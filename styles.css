@@ -1,0 +1,99 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  
+}
+
+body {
+  background-color: #000000;
+  font-family: "Ysabeau Infant", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #EFBF04;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Ysabeau SC", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 6vw;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Ysabeau SC", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 3vw;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+
+p {
+  font-family: "Ysabeau Infant", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1.5vw;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+}
+
+a.btn-dark {
+  font-family: "Ysabeau Infant", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1vw;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+}
+
+.banner {
+  margin-left: 20vw;
+  margin-right: 20vw;
+  width: 90%;
+  height: 100%;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.projects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+  margin: 3vw 0;
+  padding-bottom: 2vw;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+  margin: 3vw 0;
+  padding-bottom: 2vw;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.card {
+  margin: 1vw;
+}
+
+.projects h1, .about h1 {
+  padding-top: 2vw;
+}c
