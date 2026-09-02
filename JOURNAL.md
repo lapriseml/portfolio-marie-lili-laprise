@@ -2,34 +2,8 @@
 
 ### 2026-09-02
 - **Outil:** *Copilot (VSCODE)*
-- **Prompt:** *with a gsap animation, i want the .home to take full screen at first, then first h1 comes from the left to the middle, then second h1 comes from the right to the middle (to end up beside the first h1) then first h2 comes from the bottom to the middle (to end up under the 2 h1) and then the second h2 to appear (opacity 0 to 100) and end up under the first h2*
-- **Résultat:**
-  // Register ScrollTrigger only if it's loaded to avoid reference errors
-  if (window.ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
-  } else {
-    console.warn('ScrollTrigger plugin not loaded; continuing without it.');
-  }
-  
-  // Entrance timeline for the hero headings
-  // Hide scroll until animation completes
-  document.body.style.overflow = "hidden";
-  
-  const headings = document.querySelectorAll('.h1-1, .h1-2, .h2-1, .h2-2');
-  if (!headings || headings.length === 0) {
-    console.warn('Hero headings not found — skipping entrance animation.');
-    document.body.style.overflow = 'auto';
-  } else {
-    console.log('Starting hero entrance animation');
-    const tl = gsap.timeline({defaults:{ease: "power3.out"}});
-  
-    tl.from(".h1-1", {x: -window.innerWidth * 0.5, duration: 1})
-      .from(".h1-2", {x: window.innerWidth * 0.5, duration: 1}, "-=.6")
-      .fromTo(".h2-1", {y: 200, opacity: 0}, {y: 0, opacity: 1, duration: 0.8}, "-=0.2")
-      .fromTo(".h2-2", {opacity: 0, y: 20}, {opacity: 1, y: 0, duration: 0.6}, "-=0.2")
-      .call(() => {
-        document.body.style.overflow = "auto";
-        document.scrollingElement.scrollTo(0, 0);
-        console.log('Hero entrance animation complete');
-      });
-  }
+- **Prompt:** *avec une animation gsap, je veux que le .home prenne tout l’écran au début, ensuite le premier h1 vient de la gauche vers le milieu, puis le deuxième h1 vient de la droite vers le milieu (pour finir à côté du premier h1), puis le premier h2 vient du bas vers le milieu (pour finir sous les 2 h1) et ensuite le deuxième h2 apparaisse (opacité de 0 à 100) et finisse sous le premier h2*
+- **Résultat:** Ajout de classes aux deux titres h1 et aux deux titres h2, configuration de .home en plein écran, ajustement de l’affichage des titres, ajout d’une timeline GSAP qui : affiche .home en plein écran et désactive le défilement, anime le premier h1 depuis la gauche, anime le deuxième h1 depuis la droite afin qu’il se place à côté du premier, fait apparaître le premier h2 en le faisant remonter depuis le bas, sous les h1, fait apparaître progressivement le deuxième h2 sous le premier h2, réactive le défilement une fois l’animation terminée.
+
+- **Prompt:** *inverse les animations pour que cela commence avec seulement portfolio, puis il fait une spirale et disparaît dans developpeuse web, ensuite marie-lili arrive (par-dessus developpeuse web), puis laprise arrive (à côté de marie-lili) et ensuite tout bouge un peu vers le haut afin de faire de la place pour le fichier .text (qui serait maintenant à l’intérieur du home)*
+- **Résultat:** Déplacement du .text-file dans la zone .home et du .hero-portfolio visible au départ ; .hero-group reste mais est caché initialement, caché .hero-group initialement, agrandi .hero-portfolio, ajouté les styles de .home .text-file, remplacement de la timeline par la séquence inversée : afficher Portfolio en premier. Faire une spirale/fondu du Portfolio. Révéler Développeuse Web à sa place. Animer Marie-Lili (par-dessus) puis Laprise (à côté). Déplacer le groupe hero vers le haut et révéler le .text-file à l’intérieur de .home. Réactiver le défilement à la fin.
