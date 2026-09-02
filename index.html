@@ -25,36 +25,30 @@
       <div class="container mt-5">
         <div class="row align-items-center">
           <div class="col-12 text-center">
-            <h2>Portfolio</h2>
-            <h1>Marie-Lili Laprise</h1>
-            <h2>Développeuse Web</h2>
+            <div class="hero-group">
+              <h1 class="hero-h1 h1-1">Marie-Lili</h1>
+              <h1 class="hero-h1 h1-2">Laprise</h1>
+              <h2 class="hero-h2 h2-1">Développeuse Web</h2>
+            </div>
+            <!-- Portfolio is present and will be visible first -->
+            <h1 class="hero-portfolio" style="display:block">Portfolio</h1>
+
+            <!-- Text file moved into home; hidden until the hero moves up -->
+            <div class="text-file" style="opacity:0; transform: translateY(20px);">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
           </div>
         </div>
       </div>
-
-
-      <div class="about">
-        <div class="container mt-5">
-          <h1>À propos</h1>
-
-        
-          <div class="row align-items-center">
-            <div class="col-12 text-center">
-              <div class="text-file">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>  
-        </div>
-
-      </div>
-
     </div>
+
+
+
 
     
 
     <div class="projects">
-        <h1>Projets</h1>
+      <h2>Projets</h2>
         
       <div class="container mt-5">
         <div class="row">
@@ -69,8 +63,8 @@
                 <div class="swiper-button-next text-danger"></div>
                 <div class="swiper-button-prev text-danger"></div>
               </div>
-              <div class="card-body">
-                <h2 class="card-title">HighFish</h2>
+                <div class="card-body">
+                <h3 class="card-title">HighFish</h3>
                 <p class="card-text">Jeu de pêche</p>
                 <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Voir plus</a>
               </div>
@@ -88,7 +82,7 @@
                 <div class="swiper-button-prev text-danger"></div>
               </div>
               <div class="card-body">
-                <h2 class="card-title">HighStar</h2>
+                <h3 class="card-title">HighStar</h3>
                 <p class="card-text">Jeu de collecte d'objets</p>
                 <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Voir plus</a>
               </div>
@@ -106,7 +100,7 @@
                 <div class="swiper-button-prev text-danger"></div>
               </div>
               <div class="card-body">
-                <h2 class="card-title">Os'scape</h2>
+                <h3 class="card-title">Os'scape</h3>
                 <p class="card-text">Jeu de labyrinthe</p>
                 <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Voir plus</a>
               </div>
@@ -124,7 +118,7 @@
                 <div class="swiper-button-prev text-danger"></div>
               </div>
               <div class="card-body">
-                <h2 class="card-title">Tatooine</h2>
+                <h3 class="card-title">Tatooine</h3>
                 <p class="card-text">Vidéo d'animation et modélisation 3D</p>
                 <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Voir plus</a>
               </div>
@@ -154,7 +148,6 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js"></script>
     
 </body>
