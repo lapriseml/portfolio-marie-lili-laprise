@@ -31,10 +31,6 @@
     <a href="#competences">Compétences</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="#contact" class="nav-cta">
-    <svg width="10" height="10" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" fill="#c0392b"/></svg>
-    Disponible
-  </a>
 </nav>
 
 <!-- HYPERSPACE CANVAS -->
@@ -224,10 +220,10 @@
       <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(30rem,55vw,50rem);height:clamp(15rem,28vw,25rem);border-radius:50%;background:radial-gradient(ellipse,#7c3aed,#c0392b 50%,transparent 70%);opacity:.07"></div>
     </div>
     <div class="contact-grid">
+      <div class="contact-orb orb-wrap" aria-hidden="true"></div>
       <div class="reveal">
         <p class="section-label">04 — Contact</p>
         <h2 class="contact-title">Travaillons<br><span>ensemble</span></h2>
-        <p class="contact-desc">Disponible pour des mandats freelance ou un poste à temps plein. Je réponds sous 24h.</p>
         <div>
           <a href="mailto:marie.laprise@icloud.com" class="contact-link">
             <span class="cl-label">Email</span><span class="cl-val">marie.laprise@icloud.com</span>
@@ -249,7 +245,6 @@
       <span class="footer-name">© 2026 Marie-Lili Laprise</span>
       <svg width="20" height="20" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#1a083a" stroke="#7c3aed" stroke-width="0.5"/><circle cx="50" cy="50" r="5" fill="#4c1d95"/></svg>
     </div>
-    <span class="footer-copy">Conçu &amp; développé avec soin</span>
   </footer>
 </div><!-- /page-home -->
 
@@ -260,14 +255,14 @@
     <button class="back-btn" onclick="goBack()">
       <span id="detail-nav-eye"></span>← Retour
     </button>
-    <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted)" id="detail-nav-cat"></span>
-    <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem" id="detail-nav-year"></span>
+    <span class="detail-nav-cat" id="detail-nav-cat"></span>
+    <span class="detail-nav-year" id="detail-nav-year"></span>
   </div>
 
   <div class="detail-hero">
     <img class="detail-hero-img" id="detail-cover" src="" alt=""/>
     <div class="detail-hero-overlay" id="detail-overlay"></div>
-    <svg width="300" height="300" class="cc" style="right:2rem;top:1rem;opacity:.28" id="detail-decor">
+    <svg width="300" height="300" class="cc" style="right:2rem;top:1rem;opacity:.28">
       <circle cx="150" cy="150" r="52"  fill="none" stroke-width="0.5" opacity="0.1"/>
       <circle cx="150" cy="150" r="74"  fill="none" stroke-width="0.5" opacity="0.12"/>
       <circle cx="150" cy="150" r="96"  fill="none" stroke-width="0.5" opacity="0.14"/>
@@ -292,11 +287,11 @@
       <div class="detail-section-label" id="detail-desc-label"></div>
       <p class="detail-desc" id="detail-desc"></p>
       <div class="detail-cards">
-        <div class="detail-card" id="detail-card-challenge">
+        <div class="detail-card">
           <div class="detail-card-label" id="detail-challenge-label"></div>
           <div class="detail-card-text" id="detail-challenge"></div>
         </div>
-        <div class="detail-card result" id="detail-card-result">
+        <div class="detail-card result">
           <div class="detail-card-label" id="detail-result-label"></div>
           <div class="detail-card-text" id="detail-result"></div>
         </div>
@@ -308,7 +303,7 @@
     </div>
   </div>
 
-  <div class="saber" id="ds1"></div>
+  <div class="saber"></div>
 
   <div class="gallery-section">
     <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">// Galerie</div>
@@ -319,7 +314,7 @@
     <div class="gallery-thumbs" id="gallery-thumbs"></div>
   </div>
 
-  <div class="saber" id="ds2"></div>
+  <div class="saber"></div>
 
   <div class="video-section">
     <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem">// Vidéo</div>
@@ -334,14 +329,14 @@
     </div>
   </div>
 
-  <div class="saber" id="ds3"></div>
+  <div class="saber"></div>
 
   <div class="related-section">
     <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem">// Autres projets</div>
     <div class="related-grid" id="related-grid"></div>
   </div>
 
-  <div class="saber" id="ds4"></div>
+  <div class="saber"></div>
 
   <footer>
     <button class="back-btn" onclick="goBack()">

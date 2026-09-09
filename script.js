@@ -378,6 +378,21 @@ function initReveal() {
   document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
 }
 
+function initContactOrb() {
+  const source = document.querySelector("#hero .orb-root");
+  const target = document.querySelector(".contact-orb");
+  if (!source || !target) return;
+
+  const orb = source.cloneNode(true);
+  const gradient = orb.querySelector("#rg0");
+  const gradientCircle = orb.querySelector('[fill="url(#rg0)"]');
+  if (gradient && gradientCircle) {
+    gradient.id = "rg-contact";
+    gradientCircle.setAttribute("fill", "url(#rg-contact)");
+  }
+  target.appendChild(orb);
+}
+
 /* ─── Nav scroll tint ──────────────────────────────────────────────────── */
 function initNavScroll() {
   const nav = document.getElementById("main-nav");
@@ -385,25 +400,6 @@ function initNavScroll() {
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 30);
   }, { passive: true });
-}
-
-/* ─── Contact form ─────────────────────────────────────────────────────── */
-function initContactForm() {
-  const form = document.querySelector(".contact-form");
-  if (!form) return;
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    const btn = form.querySelector(".form-submit");
-    btn.textContent = "Message envoyé ✓";
-    btn.style.opacity = ".6";
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = "Envoyer le message →";
-      btn.style.opacity = "";
-      btn.disabled = false;
-      form.reset();
-    }, 3000);
-  });
 }
 
 /* ─── Expose globals ───────────────────────────────────────────────────── */
@@ -414,8 +410,8 @@ window.loadVideo = loadVideo;
 /* ─── Init ─────────────────────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", () => {
   buildProjectCards();
+  initContactOrb();
   initReveal();
   initNavScroll();
-  initContactForm();
   showPage("home");
 });
