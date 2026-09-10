@@ -3,10 +3,10 @@ const PROJECTS = [
   {
     id: 0, eye: "sith", accent: "#c0392b",
     title: "HighFish", category: "Jeu vidéo", year: "2024",
-    tagline: "Plateforme de vente en ligne pour artisans d'art",
-    description: "Développement d'une boutique en ligne sur mesure pour une maison d'art et d'artisanat de luxe. Système de gestion de catalogue, paiement sécurisé, et expérience d'achat immersive.",
-    tags: ["React", "Node.js", "Stripe", "PostgreSQL", "Tailwind"],
-    client: "Atelier Dumont SENC", duration: "14 semaines",
+    tagline: "Jeu vidéo de pêche en ligne",
+    description: "<h3>HighFish</h3><p>Jeu de pêche en pixel art développé avec <strong>Phaser et JavaScript</strong>. Le joueur doit atteindre un nombre précis de poissons pêchés avant la fin du temps, tout en évitant les obstacles et en récupérant des coffres offrant du temps supplémentaire.</p><p>Le projet comprend <strong>trois niveaux à difficulté progressive</strong> et met en œuvre différentes mécaniques de gameplay, telles que la pêche, les déplacements, les collisions, la gestion du temps, les bonus et la progression entre les niveaux. L'ensemble est accompagné d'une direction visuelle et sonore inspirée des jeux d'arcade rétro.</p>",
+    tags: ["HTML", "CSS", "JavaScript", "Phaser"],
+    cadre: "Scolaire", duration: "15 semaines",
     cover: "medias/HighFish.png",
     gallery: [
       "medias/HighFish.png",
@@ -25,7 +25,7 @@ const PROJECTS = [
     tagline: "Application de gestion pour professionnels de la santé",
     description: "Plateforme SaaS dédiée aux cliniques médicales du Québec. Gestion des rendez-vous, dossiers patients numériques, et tableau de bord analytique en temps réel.",
     tags: ["Vue.js", "Python", "FastAPI", "Redis", "AWS"],
-    client: "Réseau Santé QC Inc.", duration: "10 mois",
+    cadre: "Scolaire", duration: "8 semaines",
     cover: "medias/Os'scape.png",
     gallery: [
       "medias/Os'scape.png",
@@ -44,7 +44,7 @@ const PROJECTS = [
     tagline: "Vitrine numérique pour un studio de photographie haut de gamme",
     description: "Site vitrine avec galerie interactive, système de réservation en ligne, et portfolio dynamique pour un studio photographique montréalais.",
     tags: ["Next.js", "Three.js", "Framer Motion", "Sanity CMS"],
-    client: "Chronos Studio inc.", duration: "3 mois",
+    cadre: "Scolaire", duration: "2 semaines",
     cover: "medias/HighStar.png",
     gallery: [
       "medias/HighStar.png",
@@ -63,7 +63,7 @@ const PROJECTS = [
     tagline: "Outil collaboratif de gestion de projets créatifs",
     description: "Application web de gestion de projet conçue pour les agences créatives. Tableaux Kanban personnalisables, partage de fichiers intégré, et suivi de temps en temps réel.",
     tags: ["React", "Socket.io", "Express", "MongoDB", "Docker"],
-    client: "Carte Blanche Collectif", duration: "8 mois",
+    cadre: "Scolaire", duration: "2 semaines",
     cover: "medias/Tatooine.png",
     gallery: [
       "medias/Tatooine.png",
@@ -95,7 +95,6 @@ function buildProjectCards() {
       <div class="card-body">
         <div class="card-cat ${p.eye === "windu" ? "windu" : ""}">${p.category}</div>
         <h3 class="card-title">${p.title}</h3>
-        <p class="card-desc">${p.description}</p>
         <div class="card-tags">
           ${p.tags.map(t => `<span class="tag ${p.eye === "windu" ? "windu" : ""}">${t}</span>`).join("")}
         </div>
@@ -138,14 +137,15 @@ function fillDetail(id) {
   if (badgeEl) badgeEl.innerHTML = eyeSVG(p.eye, 72);
 
   // meta band
-  setText("detail-client", p.client);
+  setText("detail-cadre", p.cadre);
   setText("detail-meta-cat", p.category);
   setText("detail-duration", p.duration);
   setText("detail-year", p.year);
 
   // body
-  setText("detail-desc-label", "// Aperçu du projet");
-  setText("detail-desc", p.description);
+  setText("detail-desc-label", "// Description du projet");
+  const detailDescEl = document.getElementById("detail-desc");
+  if (detailDescEl) detailDescEl.innerHTML = p.description;
   const challengeLabelEl = document.getElementById("detail-challenge-label");
   if (challengeLabelEl) { challengeLabelEl.textContent = "Défi"; challengeLabelEl.style.color = col; }
   setText("detail-challenge", p.challenge);
