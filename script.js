@@ -240,13 +240,11 @@ function runHyperspace(cb) {
     color: Math.random() > 0.15 ? "#ffffff" : (Math.random() > 0.5 ? "#c8c8ff" : "#e8e8e8"),
   }));
 
-  let start = null;
   let navigated = false;
+  const state = { progress: 0 };
 
-  function frame(ts) {
-    if (!start) start = ts;
-    const elapsed = ts - start;
-    const t = Math.min(elapsed / HS_DURATION, 1);
+  function render(progress) {
+    const t = Math.min(progress, 1);
     const fadeStart = 0.6;
     const dissolveT = t > fadeStart ? (t - fadeStart) / (1 - fadeStart) : 0;
 
@@ -270,19 +268,21 @@ function runHyperspace(cb) {
       ctx.stroke();
     });
 
-    if (!navigated && elapsed >= HS_DURATION * 0.6) {
+    if (!navigated && t >= 0.6) {
       navigated = true;
       cb();
     }
-
-    if (t < 1) {
-      requestAnimationFrame(frame);
-    } else {
-      setTimeout(() => { canvas.style.display = "none"; }, 100);
-    }
   }
 
-  requestAnimationFrame(frame);
+  gsap.to(state, {
+    progress: 1,
+    duration: HS_DURATION / 1000,
+    ease: "none",
+    onUpdate: () => render(state.progress),
+    onComplete: () => {
+      setTimeout(() => { canvas.style.display = "none"; }, 100);
+    }
+  });
 }
 
 /* ─── Navigation ───────────────────────────────────────────────────────── */
