@@ -16,7 +16,12 @@
   --text-display: clamp(52px, 9vw, 110px);
   --text-detail: clamp(58px, 10vw, 130px);
 }
-html { scroll-behavior: smooth; }
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 body {
   font-family: 'Outfit', sans-serif;
   font-size: var(--text-body);
@@ -25,6 +30,18 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+#page-home {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+#hero, .section { scroll-snap-align: start; scroll-snap-stop: always; }
+#hero, .section { transition: opacity .35s ease, transform .35s ease; }
+#hero.active-section, .section.active-section { opacity: 1; }
+#hero:not(.active-section), .section:not(.active-section) { opacity: .88; }
 body::-webkit-scrollbar { width: .25rem; }
 body::-webkit-scrollbar-track { background: var(--bg); }
 body::-webkit-scrollbar-thumb { background: #2d0a3e; }
@@ -199,11 +216,14 @@ body::-webkit-scrollbar-thumb { background: #2d0a3e; }
 .form-submit:hover { opacity:.85; }
 
 /* Footer */
-footer { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding:2rem 4rem; }
-@media (max-width:768px) { footer { padding:2rem; } }
+footer { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding:1.5rem 4rem 2.5rem; }
+@media (max-width:768px) { footer { padding:1.5rem 2rem 2rem; } }
 .footer-logo { display:flex; align-items:center; gap:.75rem; }
 .footer-name { font-family:'Cinzel',serif; font-size:var(--text-meta); letter-spacing:.15em; color:var(--muted); }
 .footer-copy { font-family:'JetBrains Mono',monospace; font-size:var(--text-sm); letter-spacing:.3em; text-transform:uppercase; color:var(--muted); }
+#contact { padding-bottom:0; display:flex; flex-direction:column; justify-content:space-between; }
+#contact .contact-grid { margin-top:0; padding-bottom:1rem; width:100%; flex:1; display:flex; align-items:center; justify-content:center; }
+#contact footer { margin-top:0; width:100%; }
 
 .cc { position:absolute; pointer-events:none; }
 
