@@ -1,82 +1,26 @@
 /* ─── Data ─────────────────────────────────────────────────────────────── */
-const PROJECTS = [
-  {
-    id: 0, eye: "sith", accent: "#c0392b",
-    title: "HighFish", category: "Jeu vidéo", year: "2024",
-    tagline: "Jeu vidéo de pêche en ligne",
-    description: "<h3>HighFish</h3><p>Jeu de pêche en pixel art développé avec <strong>Phaser et JavaScript</strong>. Le joueur doit atteindre un nombre précis de poissons pêchés avant la fin du temps, tout en évitant les obstacles et en récupérant des coffres offrant du temps supplémentaire.</p><p>Le projet comprend <strong>trois niveaux à difficulté progressive</strong> et met en œuvre différentes mécaniques de gameplay, telles que la pêche, les déplacements, les collisions, la gestion du temps, les bonus et la progression entre les niveaux. L'ensemble est accompagné d'une direction visuelle et sonore inspirée des jeux d'arcade rétro.</p>",
-    tags: ["HTML", "CSS", "JavaScript", "Phaser"],
-    cadre: "Scolaire", duration: "15 semaines",
-    cover: "medias/HighFish.png",
-    gallery: [
-      "medias/HighFish.png",
-      "medias/HighFish.png",
-      "medias/HighFish.png",
-      "medias/HighFish.png",
-      "medias/HighFish.png",
-    ],
-    videoId: "dQw4w9WgXcQ", videoCaption: "Démo du configurateur de commande sur mesure",
-    challenge: "Créer une expérience d'achat en ligne qui reflète le prestige des créations artisanales tout en optimisant les conversions.",
-    result: "+340% de conversions en ligne, 0 abandon de panier lié à la performance",
-  },
-  {
-    id: 1, eye: "windu", accent: "#7c3aed",
-    title: "Os'scape", category: "Jeu réalité virtuelle", year: "2025",
-    tagline: "Application de gestion pour professionnels de la santé",
-    description: "Plateforme SaaS dédiée aux cliniques médicales du Québec. Gestion des rendez-vous, dossiers patients numériques, et tableau de bord analytique en temps réel.",
-    tags: ["Vue.js", "Python", "FastAPI", "Redis", "AWS"],
-    cadre: "Scolaire", duration: "8 semaines",
-    cover: "medias/Os'scape.png",
-    gallery: [
-      "medias/Os'scape.png",
-      "medias/Os'scape.png",
-      "medias/Os'scape.png",
-      "medias/Os'scape.png",
-      "medias/Os'scape.png",
-    ],
-    videoId: "dQw4w9WgXcQ", videoCaption: "Aperçu de la plateforme de gestion clinique",
-    challenge: "Concevoir un système sécurisé conforme à la Loi 25 avec une UX assez simple pour des professionnels de santé non-techniques.",
-    result: "Adopté par 47 cliniques, réduction de 60% du temps administratif",
-  },
-  {
-    id: 2, eye: "sith", accent: "#c0392b",
-    title: "HighStar", category: "Jeu interactif", year: "2025",
-    tagline: "Vitrine numérique pour un studio de photographie haut de gamme",
-    description: "Site vitrine avec galerie interactive, système de réservation en ligne, et portfolio dynamique pour un studio photographique montréalais.",
-    tags: ["Next.js", "Three.js", "Framer Motion", "Sanity CMS"],
-    cadre: "Scolaire", duration: "2 semaines",
-    cover: "medias/HighStar.png",
-    gallery: [
-      "medias/HighStar.png",
-      "medias/HighStar.png",
-      "medias/HighStar.png",
-      "medias/HighStar.png",
-      "medias/HighStar.png",
-    ],
-    videoId: "dQw4w9WgXcQ", videoCaption: "Visite guidée du site vitrine",
-    challenge: "Présenter un portfolio photographique avec une performance maximale malgré des images haute résolution.",
-    result: "Score Lighthouse 98/100, +180% de demandes de devis reçues",
-  },
-  {
-    id: 3, eye: "windu", accent: "#7c3aed",
-    title: "Tatooine", category: "Animation / Modélisation 3D", year: "2025",
-    tagline: "Outil collaboratif de gestion de projets créatifs",
-    description: "Application web de gestion de projet conçue pour les agences créatives. Tableaux Kanban personnalisables, partage de fichiers intégré, et suivi de temps en temps réel.",
-    tags: ["React", "Socket.io", "Express", "MongoDB", "Docker"],
-    cadre: "Scolaire", duration: "2 semaines",
-    cover: "medias/Tatooine.png",
-    gallery: [
-      "medias/Tatooine.png",
-      "medias/Tatooine.png",
-      "medias/Tatooine.png",
-      "medias/Tatooine.png",
-      "medias/Tatooine.png",
-    ],
-    videoId: "dQw4w9WgXcQ", videoCaption: "Démonstration de l'outil collaboratif",
-    challenge: "Synchroniser en temps réel les données de plusieurs utilisateurs simultanés sans perte de données ni conflits.",
-    result: "Utilisée par 12 agences, 99.97% de disponibilité, 4.9/5 satisfaction",
-  },
-];
+let PROJECTS = [];
+
+async function loadProjects() {
+  try {
+    const response = await fetch("projects.json");
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    PROJECTS = await response.json();
+    buildProjectCards();
+    initContactOrb();
+    initReveal();
+    initNavScroll();
+    showPage("home");
+  } catch (error) {
+    console.error("Could not load projects.json:", error);
+    document.getElementById("projects-grid").innerHTML = `
+      <div class="project-card" style="grid-column:1/-1; padding:2rem; text-align:center;">
+        Impossible de charger les projets. Vérifiez que le fichier <strong>projects.json</strong> est présent et servi via un serveur local.
+      </div>`;
+  }
+}
 
 /* ─── Active project (for loadVideo) ───────────────────────────────────── */
 let _currentProject = null;
@@ -409,9 +353,5 @@ window.loadVideo = loadVideo;
 
 /* ─── Init ─────────────────────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", () => {
-  buildProjectCards();
-  initContactOrb();
-  initReveal();
-  initNavScroll();
-  showPage("home");
+  loadProjects();
 });
