@@ -3,9 +3,9 @@ JSON car simple, efficace et aucun serveur externe nécessaire.
 
 
 # 2. Animations
-- **Élément à animer :** 
-- **Type d'animation :** 
-- **Déclencheur :**
+- **Élément à animer :** Le logo // les transitions pour les projets
+- **Type d'animation :** Des cercles mauves et rouges qui tournent // style "hyperspace" étoiles
+- **Déclencheur :** Constamment // au clic sur un projet
 
 
 
