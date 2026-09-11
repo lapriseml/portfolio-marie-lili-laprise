@@ -1,8 +1,17 @@
 gsap.registerPlugin(ScrollTrigger);
 
-/* ─── Data ─────────────────────────────────────────────────────────────── */
+/*
+  Bloc de données
+  Ce fichier récupère les projets depuis le JSON, construit les cartes du portfolio,
+  remplit les pages de détail et gère les transitions et animations de navigation.
+*/
 let PROJECTS = [];
 
+/*
+  Charge les données du portfolio depuis projects.json.
+  Quand le fichier est récupéré, on construit les cartes, initialise les animations,
+  puis on affiche la page d'accueil.
+*/
 async function loadProjects() {
   try {
     const response = await fetch("projects.json");
@@ -25,10 +34,17 @@ async function loadProjects() {
   }
 }
 
-/* ─── Active project (for loadVideo) ───────────────────────────────────── */
+/*
+  Projet actif pour la lecture de vidéo.
+  On garde le projet courant pour pouvoir afficher la bonne vidéo dans la page de détail.
+*/
 let _currentProject = null;
 
-/* ─── Render home project cards ────────────────────────────────────────── */
+/*
+  Génère les cartes de projets visibles sur la page d'accueil.
+  Chaque carte contient l'image, le titre, la catégorie et les tags.
+  Au clic, on ouvre le projet correspondant.
+*/
 function buildProjectCards() {
   const grid = document.getElementById("projects-grid");
   if (!grid) return;
@@ -49,7 +65,11 @@ function buildProjectCards() {
     </div>`).join("");
 }
 
-/* ─── Fill detail page ─────────────────────────────────────────────────── */
+/*
+  Remplit la page de détail avec le contenu du projet choisi.
+  Cette fonction prend l'identifiant du projet, cherche ses données dans PROJECTS,
+  puis injecte le contenu dans chaque zone HTML de la page détaillée.
+*/
 function fillDetail(id) {
   const p = PROJECTS[id];
   _currentProject = p;
@@ -172,7 +192,10 @@ function fillDetail(id) {
   }
 }
 
-/* ─── Load video ───────────────────────────────────────────────────────── */
+/*
+  Charge la vidéo YouTube du projet actif dans le conteneur dédié.
+  On remplace l'affiche par une iframe intégrée avec lecture automatique.
+*/
 function loadVideo() {
   const p = _currentProject;
   if (!p) return;
@@ -181,7 +204,10 @@ function loadVideo() {
     `<iframe src="https://www.youtube.com/embed/${p.videoId}?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
 }
 
-/* ─── Helpers ──────────────────────────────────────────────────────────── */
+/*
+  Helpers utilitaires.
+  Ces fonctions simplifient l'injection de contenu textuel ou de mini-icônes.
+*/
 function setText(id, text) {
   const el = document.getElementById(id);
   if (el) el.textContent = text;
@@ -225,7 +251,11 @@ function eyeSVG(type, size) {
   </svg>`;
 }
 
-/* ─── Hyperspace ───────────────────────────────────────────────────────── */
+/*
+  Animation de transition hyperspace.
+  Elle crée une animation de particules et une eflet de navigation visuelle
+  avant d'afficher la page de détail ou de revenir à l'accueil.
+*/
 const HS_DURATION = 1900;
 const HS_STARS = 520;
 
@@ -290,7 +320,11 @@ function runHyperspace(cb) {
   });
 }
 
-/* ─── Navigation ───────────────────────────────────────────────────────── */
+/*
+  Navigation entre les pages du portfolio.
+  La page d'accueil et la page de détail sont gérées comme des vues distinctes.
+  On masque l'autre vue et on remet le scroll au haut de la page.
+*/
 function showPage(name) {
   const nav = document.getElementById("main-nav");
   if (nav) nav.style.display = name === "home" ? "" : "none";
@@ -317,7 +351,11 @@ function goBack() {
   showPage("home");
 }
 
-/* ─── Scroll reveals ───────────────────────────────────────────────────── */
+/*
+  Animation d'apparition au scroll.
+  On observe les éléments avec la classe reveal pour les faire apparaître
+  lorsqu'ils entrent dans la zone visible de l'écran.
+*/
 function initReveal() {
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -327,6 +365,10 @@ function initReveal() {
   document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
 }
 
+/*
+  Clone le globe du hero pour le réutiliser dans la section contact.
+  Cela permet d'avoir un visuel cohérent dans les deux blocs.
+*/
 function initContactOrb() {
   const source = document.querySelector("#hero .orb-root");
   const target = document.querySelector(".contact-orb");
@@ -342,7 +384,11 @@ function initContactOrb() {
   target.appendChild(orb);
 }
 
-/* ─── Nav scroll tint ──────────────────────────────────────────────────── */
+/*
+  Change l'apparence de la navigation au scroll.
+  Quand on descend dans la page, le menu devient plus opaque pour garder
+  un bon contraste sur les sections sombres.
+*/
 function initNavScroll() {
   const nav = document.getElementById("main-nav");
   if (!nav) return;
@@ -351,7 +397,12 @@ function initNavScroll() {
   }, { passive: true });
 }
 
-/* ─── Section change on scroll ───────────────────────────────────────────── */
+/*
+  Gère le comportement de scroll section par section.
+  On détecte la section la plus proche du haut du conteneur et on force
+  le défilement vers cette section avec un effet progressif.
+  Cela donne l'impression d'un parcours fluide et contrôlé.
+*/
 function initSectionScroll() {
   const home = document.getElementById("page-home");
   const sections = Array.from(document.querySelectorAll("#hero, #projets, #competences, #contact"));
@@ -407,12 +458,19 @@ function initSectionScroll() {
   setActiveSection(0);
 }
 
-/* ─── Expose globals ───────────────────────────────────────────────────── */
+/*
+  Expose les fonctions globales aux éléments HTML.
+  Cela permet d'appeler openProject(), goBack() ou loadVideo() depuis les onclick
+  écrits directement dans le HTML.
+*/
 window.openProject = openProject;
 window.goBack = goBack;
 window.loadVideo = loadVideo;
 
-/* ─── Init ─────────────────────────────────────────────────────────────── */
+/*
+  Initialisation du portfolio.
+  On attend que le DOM soit chargé pour lancer le chargement des données.
+*/
 document.addEventListener("DOMContentLoaded", () => {
   loadProjects();
 });

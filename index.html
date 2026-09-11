@@ -13,7 +13,8 @@
 </head>
 <body>
 
-<!-- NAV -->
+<!-- Navigation principale du site avec logo, nom et liens -->
+
 <nav id="main-nav">
   <div class="nav-logo" onclick="showPage('home')">
     <svg width="28" height="28" viewBox="0 0 100 100">
@@ -35,28 +36,14 @@
   </div>
 </nav>
 
-<!-- HYPERSPACE CANVAS -->
+<!-- Animation hyperspace -->
 <canvas id="hyperspace"></canvas>
 
-<!-- ══════ HOME ══════ -->
+<!-- Page d'accueil principale avec sections -->
 <div id="page-home" class="page active">
 
-  <!-- Hero -->
+  <!-- Section hero nom, spécialité, résumé et orb -->
   <section id="hero">
-    <div class="hero-glow-r"></div>
-    <div class="hero-glow-p"></div>
-    <svg width="300" height="300" class="cc" style="left:-5rem;top:50%;transform:translateY(-50%);opacity:.45">
-      <circle cx="150" cy="150" r="52"  fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.1"/>
-      <circle cx="150" cy="150" r="74"  fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.12"/>
-      <circle cx="150" cy="150" r="96"  fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.14"/>
-      <circle cx="150" cy="150" r="118" fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.10"/>
-    </svg>
-    <svg width="300" height="300" class="cc" style="right:2rem;top:2rem;opacity:.4">
-      <circle cx="150" cy="150" r="52"  fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.1"/>
-      <circle cx="150" cy="150" r="74"  fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.12"/>
-      <circle cx="150" cy="150" r="96"  fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.14"/>
-      <circle cx="150" cy="150" r="118" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.10"/>
-    </svg>
 
     <div class="hero-text">
       <p class="hero-label">// Développeuse web · Montréal</p>
@@ -119,9 +106,13 @@
     </div>
   </section>
 
+  <!-- -->
   <div class="saber"></div>
 
-  <!-- Projects -->
+  <!--
+    Section des projets récents.
+    Le conteneur avec l'id projects-grid est rempli dynamiquement par JavaScript.
+  -->
   <section id="projets" class="section">
     <svg width="300" height="300" class="cc" style="right:0;bottom:-5rem;opacity:.22">
       <circle cx="150" cy="150" r="52"  fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.1"/>
@@ -147,7 +138,10 @@
 
   <div class="saber"></div>
 
-  <!-- Skills & About -->
+  <!--
+    Section compétences + histoire personnelle.
+    Elle regroupe les outils maîtrisés et un bloc de présentation de la personne.
+  -->
   <section id="competences" class="section">
     <svg width="300" height="300" class="cc" style="left:-5rem;top:50%;transform:translateY(-50%);opacity:.18">
       <circle cx="150" cy="150" r="52"  fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.12"/>
@@ -216,7 +210,10 @@
 
   <div class="saber"></div>
 
-  <!-- Contact -->
+  <!--
+    Section contact.
+    Elle contient les coordonnées ainsi que le pied de page du portfolio.
+  -->
   <section id="contact" class="section">
     <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
       <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(30rem,55vw,50rem);height:clamp(15rem,28vw,25rem);border-radius:50%;background:radial-gradient(ellipse,#7c3aed,#c0392b 50%,transparent 70%);opacity:.07"></div>
@@ -248,8 +245,15 @@
 </div><!-- /page-home -->
 
 
-<!-- ══════ DETAIL PAGE ══════ -->
+<!--
+  Page de détail d'un projet.
+  Elle remplace l'accueil quand on clique sur un projet et affiche le contenu complet.
+-->
 <div id="page-detail" class="page">
+  <!--
+    Barre de navigation fixe du détail du projet.
+    Elle permet de revenir à l'accueil et affiche le titre du projet.
+  -->
   <div class="detail-sticky-nav">
     <button class="back-btn" onclick="goBack()">
       <span id="detail-nav-eye"></span>← Retour
@@ -258,6 +262,10 @@
     <span class="detail-nav-year" id="detail-nav-year"></span>
   </div>
 
+  <!--
+    Hero du projet détaillé : image de couverture, titre et sous-titre.
+    La couleur d'accent et les visuels varient selon le projet.
+  -->
   <div class="detail-hero">
     <img class="detail-hero-img" id="detail-cover" src="" alt=""/>
     <div class="detail-hero-overlay" id="detail-overlay"></div>
@@ -274,6 +282,10 @@
     <div class="detail-eye-badge pulse" id="detail-eye-badge"></div>
   </div>
 
+  <!--
+    Bande d'informations du projet : cadre, catégorie, durée et année.
+    Ces éléments sont injectés dynamiquement en JavaScript.
+  -->
   <div class="detail-meta-band">
     <div><div class="meta-label">Cadre</div><div class="meta-val" id="detail-cadre"></div></div>
     <div><div class="meta-label">Catégorie</div><div class="meta-val" id="detail-meta-cat"></div></div>
@@ -281,6 +293,10 @@
     <div><div class="meta-label">Année</div><div class="meta-val" id="detail-year"></div></div>
   </div>
 
+  <!--
+    Corps du projet : description, défi, résultat et technologies.
+    Le contenu est aussi injecté dynamiquement selon le projet sélectionné.
+  -->
   <div class="detail-body">
     <div>
       <div class="detail-section-label" id="detail-desc-label"></div>
@@ -304,6 +320,10 @@
 
   <div class="saber"></div>
 
+  <!--
+    Galerie de visuels du projet.
+    Elle affiche les images du projet avec une miniature active et un compteur.
+  -->
   <div class="gallery-section">
     <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">// Galerie</div>
     <div class="gallery-main">
@@ -315,6 +335,10 @@
 
   <div class="saber"></div>
 
+  <!--
+    Section vidéo.
+    Une image d'affiche s'affiche d'abord, puis elle est remplacée par une iframe YouTube au clic.
+  -->
   <div class="video-section">
     <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem">// Vidéo</div>
     <p style="font-family:'Cinzel',serif;font-size:.8rem;color:var(--muted);margin-bottom:1.5rem" id="video-caption"></p>
@@ -330,6 +354,10 @@
 
   <div class="saber"></div>
 
+  <!--
+    Section projets associés.
+    Elle propose d'autres projets pour naviguer plus facilement dans le portfolio.
+  -->
   <div class="related-section">
     <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem">// Autres projets</div>
     <div class="related-grid" id="related-grid"></div>
