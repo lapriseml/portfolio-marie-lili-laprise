@@ -90,12 +90,14 @@ function fillDetail(id) {
   setText("detail-desc-label", "// Description du projet");
   const detailDescEl = document.getElementById("detail-desc");
   if (detailDescEl) detailDescEl.innerHTML = p.description;
+  // challenge / result
   const challengeLabelEl = document.getElementById("detail-challenge-label");
   if (challengeLabelEl) { challengeLabelEl.textContent = "Défi"; challengeLabelEl.style.color = col; }
   setText("detail-challenge", p.challenge);
   const resultLabelEl = document.getElementById("detail-result-label");
   if (resultLabelEl) { resultLabelEl.textContent = "Résultat"; resultLabelEl.style.color = col; }
   setText("detail-result", p.result);
+  // challenge / result end
   setText("detail-tech-label", "// Technologies");
 
   // tags
