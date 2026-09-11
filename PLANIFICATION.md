@@ -1,5 +1,5 @@
 # 1. Gestion des données
-
+JSON car simple, efficace et aucun serveur externe nécessaire.
 
 
 # 2. Animations
