@@ -329,10 +329,21 @@ function showPage(name) {
   const nav = document.getElementById("main-nav");
   if (nav) nav.style.display = name === "home" ? "" : "none";
 
+  const isHome = name === "home";
+  document.documentElement.style.overflowY = "auto";
+  document.body.style.overflowY = "auto";
   document.documentElement.style.scrollBehavior = "auto";
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   const target = document.getElementById("page-" + name);
   if (target) target.classList.add("active");
+
+  if (isHome) {
+    const home = document.getElementById("page-home");
+    if (home) {
+      home.scrollTop = 0;
+    }
+  }
+
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
   requestAnimationFrame(() => {
