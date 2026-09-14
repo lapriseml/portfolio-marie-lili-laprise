@@ -1,14 +1,17 @@
 ## IA
 
-### 2026-09-02
-- **Outil:** *Copilot (VSCODE)*
-- **Prompt:** *avec une animation gsap, je veux que le .home prenne tout l’écran au début, ensuite le premier h1 vient de la gauche vers le milieu, puis le deuxième h1 vient de la droite vers le milieu (pour finir à côté du premier h1), puis le premier h2 vient du bas vers le milieu (pour finir sous les 2 h1) et ensuite le deuxième h2 apparaisse (opacité de 0 à 100) et finisse sous le premier h2*
-- **Résultat:** Ajout de classes aux deux titres h1 et aux deux titres h2, configuration de .home en plein écran, ajustement de l’affichage des titres, ajout d’une timeline GSAP qui : affiche .home en plein écran et désactive le défilement, anime le premier h1 depuis la gauche, anime le deuxième h1 depuis la droite afin qu’il se place à côté du premier, fait apparaître le premier h2 en le faisant remonter depuis le bas, sous les h1, fait apparaître progressivement le deuxième h2 sous le premier h2, réactive le défilement une fois l’animation terminée.
+### 2026-09-09
+- **Outil:** *Figma make*
+- **Prompt:** *designe moi un portfolio pour programmeuse web nom Marie-Lili Laprise, jaimerais que le style soit inspiré du rinnegan et sharingan dans naruto*
+- **Résultat:** *page de base avec couleurs mauves et rouges, section home, projects, competences et contact avec barre de navigation*
 
-- **Prompt:** *inverse les animations pour que cela commence avec seulement portfolio, puis il fait une spirale et disparaît dans developpeuse web, ensuite marie-lili arrive (par-dessus developpeuse web), puis laprise arrive (à côté de marie-lili) et ensuite tout bouge un peu vers le haut afin de faire de la place pour le fichier .text (qui serait maintenant à l’intérieur du home)*
-- **Résultat:** Déplacement du .text-file dans la zone .home et du .hero-portfolio visible au départ ; .hero-group reste mais est caché initialement, caché .hero-group initialement, agrandi .hero-portfolio, ajouté les styles de .home .text-file, remplacement de la timeline par la séquence inversée : afficher Portfolio en premier. Faire une spirale/fondu du Portfolio. Révéler Développeuse Web à sa place. Animer Marie-Lili (par-dessus) puis Laprise (à côté). Déplacer le groupe hero vers le haut et révéler le .text-file à l’intérieur de .home. Réactiver le défilement à la fin.
+### 2026-09-09
+- **Outil:** *Figma make*
+- **Prompt:** *lorsque je clique sur un projet je veux qu'une autre page souvre avec les details, plus de photos et une video egalement. aussi, je veux qu'il y a une animation inspirée du hyperspace dans star wars pour la transition de page*
+- **Résultat:** *ajout de pages projets ainsi qu'une animation hyperspace pour la transition de page*
 
 
+### 2026-09-09
 1. Qu'est-ce que j'ai accompli depuis le dernier bloc?
 2. Quelle a été ma principale difficulté et comment je l'ai surmontée? 
 3. Qu'est-ce que j'ai appris que je ne savais pas avant?
