@@ -18,7 +18,9 @@
 
 ### 2026-09-09
 **1. Qu'est-ce que j'ai accompli depuis le dernier bloc?**
+
 *J'ai complètement changé le design du portfolio que j'avais commencé l'année passée*
+
 **2. Quelle a été ma principale difficulté et comment je l'ai surmontée?**
 *D'intégrer la notion de JSON et fetch pour la gestion de données. J'ai pu le surmonter en demandant à copilot comment modifier mon html pour rentrer les données dans un fichier JSON
 **3. Qu'est-ce que j'ai appris que je ne savais pas avant?**
