@@ -7,3 +7,10 @@
 
 - **Prompt:** *inverse les animations pour que cela commence avec seulement portfolio, puis il fait une spirale et disparaît dans developpeuse web, ensuite marie-lili arrive (par-dessus developpeuse web), puis laprise arrive (à côté de marie-lili) et ensuite tout bouge un peu vers le haut afin de faire de la place pour le fichier .text (qui serait maintenant à l’intérieur du home)*
 - **Résultat:** Déplacement du .text-file dans la zone .home et du .hero-portfolio visible au départ ; .hero-group reste mais est caché initialement, caché .hero-group initialement, agrandi .hero-portfolio, ajouté les styles de .home .text-file, remplacement de la timeline par la séquence inversée : afficher Portfolio en premier. Faire une spirale/fondu du Portfolio. Révéler Développeuse Web à sa place. Animer Marie-Lili (par-dessus) puis Laprise (à côté). Déplacer le groupe hero vers le haut et révéler le .text-file à l’intérieur de .home. Réactiver le défilement à la fin.
+
+
+1. Qu'est-ce que j'ai accompli depuis le dernier bloc?
+2. Quelle a été ma principale difficulté et comment je l'ai surmontée? 
+3. Qu'est-ce que j'ai appris que je ne savais pas avant?
+4. Quelle est ma prochaine étape concrète?
+5.Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
