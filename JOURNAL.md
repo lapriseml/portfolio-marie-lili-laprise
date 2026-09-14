@@ -22,10 +22,17 @@
 *J'ai complètement changé le design du portfolio que j'avais commencé l'année passée*
 
 **2. Quelle a été ma principale difficulté et comment je l'ai surmontée?**
+
 *D'intégrer la notion de JSON et fetch pour la gestion de données. J'ai pu le surmonter en demandant à copilot comment modifier mon html pour rentrer les données dans un fichier JSON
+
 **3. Qu'est-ce que j'ai appris que je ne savais pas avant?**
+
 *J'ai appris à utiliser Figma Make et Copilot VSCode
+
 **4. Quelle est ma prochaine étape concrète?**
+
 *Aller chercher plus de documentation sur mes projets pour le contenu de mon portfolio*
+
 **5.Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?**
+
 *Oui, pour le design principal de ma page, pour mes logos svg sharingan/rinnegan, mes animations hyperspace et la planification de mon JSON. Il m'a appris comment fonctionnaient les fetch et comment faire des animations gsap svg*
