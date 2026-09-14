@@ -1,5 +1,13 @@
 # portfolio-marie-lili-laprise
 
+## Marie-Lili Laprise
+
+## Technique d'intégration multimédia / Collège Montmorency
+
+## marie.laprise@icloud.com
+
+## lien portfolio
+
 ## Figma Make:
 *https://www.figma.com/make/GUspf9v7ROLf4DrG629hgN/Portfolio-for-Marie-Lili-Laprise?t=n2P5k64zutSYwMek-1*
 
