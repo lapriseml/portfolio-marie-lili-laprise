@@ -23,11 +23,11 @@
 
 **2. Quelle a été ma principale difficulté et comment je l'ai surmontée?**
 
-*D'intégrer la notion de JSON et fetch pour la gestion de données. J'ai pu le surmonter en demandant à copilot comment modifier mon html pour rentrer les données dans un fichier JSON
+*D'intégrer la notion de JSON et fetch pour la gestion de données. J'ai pu le surmonter en demandant à copilot comment modifier mon html pour rentrer les données dans un fichier JSON*
 
 **3. Qu'est-ce que j'ai appris que je ne savais pas avant?**
 
-*J'ai appris à utiliser Figma Make et Copilot VSCode
+*J'ai appris à utiliser Figma Make et Copilot VSCode*
 
 **4. Quelle est ma prochaine étape concrète?**
 
