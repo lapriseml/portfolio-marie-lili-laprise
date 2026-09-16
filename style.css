@@ -116,7 +116,24 @@ svg { display: block; }
 /* Mise en page hero, sections, cartes */
 
 .panel { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding: 7rem 4rem 3rem; position: relative; overflow: hidden; }
-.section { min-height: 100vh; padding: 3rem 4rem 2.5rem; display: flex; flex-direction: column; justify-content: center; position: relative; }
+.section {
+  min-height: 100vh;
+  height: 100vh;
+  padding: 3rem 4rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+#projects,
+#skills {
+  min-height: 100vh;
+  height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  justify-content: center;
+  scroll-margin-top: 4rem;
+}
 #contact { justify-content: center; }
 #contact .contact-grid { margin-bottom: 0; }
 #contact footer { margin-top: 3rem; }
