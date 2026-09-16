@@ -13,10 +13,10 @@
 </head>
 <body>
 
-<!-- Navigation principale du site avec logo, nom et liens -->
+<!-- Navigation principale -->
 
-<nav id="main-nav">
-  <div class="nav-logo" onclick="showPage('home')">
+<nav id="main-nav" class="nav">
+  <div class="brand" onclick="showPage('home')">
     <svg width="28" height="28" viewBox="0 0 100 100">
       <defs><radialGradient id="nsg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a0505"/><stop offset="100%" stop-color="#06040a"/></radialGradient></defs>
       <circle cx="50" cy="50" r="48" fill="url(#nsg)" stroke="#c0392b" stroke-width="0.5" opacity="0.8"/>
@@ -27,57 +27,54 @@
       <g transform="translate(69.1,61)"><circle cx="0" cy="0" r="4" fill="#c0392b"/><ellipse cx="0" cy="-5" rx="2" ry="4.5" fill="#c0392b" opacity="0.9"/></g>
       <g transform="translate(30.9,61)"><circle cx="0" cy="0" r="4" fill="#c0392b"/><ellipse cx="0" cy="-5" rx="2" ry="4.5" fill="#c0392b" opacity="0.9"/></g>
     </svg>
-    <span style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.15em">M·L·L</span>
+    <span>M·L·L</span>
   </div>
-  <div class="nav-links">
-    <a href="#projets">Projets</a>
-    <a href="#competences">Compétences</a>
+  <div class="menu">
+    <a href="#projects">Projets</a>
+    <a href="#skills">Compétences</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <!-- Animation hyperspace -->
+
 <canvas id="hyperspace"></canvas>
 
-<!-- Page d'accueil principale avec sections -->
+<!-- Page principale -->
+
 <div id="page-home" class="page active">
-
-  <!-- Section hero nom, spécialité, résumé et orb -->
-  <section id="hero">
-
-    <div class="hero-text">
-      <p class="hero-label">// Développeuse web · Montréal</p>
-      <h1 class="hero-name">
-        <span class="l1">Marie-Lili</span>
-        <span class="l2">Laprise</span>
+  <section id="hero" class="panel">
+    <div class="copy">
+      <p class="eyebrow">// Développeuse web</p>
+      <h1 class="title big">
+        <span>Marie-Lili</span>
+        <span class="accent">Laprise</span>
       </h1>
-      <p class="hero-desc">Je conçois et développe des expériences web soignées — de l'interface à l'infrastructure — avec une attention particulière à la performance et au détail.</p>
-      <div class="hero-btns">
-        <a href="#projets" class="btn-primary">
-          <svg width="12" height="12" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" fill="#fff"/><ellipse cx="10" cy="5" rx="2" ry="4" fill="#fff" opacity="0.85"/></svg>
-          Voir mes projets
-        </a>
-        <a href="#contact" class="btn-ghost">Me contacter →</a>
+      <p class="lead">Je conçois et développe des expériences web soignées — de l'interface à l'infrastructure — avec une attention particulière à la performance et au détail.</p>
+      <div class="actions">
+        <a href="#projects" class="btn primary"><svg width="12" height="12" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" fill="#fff"/><ellipse cx="10" cy="5" rx="2" ry="4" fill="#fff" opacity="0.85"/></svg>Voir mes projets</a>
+        <a href="#contact" class="btn secondary">Me contacter →</a>
       </div>
     </div>
 
     <!-- Orb -->
+
     <div class="orb-wrap">
-      <div class="orb-root">
-        <div class="ripple-ring" style="border-color:rgba(192,57,43,.22);animation:ripple 2.5s ease-out 0s infinite"></div>
-        <div class="ripple-ring" style="border-color:rgba(124,58,237,.18);animation:ripple 3.3s ease-out .6s infinite"></div>
-        <div class="ripple-ring" style="border-color:rgba(192,57,43,.15);animation:ripple 4.1s ease-out 1.2s infinite"></div>
-        <div class="orb-ring-outer spin-cw">
-          <div class="orb-dot" style="width:.75rem;height:.75rem;background:#c0392b;box-shadow:0 0 .5rem #c0392b;top:calc(50% - 108px);left:calc(50% - 6px)"></div>
-          <div class="orb-dot" style="width:.75rem;height:.75rem;background:#c0392b;box-shadow:0 0 .5rem #c0392b;top:calc(50% + 50px);left:calc(50% + 88px - 6px)"></div>
-          <div class="orb-dot" style="width:.75rem;height:.75rem;background:#c0392b;box-shadow:0 0 .5rem #c0392b;top:calc(50% + 50px);left:calc(50% - 88px - 6px)"></div>
+      <div class="orb">
+        <div class="ring ring-a"></div>
+        <div class="ring ring-b"></div>
+        <div class="ring ring-c"></div>
+        <div class="orbit spin-cw orbit-red">
+          <span class="dot red dot-red-1"></span>
+          <span class="dot red dot-red-2"></span>
+          <span class="dot red dot-red-3"></span>
         </div>
-        <div class="orb-ring-inner spin-ccw">
-          <div class="orb-dot" style="width:.5rem;height:.5rem;background:#7c3aed;box-shadow:0 0 .375rem #7c3aed;top:calc(50% - 62px);left:calc(50% - 4px)"></div>
-          <div class="orb-dot" style="width:.5rem;height:.5rem;background:#7c3aed;box-shadow:0 0 .375rem #7c3aed;top:calc(50% + 27px);left:calc(50% + 50.2px - 4px)"></div>
-          <div class="orb-dot" style="width:.5rem;height:.5rem;background:#7c3aed;box-shadow:0 0 .375rem #7c3aed;top:calc(50% + 27px);left:calc(50% - 50.2px - 4px)"></div>
+        <div class="orbit spin-ccw orbit-violet">
+          <span class="dot violet dot-violet-1"></span>
+          <span class="dot violet dot-violet-2"></span>
+          <span class="dot violet dot-violet-3"></span>
         </div>
-        <div class="orb-eye pulse">
+        <div class="core pulse">
           <svg width="170" height="170" viewBox="0 0 100 100">
             <defs><radialGradient id="rg0" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a083a"/><stop offset="100%" stop-color="#06040a"/></radialGradient></defs>
             <circle cx="50" cy="50" r="48" fill="url(#rg0)" stroke="#7c3aed" stroke-width="0.5" opacity="0.8"/>
@@ -106,25 +103,24 @@
     </div>
   </section>
 
-  <!-- -->
+  <!-- Séparation -->
+
   <div class="saber"></div>
 
-  <!--
-    Section des projets récents.
-    Le conteneur avec l'id projects-grid est rempli dynamiquement par JavaScript.
-  -->
-  <section id="projets" class="section">
-    <svg width="300" height="300" class="cc" style="right:0;bottom:-5rem;opacity:.22">
+  <!-- Section projets (projects-grid rempli avec js) -->
+
+  <section id="projects" class="section">
+    <svg width="300" height="300" class="cc cc-project">
       <circle cx="150" cy="150" r="52"  fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.1"/>
       <circle cx="150" cy="150" r="74"  fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.12"/>
       <circle cx="150" cy="150" r="96"  fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.14"/>
     </svg>
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+    <div class="section-head">
       <div>
         <p class="section-label">02 — Sélection</p>
         <h2 class="section-title">Projets récents</h2>
       </div>
-      <svg width="48" height="48" viewBox="0 0 100 100" style="opacity:.55">
+      <svg width="48" height="48" viewBox="0 0 100 100" class="section-icon">
         <defs><radialGradient id="rg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a083a"/><stop offset="100%" stop-color="#06040a"/></radialGradient></defs>
         <circle cx="50" cy="50" r="48" fill="url(#rg1)" stroke="#7c3aed" stroke-width="0.5"/>
         <circle cx="50" cy="50" r="38" fill="none" stroke="#7c3aed" stroke-width="0.6" opacity="0.45"/>
@@ -138,68 +134,56 @@
 
   <div class="saber"></div>
 
-  <!--
-    Section compétences + histoire personnelle.
-    Elle regroupe les outils maîtrisés et un bloc de présentation de la personne.
-  -->
-  <section id="competences" class="section">
-    <svg width="300" height="300" class="cc" style="left:-5rem;top:50%;transform:translateY(-50%);opacity:.18">
-      <circle cx="150" cy="150" r="52"  fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.12"/>
-      <circle cx="150" cy="150" r="74"  fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.14"/>
-      <circle cx="150" cy="150" r="96"  fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.16"/>
+  <!-- Section compétences + histoire personnelle -->
+
+  <section id="skills" class="section">
+    <svg width="300" height="300" class="cc cc-skills">
+      <circle cx="150" cy="150" r="52" fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.12"/>
+      <circle cx="150" cy="150" r="74" fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.14"/>
+      <circle cx="150" cy="150" r="96" fill="none" stroke="#c0392b" stroke-width="0.5" opacity="0.16"/>
     </svg>
-    <p class="section-label">03 — Expertise</p>
-    <h2 class="section-title">Compétences</h2>
+    <p class="eyebrow">03 — Expertise</p>
+    <h2 class="title">Compétences</h2>
     <div class="skills-grid">
-      <div class="skill-card reveal">
-        <div class="skill-eye">
-          <svg width="36" height="36" viewBox="0 0 100 100"><defs><radialGradient id="sg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a0505"/><stop offset="100%" stop-color="#06040a"/></radialGradient></defs><circle cx="50" cy="50" r="48" fill="url(#sg1)" stroke="#c0392b" stroke-width="0.5"/><circle cx="50" cy="50" r="10" fill="#0a0000"/><g transform="translate(50,28)"><circle cx="0" cy="0" r="4" fill="#c0392b"/><ellipse cx="0" cy="-5" rx="2" ry="4.5" fill="#c0392b" opacity="0.9"/></g><g transform="translate(69.1,61)"><circle cx="0" cy="0" r="4" fill="#c0392b"/><ellipse cx="0" cy="-5" rx="2" ry="4.5" fill="#c0392b" opacity="0.9"/></g><g transform="translate(30.9,61)"><circle cx="0" cy="0" r="4" fill="#c0392b"/><ellipse cx="0" cy="-5" rx="2" ry="4.5" fill="#c0392b" opacity="0.9"/></g></svg>
-        </div>
-        <div class="skill-cat">Développement</div>
+      <div class="skill-card">
+        <div class="skill-label">Développement</div>
         <ul class="skill-list">
-          <li><span class="skill-dot"></span>HTML</li>
-          <li><span class="skill-dot"></span>JavaScript</li>
-          <li><span class="skill-dot"></span>CSS</li>
-          <li><span class="skill-dot"></span>Phaser</li>
-          <li><span class="skill-dot"></span>GSAP</li>
-          <li><span class="skill-dot"></span>Unity</li>
+          <li><span class="dot"></span>HTML</li>
+          <li><span class="dot"></span>JavaScript</li>
+          <li><span class="dot"></span>CSS</li>
+          <li><span class="dot"></span>Phaser</li>
+          <li><span class="dot"></span>GSAP</li>
+          <li><span class="dot"></span>Unity</li>
         </ul>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-eye">
-          <svg width="36" height="36" viewBox="0 0 100 100"><defs><radialGradient id="rg2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a083a"/><stop offset="100%" stop-color="#06040a"/></radialGradient></defs><circle cx="50" cy="50" r="48" fill="url(#rg2)" stroke="#7c3aed" stroke-width="0.5"/><circle cx="50" cy="50" r="38" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.4"/><circle cx="50" cy="50" r="26" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.35"/><circle cx="50" cy="50" r="5" fill="#4c1d95"/><circle cx="50" cy="50" r="2.5" fill="#a855f7" opacity="0.8"/></svg>
-        </div>
-        <div class="skill-cat windu">Création</div>
+      <div class="skill-card">
+        <div class="skill-label alt">Création</div>
         <ul class="skill-list">
-          <li><span class="skill-dot w"></span>Photoshop</li>
-          <li><span class="skill-dot w"></span>Illustrator</li>
-          <li><span class="skill-dot w"></span>After Effects</li>
-          <li><span class="skill-dot w"></span>Maya</li>
-          <li><span class="skill-dot w"></span>Figma</li>
-          <li><span class="skill-dot w"></span>Vscode</li>
+          <li><span class="dot alt"></span>Photoshop</li>
+          <li><span class="dot alt"></span>Illustrator</li>
+          <li><span class="dot alt"></span>After Effects</li>
+          <li><span class="dot alt"></span>Maya</li>
+          <li><span class="dot alt"></span>Figma</li>
+          <li><span class="dot alt"></span>Vscode</li>
         </ul>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-eye" style="display:flex;gap:4px">
-          <svg width="20" height="20" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#1a0505" stroke="#c0392b" stroke-width="0.5"/><circle cx="50" cy="50" r="10" fill="#0a0000"/></svg>
-          <svg width="20" height="20" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#1a083a" stroke="#7c3aed" stroke-width="0.5"/><circle cx="50" cy="50" r="5" fill="#4c1d95"/></svg>
-        </div>
-        <div class="skill-cat">Outils</div>
+      <div class="skill-card">
+        <div class="skill-label">Outils</div>
         <ul class="skill-list">
-          <li><span class="skill-dot"></span>VSCode</li>
-          <li><span class="skill-dot"></span>GitHub</li>
-          <li><span class="skill-dot"></span>Figma</li>
-          <li><span class="skill-dot"></span>Photoshop</li>
-          <li><span class="skill-dot"></span>Illustrator</li>
-          <li><span class="skill-dot"></span>After Effects</li>
+          <li><span class="dot"></span>VSCode</li>
+          <li><span class="dot"></span>GitHub</li>
+          <li><span class="dot"></span>Figma</li>
+          <li><span class="dot"></span>Photoshop</li>
+          <li><span class="dot"></span>Illustrator</li>
+          <li><span class="dot"></span>After Effects</li>
         </ul>
       </div>
     </div>
 
-    <div class="about-card reveal">
-      <div class="about-grid about-grid-no-photo">
+    <div class="about-card">
+      <div class="about-grid">
         <div>
-          <p style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem">// Histoire personnelle</p>
+          <p class="mini-tag">// Histoire personnelle</p>
           <h3 class="about-title">Passionnée par le <span>web artisanal</span></h3>
           <p class="about-text">Diplômée en Technique d’Intégration Multimédia au Collège Montmorency, je combine rigueur technique et vision créative pour livrer des produits web d'exception.</p>
           <p class="about-text">Je conçois des expériences numériques immersives, lisibles et efficaces, en alliant esthétisme, structuration claire et sens du détail.</p>
@@ -210,18 +194,14 @@
 
   <div class="saber"></div>
 
-  <!--
-    Section contact.
-    Elle contient les coordonnées ainsi que le pied de page du portfolio.
-  -->
+  <!-- Section contact + footer -->
+
   <section id="contact" class="section">
-    <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
-      <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(30rem,55vw,50rem);height:clamp(15rem,28vw,25rem);border-radius:50%;background:radial-gradient(ellipse,#7c3aed,#c0392b 50%,transparent 70%);opacity:.07"></div>
-    </div>
+    <div class="glow"></div>
     <div class="contact-grid">
       <div class="contact-orb orb-wrap" aria-hidden="true"></div>
-      <div class="reveal">
-        <p class="section-label">04 — Contact</p>
+      <div>
+        <p class="eyebrow">04 — Contact</p>
         <h2 class="contact-title">Travaillons<br><span>ensemble</span></h2>
         <div>
           <a href="mailto:marie.laprise@icloud.com" class="contact-link">
@@ -235,131 +215,98 @@
     </div>
 
     <footer>
-      <div class="footer-logo">
+      <div class="footer-brand">
         <svg width="20" height="20" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#1a0505" stroke="#c0392b" stroke-width="0.5"/><circle cx="50" cy="50" r="10" fill="#0a0000"/></svg>
         <span class="footer-name">© 2026 Marie-Lili Laprise</span>
         <svg width="20" height="20" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#1a083a" stroke="#7c3aed" stroke-width="0.5"/><circle cx="50" cy="50" r="5" fill="#4c1d95"/></svg>
       </div>
     </footer>
   </section>
-</div><!-- /page-home -->
+</div>
 
 
-<!--
-  Page de détail d'un projet.
-  Elle remplace l'accueil quand on clique sur un projet et affiche le contenu complet.
--->
+<!-- Page des projets remplie par js-->
+
 <div id="page-detail" class="page">
-  <!--
-    Barre de navigation fixe du détail du projet.
-    Elle permet de revenir à l'accueil et affiche le titre du projet.
-  -->
-  <div class="detail-sticky-nav">
+  <div class="detail-head">
     <button class="back-btn" onclick="goBack()">
-      <span id="detail-nav-eye"></span>← Retour
+      ← Retour
     </button>
-    <span class="detail-nav-cat" id="detail-nav-cat"></span>
-    <span class="detail-nav-year" id="detail-nav-year"></span>
+    <span class="detail-name" id="detail-nav-cat"></span>
+    <span class="detail-year" id="detail-nav-year"></span>
   </div>
 
-  <!--
-    Hero du projet détaillé : image de couverture, titre et sous-titre.
-    La couleur d'accent et les visuels varient selon le projet.
-  -->
   <div class="detail-hero">
-    <img class="detail-hero-img" id="detail-cover" src="" alt=""/>
-    <div class="detail-hero-overlay" id="detail-overlay"></div>
-    <svg width="300" height="300" class="cc" style="right:2rem;top:1rem;opacity:.28">
-      <circle cx="150" cy="150" r="52"  fill="none" stroke-width="0.5" opacity="0.1"/>
-      <circle cx="150" cy="150" r="74"  fill="none" stroke-width="0.5" opacity="0.12"/>
-      <circle cx="150" cy="150" r="96"  fill="none" stroke-width="0.5" opacity="0.14"/>
+    <img class="detail-cover" id="detail-cover" src="" alt=""/>
+    <div class="detail-overlay" id="detail-overlay"></div>
+    <svg width="300" height="300" class="cc cc-detail">
+      <circle cx="150" cy="150" r="52" fill="none" stroke-width="0.5" opacity="0.1"/>
+      <circle cx="150" cy="150" r="74" fill="none" stroke-width="0.5" opacity="0.12"/>
+      <circle cx="150" cy="150" r="96" fill="none" stroke-width="0.5" opacity="0.14"/>
     </svg>
-    <div class="detail-hero-content">
+    <div class="detail-copy">
       <p class="detail-cat" id="detail-cat"></p>
       <h1 class="detail-title" id="detail-title"></h1>
       <p class="detail-tagline" id="detail-tagline"></p>
     </div>
-    <div class="detail-eye-badge pulse" id="detail-eye-badge"></div>
   </div>
 
-  <!--
-    Bande d'informations du projet : cadre, catégorie, durée et année.
-    Ces éléments sont injectés dynamiquement en JavaScript.
-  -->
-  <div class="detail-meta-band">
-    <div><div class="meta-label">Cadre</div><div class="meta-val" id="detail-cadre"></div></div>
-    <div><div class="meta-label">Catégorie</div><div class="meta-val" id="detail-meta-cat"></div></div>
-    <div><div class="meta-label">Durée</div><div class="meta-val" id="detail-duration"></div></div>
-    <div><div class="meta-label">Année</div><div class="meta-val" id="detail-year"></div></div>
+  <div class="detail-meta">
+    <div><div class="meta-label">Cadre</div><div class="meta-value" id="detail-cadre"></div></div>
+    <div><div class="meta-label">Catégorie</div><div class="meta-value" id="detail-meta-cat"></div></div>
+    <div><div class="meta-label">Durée</div><div class="meta-value" id="detail-duration"></div></div>
+    <div><div class="meta-label">Année</div><div class="meta-value" id="detail-year"></div></div>
   </div>
 
-  <!--
-    Corps du projet : description, défi, résultat et technologies.
-    Le contenu est aussi injecté dynamiquement selon le projet sélectionné.
-  -->
   <div class="detail-body">
     <div>
-      <div class="detail-section-label" id="detail-desc-label"></div>
+      <div class="section-label" id="detail-desc-label"></div>
       <p class="detail-desc" id="detail-desc"></p>
       <div class="detail-cards">
         <div class="detail-card">
-          <div class="detail-card-label" id="detail-challenge-label"></div>
-          <div class="detail-card-text" id="detail-challenge"></div>
+          <div class="meta-label" id="detail-challenge-label"></div>
+          <div class="detail-text" id="detail-challenge"></div>
         </div>
         <div class="detail-card result">
-          <div class="detail-card-label" id="detail-result-label"></div>
-          <div class="detail-card-text" id="detail-result"></div>
+          <div class="meta-label" id="detail-result-label"></div>
+          <div class="detail-text" id="detail-result"></div>
         </div>
       </div>
     </div>
     <div>
-      <div class="detail-section-label" id="detail-tech-label"></div>
+      <div class="section-label" id="detail-tech-label"></div>
       <div class="detail-tags" id="detail-tags"></div>
     </div>
   </div>
 
   <div class="saber"></div>
 
-  <!--
-    Galerie de visuels du projet.
-    Elle affiche les images du projet avec une miniature active et un compteur.
-  -->
-  <div class="gallery-section">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">// Galerie</div>
+  <div class="gallery-wrap">
+    <div class="mini-tag">// Galerie</div>
     <div class="gallery-main">
       <img id="gallery-img" src="" alt=""/>
-      <div class="gallery-counter" id="gallery-counter">1 / 4</div>
+      <div class="gallery-count" id="gallery-counter">1 / 4</div>
     </div>
     <div class="gallery-thumbs" id="gallery-thumbs"></div>
   </div>
 
   <div class="saber"></div>
 
-  <!--
-    Section vidéo.
-    Une image d'affiche s'affiche d'abord, puis elle est remplacée par une iframe YouTube au clic.
-  -->
-  <div class="video-section">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem">// Vidéo</div>
-    <p style="font-family:'Cinzel',serif;font-size:.8rem;color:var(--muted);margin-bottom:1.5rem" id="video-caption"></p>
+  <div class="video-block">
+    <div class="mini-tag">// Vidéo</div>
     <div class="video-wrap" id="video-wrap">
       <div class="video-poster" id="video-poster" onclick="loadVideo()">
-        <img class="video-poster-img" id="video-thumb" src="" alt=""/>
-        <div class="video-poster-overlay"></div>
-        <div class="video-play-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="#f0e8ff"><path d="M8 5v14l11-7z"/></svg></div>
-        <span class="video-label">Lancer la vidéo</span>
+        <img class="video-thumb" id="video-thumb" src="" alt=""/>
+        <div class="video-overlay"></div>
+        <div class="video-play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#f0e8ff"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
     </div>
   </div>
 
   <div class="saber"></div>
 
-  <!--
-    Section projets associés.
-    Elle propose d'autres projets pour naviguer plus facilement dans le portfolio.
-  -->
-  <div class="related-section">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem">// Autres projets</div>
+  <div class="related-wrap">
+    <div class="mini-tag">// Autres projets</div>
     <div class="related-grid" id="related-grid"></div>
   </div>
 
@@ -372,7 +319,7 @@
     </button>
     <span class="footer-copy">© 2026 Marie-Lili Laprise</span>
   </footer>
-</div><!-- /page-detail -->
+</div>
 
 <script src="script.js"></script>
 </body>

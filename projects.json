@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "eye": "sith",
+    "tone": "red",
     "accent": "#c0392b",
     "title": "HighFish",
     "category": "Jeu vidéo",
@@ -20,13 +20,12 @@
       "medias/HighFish.png"
     ],
     "videoId": "dQw4w9WgXcQ",
-    "videoCaption": "Démo du configurateur de commande sur mesure",
     "challenge": "Créer une expérience d'achat en ligne qui reflète le prestige des créations artisanales tout en optimisant les conversions.",
     "result": "+340% de conversions en ligne, 0 abandon de panier lié à la performance"
   },
   {
     "id": 1,
-    "eye": "windu",
+    "tone": "violet",
     "accent": "#7c3aed",
     "title": "Os'scape",
     "category": "Jeu réalité virtuelle",
@@ -45,13 +44,12 @@
       "medias/Os'scape.png"
     ],
     "videoId": "dQw4w9WgXcQ",
-    "videoCaption": "Aperçu de la plateforme de gestion clinique",
     "challenge": "Concevoir un système sécurisé conforme à la Loi 25 avec une UX assez simple pour des professionnels de santé non-techniques.",
     "result": "Adopté par 47 cliniques, réduction de 60% du temps administratif"
   },
   {
     "id": 2,
-    "eye": "sith",
+    "tone": "red",
     "accent": "#c0392b",
     "title": "HighStar",
     "category": "Jeu interactif",
@@ -70,13 +68,12 @@
       "medias/HighStar.png"
     ],
     "videoId": "dQw4w9WgXcQ",
-    "videoCaption": "Visite guidée du site vitrine",
     "challenge": "Présenter un portfolio photographique avec une performance maximale malgré des images haute résolution.",
     "result": "Score Lighthouse 98/100, +180% de demandes de devis reçues"
   },
   {
     "id": 3,
-    "eye": "windu",
+    "tone": "violet",
     "accent": "#7c3aed",
     "title": "Tatooine",
     "category": "Vidéo d'animation",
@@ -95,7 +92,6 @@
       "medias/Tatooine.png"
     ],
     "videoId": "dQw4w9WgXcQ",
-    "videoCaption": "Démonstration de l'outil collaboratif",
     "challenge": "Synchroniser en temps réel les données de plusieurs utilisateurs simultanés sans perte de données ni conflits.",
     "result": "Utilisée par 12 agences, 99.97% de disponibilité, 4.9/5 satisfaction"
   }
