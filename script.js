@@ -35,8 +35,8 @@ function buildProjectCards() {
         <div class="card-year">${p.year}</div>
       </div>
       <div class="card-body">
-        <div class="card-label ${p.tone === 'violet' ? 'alt' : ''}">${p.category}</div>
         <h3 class="card-title">${p.title}</h3>
+        <div class="card-label ${p.tone === 'violet' ? 'alt' : ''}">${p.category}</div>
         <div class="card-tags">
           ${p.tags.map(t => `<span class="tag ${p.tone === 'violet' ? 'alt' : ''}">${t}</span>`).join('')}
         </div>
@@ -70,7 +70,6 @@ function fillDetail(id) {
   const catEl = document.getElementById('detail-cat');
   if (catEl) { catEl.textContent = p.category; catEl.style.color = col; }
   setText('detail-title', p.title);
-  setText('detail-tagline', p.tagline);
 
   setText('detail-cadre', p.cadre);
   setText('detail-meta-cat', p.category);
