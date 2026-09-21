@@ -26,7 +26,7 @@ body {
   font-size: var(--text-md);
   color: var(--fg);
   background: var(--bg);
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* Styles liens, boutons, images, SVG */
@@ -38,9 +38,10 @@ svg { display: block; }
 /* Page d'accueil avec scroll vertical par sections avec snap */
 
 #page-home {
-  height: 100vh;
+  height: 100dvh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
+  scroll-padding-top: 5.75rem;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -70,7 +71,7 @@ svg { display: block; }
 /* Navigation principale et menu */
 
 .nav {
-  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  position: fixed; inset: 0 0 auto 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.25rem 4rem;
   border-bottom: 1px solid transparent;
@@ -115,10 +116,9 @@ svg { display: block; }
 
 /* Mise en page hero, sections, cartes */
 
-.panel { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding: 7rem 4rem 3rem; position: relative; overflow: hidden; }
+.panel { min-height: 100dvh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding: 7rem 4rem 3rem; position: relative; overflow: hidden; }
 .section {
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 100dvh;
   padding: 3rem 4rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -127,12 +127,15 @@ svg { display: block; }
 }
 #projects,
 #skills {
-  min-height: 100vh;
-  height: 100vh;
-  padding-top: 2rem;
+  min-height: 100dvh;
+  padding-top: 3rem;
   padding-bottom: 2rem;
   justify-content: center;
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 5.75rem;
+}
+#projects {
+  padding-top: .75rem;
+  justify-content: flex-start;
 }
 #contact { justify-content: center; }
 #contact .contact-grid { margin-bottom: 0; }
@@ -184,12 +187,12 @@ svg { display: block; }
 
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .section-icon { opacity: .55; }
-.projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85rem; margin-top: 1.5rem; }
 .project-card {
   background: var(--panel); border: 1px solid rgba(139, 26, 26, .15); overflow: hidden; cursor: pointer; transition: border-color .4s, box-shadow .4s;
 }
 .project-card:hover { border-color: rgba(192, 57, 43, .5); box-shadow: 0 0 30px rgba(192,57,43,.12); }
-.card-media { position: relative; height: 11rem; overflow: hidden; }
+.card-media { position: relative; height: 8.5rem; overflow: hidden; }
 .card-media img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .38; filter: saturate(.7); transition: opacity .6s, transform .6s; }
 .project-card:hover .card-media img { opacity: .6; transform: scale(1.07); }
 .card-media::after {
@@ -204,28 +207,28 @@ svg { display: block; }
 .card-body {
   display: grid;
   grid-template-rows: auto auto auto;
-  padding: 1.25rem;
+  padding: 1rem 1.1rem;
 }
 .card-label, .skill-label { font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
 .card-label.alt, .skill-label.alt { color: var(--violet); }
 .card-title {
   grid-row: 1;
-  margin: 0 0 .35rem;
+  margin: 0 0 .25rem;
   font-family: 'Cinzel', serif;
-  font-size: var(--text-lg);
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
 }
 .card-label {
   grid-row: 2;
-  margin-bottom: .75rem;
+  margin-bottom: .5rem;
 }
 .card-tags {
   grid-row: 3;
   display: flex;
   flex-wrap: wrap;
-  gap: .4rem;
+  gap: .3rem;
 }
 .tag {
-  padding: .2rem .5rem; color: var(--muted); border: 1px solid rgba(192,57,43,.2); background: rgba(192,57,43,.04);
+  padding: .16rem .42rem; color: var(--muted); border: 1px solid rgba(192,57,43,.2); background: rgba(192,57,43,.04);
   font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm);
 }
 .tag.alt { border-color: rgba(124,58,237,.2); background: rgba(124,58,237,.04); }
