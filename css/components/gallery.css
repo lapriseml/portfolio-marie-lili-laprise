@@ -1,0 +1,19 @@
+/* Galerie */
+
+.gallery-wrap, .video-block, .related-wrap { padding: 4rem 4rem 4rem; }
+.gallery-main { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #0d0914; }
+.gallery-main img { width: 100%; height: 100%; object-fit: cover; opacity: .85; filter: saturate(.8) contrast(1.05); }
+.gallery-count { position: absolute; right: 1rem; bottom: 1rem; padding: .25rem .6rem; background: rgba(6,4,10,.8); color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); }
+.gallery-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: .5rem; margin-top: .5rem; }
+.gallery-thumb { aspect-ratio: 4 / 3; overflow: hidden; border: 2px solid transparent; opacity: .5; cursor: pointer; }
+.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-thumb.active { opacity: 1; }
+
+/* Vidéo */
+
+.video-wrap { position: relative; aspect-ratio: 16 / 9; background: #0d0914; }
+.video-poster { position: absolute; inset: 0; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
+.video-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .35; filter: saturate(.4); }
+.video-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(192,57,43,.15), rgba(6,4,10,.6)); }
+.video-play { position: relative; width: 5rem; height: 5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #8b1a1a, #4c1d95); box-shadow: 0 0 1.875rem rgba(192,57,43,.3); }
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

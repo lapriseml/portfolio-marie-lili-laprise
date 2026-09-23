@@ -1,0 +1,17 @@
+/* Couleurs, espacements, tailles texte. */
+
+:root {
+  --bg: #06040a;
+  --panel: #0d0914;
+  --fg: #f0e8ff;
+  --muted: #6e5a80;
+  --line: rgba(139, 26, 26, 0.18);
+  --red: #c0392b;
+  --violet: #7c3aed;
+  --text-xs: clamp(11px, 1.2vw, 16px);
+  --text-sm: clamp(12px, 1.5vw, 18px);
+  --text-md: clamp(15px, 1.7vw, 22px);
+  --text-lg: clamp(20px, 2vw, 30px);
+  --text-display: clamp(52px, 9vw, 110px);
+  --text-detail: clamp(58px, 10vw, 130px);
+}

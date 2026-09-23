@@ -1,0 +1,36 @@
+/* Orb hero */
+
+.orb-wrap { display: flex; justify-content: center; align-items: center; }
+.orb { position: relative; width: 16rem; height: 16rem; }
+.orbit, .ring { position: absolute; border-radius: 50%; }
+.orbit-red, .orbit-violet { inset: 0; }
+.orbit-red .dot-red-1 { top: calc(50% - 106px); left: calc(50%); }
+.orbit-red .dot-red-2 { top: calc(50% + 53px); left: calc(50% + 91.8px); }
+.orbit-red .dot-red-3 { top: calc(50% + 53px); left: calc(50% - 91.8px); }
+.orbit-violet .dot-violet-1 { top: calc(50% - 66px); left: calc(50%); }
+.orbit-violet .dot-violet-2 { top: calc(50% + 32px); left: calc(50% + 57px); }
+.orbit-violet .dot-violet-3 { top: calc(50% + 32px); left: calc(50% - 57px); }
+.ring { inset: 0; border: 1px solid; }
+.ring-a { inset: -2rem; border-color: rgba(192, 57, 43, .2); }
+.ring-b { inset: -1rem; border-color: rgba(124, 58, 237, .2); }
+.ring-c { inset: 0; border-color: rgba(192, 57, 43, .15); }
+.orbit { inset: 0; }
+.dot { position: absolute; border-radius: 50%; transform: translate(-50%, -50%); }
+.dot.red { width: .75rem; height: .75rem; background: var(--red); box-shadow: 0 0 .45rem var(--red); }
+.dot.violet { width: .55rem; height: .55rem; background: var(--violet); box-shadow: 0 0 .3rem var(--violet); }
+.core {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #1a0830, #06040a);
+  box-shadow: 0 0 2.5rem rgba(124,58,237,.3), 0 0 5rem rgba(192,57,43,.15), inset 0 0 1.875rem rgba(6,4,10,.8);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Animation orbs */
+
+@keyframes spin-cw { to { transform: rotate(360deg); } }
+@keyframes spin-ccw { to { transform: rotate(-360deg); } }
+@keyframes pulse-glow { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes ripple { 0% { transform: scale(.85); opacity: .7; } 100% { transform: scale(1.55); opacity: 0; } }
+.spin-cw { animation: spin-cw 12s linear infinite; }
+.spin-ccw { animation: spin-ccw 8s linear infinite; }
+.pulse { animation: pulse-glow 3s ease-in-out infinite; }

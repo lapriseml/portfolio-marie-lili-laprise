@@ -7,7 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components/nav.css" />
+  <link rel="stylesheet" href="css/components/orbs.css" />
+  <link rel="stylesheet" href="css/components/projects.css" />
+  <link rel="stylesheet" href="css/components/skills.css" />
+  <link rel="stylesheet" href="css/components/gallery.css" />
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
@@ -103,10 +109,6 @@
     </div>
   </section>
 
-  <!-- Séparation -->
-
-  <div class="saber"></div>
-
   <!-- Section projets (projects-grid rempli avec js) -->
 
   <section id="projects" class="section">
@@ -126,8 +128,6 @@
     </div>
     <div class="projects-grid" id="projects-grid"></div>
   </section>
-
-  <div class="saber"></div>
 
   <!-- Section compétences + histoire personnelle -->
 
@@ -181,8 +181,6 @@
       </div>
     </div>
   </section>
-
-  <div class="saber"></div>
 
   <!-- Section contact + footer -->
 
@@ -267,8 +265,6 @@
     <div class="gallery-thumbs" id="gallery-thumbs"></div>
   </div>
 
-  <div class="saber"></div>
-
   <div class="video-block">
     <div class="mini-tag">// Vidéo</div>
     <div class="video-wrap" id="video-wrap">
@@ -290,10 +286,9 @@
       <svg width="14" height="14" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#1a0505" stroke="#c0392b" stroke-width="0.5"/><circle cx="50" cy="50" r="10" fill="#0a0000"/></svg>
       Retour au portfolio
     </button>
-    <span class="footer-copy">© 2026 Marie-Lili Laprise</span>
   </footer>
 </div>
 
-<script src="script.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

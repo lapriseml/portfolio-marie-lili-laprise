@@ -1,0 +1,60 @@
+/* Section projets */
+
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.section-icon { opacity: .55; }
+.projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85rem; margin-top: 1.5rem; }
+.project-card {
+  background: var(--panel); border: 1px solid rgba(139, 26, 26, .15); overflow: hidden; cursor: pointer; transition: border-color .4s, box-shadow .4s;
+}
+.project-card:hover { border-color: rgba(192, 57, 43, .5); box-shadow: 0 0 30px rgba(192,57,43,.12); }
+.card-media { position: relative; height: 8.5rem; overflow: hidden; }
+.card-media img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .38; filter: saturate(.7); transition: opacity .6s, transform .6s; }
+.project-card:hover .card-media img { opacity: .6; transform: scale(1.07); }
+.card-media::after {
+  content: 'Voir le projet'; position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; opacity: 0; transition: opacity .3s;
+  font-family: 'Cinzel', serif; letter-spacing: .15em; text-transform: uppercase; color: var(--fg); background: rgba(6, 4, 10, .28);
+}
+.project-card:hover .card-media::after { opacity: 1; }
+.card-year {
+  position: absolute; top: 1rem; left: 1rem; z-index: 1; padding: .25rem .6rem;
+  background: rgba(6, 4, 10, .8); border: 1px solid rgba(139, 26, 26, .2); color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs);
+}
+.card-body {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  padding: 1rem 1.1rem;
+}
+.card-label, .skill-label { font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+.card-label.alt, .skill-label.alt { color: var(--violet); }
+.card-title {
+  grid-row: 1;
+  margin: 0 0 .25rem;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+}
+.card-label {
+  grid-row: 2;
+  margin-bottom: .5rem;
+}
+.card-tags {
+  grid-row: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+}
+.tag {
+  padding: .16rem .42rem; color: var(--muted); border: 1px solid rgba(192,57,43,.2); background: rgba(192,57,43,.04);
+  font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm);
+}
+.tag.alt { border-color: rgba(124,58,237,.2); background: rgba(124,58,237,.04); }
+
+/* Autres projets */
+
+.related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.related-card { background: var(--panel); border: 1px solid rgba(139,26,26,.15); overflow: hidden; cursor: pointer; }
+.related-card:hover { border-color: rgba(192,57,43,.4); }
+.related-image { height: 8rem; overflow: hidden; }
+.related-image img { width: 100%; height: 100%; object-fit: cover; opacity: .4; filter: saturate(.5); }
+.related-body { padding: 1rem; }
+.related-cat { color: var(--red); font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); letter-spacing: .2em; text-transform: uppercase; }
+.related-title { font-family: 'Cinzel', serif; }

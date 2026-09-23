@@ -1,0 +1,37 @@
+/* Navigation principale */
+
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 4rem;
+  border-bottom: 1px solid transparent;
+  transition: background .4s, border-color .4s;
+}
+.nav.scrolled {
+  background: rgba(6, 4, 10, .92);
+  border-color: rgba(139, 26, 26, .25);
+  backdrop-filter: blur(12px);
+}
+.brand { display: flex; align-items: center; gap: .75rem; cursor: pointer; }
+.brand span { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: .15em; }
+.menu { display: flex; gap: 2.5rem; }
+.menu a {
+  color: var(--muted); text-decoration: none;
+  font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); letter-spacing: .3em; text-transform: uppercase; position: relative;
+}
+.menu a::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--red); transition: width .3s; }
+.menu a:hover { color: var(--red); }
+.menu a:hover::after { width: 100%; }
+
+/* Navigation de page détail */
+
+.detail-head {
+  position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem;
+  background: rgba(6, 4, 10, .92); border-bottom: 1px solid rgba(139, 26, 26, .2); backdrop-filter: blur(12px);
+}
+.back-btn {
+  display: inline-flex; align-items: center; gap: .5rem; background: none; border: none; cursor: pointer; color: var(--muted);
+  font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); letter-spacing: .2em; text-transform: uppercase;
+}
+.detail-name, .detail-year { font-family: 'JetBrains Mono', monospace; color: var(--muted); }
+.detail-year { font-size: var(--text-xs); }

@@ -10,13 +10,13 @@
     "tags": ["HTML", "CSS", "JavaScript", "Phaser", "Game development"],
     "cadre": "Scolaire",
     "duration": "15 semaines",
-    "cover": "medias/HighFish1.png",
+    "cover": "assets/images/HighFish1.png",
     "gallery": [
-      "medias/HighFish1.png",
-      "medias/HighFish2.png",
-      "medias/HighFish3.png",
-      "medias/HighFish4.png",
-      "medias/HighFish5.png"
+      "assets/images/HighFish1.png",
+      "assets/images/HighFish2.png",
+      "assets/images/HighFish3.png",
+      "assets/images/HighFish4.png",
+      "assets/images/HighFish5.png"
     ],
     "videoId": "dQw4w9WgXcQ"
   },
@@ -31,13 +31,13 @@
     "tags": ["Unity", "C#", "3D", "VR", "Game development"],
     "cadre": "Scolaire",
     "duration": "8 semaines",
-    "cover": "medias/Os'scape1.png",
+    "cover": "assets/images/Os'scape1.png",
     "gallery": [
-      "medias/Os'scape1.png",
-      "medias/Os'scape2.png",
-      "medias/Os'scape3.png",
-      "medias/Os'scape4.png",
-      "medias/Os'scape5.png"
+      "assets/images/Os'scape1.png",
+      "assets/images/Os'scape2.png",
+      "assets/images/Os'scape3.png",
+      "assets/images/Os'scape4.png",
+      "assets/images/Os'scape5.png"
     ],
     "videoId": "dQw4w9WgXcQ"
   },
@@ -52,13 +52,13 @@
     "tags": ["Unity", "C#", "3D", "Game development"],
     "cadre": "Scolaire",
     "duration": "2 semaines",
-    "cover": "medias/HighStar1.png",
+    "cover": "assets/images/HighStar1.png",
     "gallery": [
-      "medias/HighStar1.png",
-      "medias/HighStar2.png",
-      "medias/HighStar3.png",
-      "medias/HighStar4.png",
-      "medias/HighStar5.png"
+      "assets/images/HighStar1.png",
+      "assets/images/HighStar2.png",
+      "assets/images/HighStar3.png",
+      "assets/images/HighStar4.png",
+      "assets/images/HighStar5.png"
     ],
     "videoId": "dQw4w9WgXcQ"
   },
@@ -73,15 +73,15 @@
     "tags": ["Maya", "Modélisation 3D", "Animation 3D"],
     "cadre": "Scolaire",
     "duration": "2 semaines",
-    "cover": "medias/Tatooine1.png",
+    "cover": "assets/images/Tatooine1.png",
     "gallery": [
-      "medias/Tatooine1.png",
-      "medias/Tatooine2.png",
-      "medias/Tatooine3.png",
-      "medias/Tatooine4.png",
-      "medias/Tatooine5.png"
+      "assets/images/Tatooine1.png",
+      "assets/images/Tatooine2.png",
+      "assets/images/Tatooine3.png",
+      "assets/images/Tatooine4.png",
+      "assets/images/Tatooine5.png"
     ],
-    "videoId": "medias/Tatooine.mp4"
+    "videoId": "assets/images/tatooine.mp4"
   },
   {
     "id": 4,
@@ -94,13 +94,13 @@
     "tags": ["Maya", "Modélisation 3D", "Personnage 3D"],
     "cadre": "Scolaire",
     "duration": "1 semaine",
-    "cover": "medias/HishSkull1.jpg",
+    "cover": "assets/images/HishSkull1.jpg",
     "gallery": [
-      "medias/HishSkull1.jpg",
-      "medias/HishSkull2.jpg",
-      "medias/HishSkull3.jpg",
-      "medias/HishSkull4.jpg",
-      "medias/HishSkull5.jpg"
+      "assets/images/HishSkull1.jpg",
+      "assets/images/HishSkull2.jpg",
+      "assets/images/HishSkull3.jpg",
+      "assets/images/HishSkull4.jpg",
+      "assets/images/HishSkull5.jpg"
     ]
   },
   {
@@ -114,13 +114,13 @@
     "tags": ["Maya", "Modélisation 3D", "Environnement 3D"],
     "cadre": "Scolaire",
     "duration": "4 semaines",
-    "cover": "medias/LostIsland1.jpg",
+    "cover": "assets/images/LostIsland1.jpg",
     "gallery": [
-      "medias/LostIsland1.jpg",
-      "medias/LostIsland2.jpg",
-      "medias/LostIsland3.jpg",
-      "medias/LostIsland4.jpg",
-      "medias/LostIsland5.jpg"
+      "assets/images/LostIsland1.jpg",
+      "assets/images/LostIsland2.jpg",
+      "assets/images/LostIsland3.jpg",
+      "assets/images/LostIsland4.jpg",
+      "assets/images/LostIsland5.jpg"
     ]
   }
 ]

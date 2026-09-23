@@ -1,0 +1,22 @@
+/* Section compétences */
+
+.skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.skill-card {
+  position: relative; background: var(--panel); border: 1px solid rgba(139, 26, 26, .15); padding: 1.5rem; overflow: hidden; display: flex; flex-direction: column; gap: 1.1rem;
+}
+.skill-list { list-style: none; display: flex; flex-direction: column; gap: .65rem; margin: 0; padding: 0; }
+.skill-list li { display: flex; align-items: center; gap: .9rem; color: var(--muted); }
+.skill-list .dot {
+  position: static; transform: none; width: .375rem; height: .375rem; border-radius: 50%; background: var(--red); flex-shrink: 0; display: inline-block;
+}
+.dot.alt { background: var(--violet); }
+
+/* Section histoire personnelle */
+
+.about-card {
+  background: var(--panel); border: 1px solid rgba(124,58,237,.2); padding: 2rem 2.5rem; margin-top: 1.5rem;
+}
+.about-grid { display: grid; }
+.about-title { margin-bottom: 1rem; font-family: 'Cinzel', serif; font-size: var(--text-lg); }
+.about-title span { background: linear-gradient(135deg, var(--red), var(--violet)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.about-text { margin-bottom: .75rem; color: var(--muted); line-height: 1.6; }
