@@ -80,13 +80,6 @@ function fillDetail(id) {
   const detailDescEl = document.getElementById('detail-desc');
   if (detailDescEl) detailDescEl.innerHTML = p.description;
 
-  const challengeLabelEl = document.getElementById('detail-challenge-label');
-  if (challengeLabelEl) { challengeLabelEl.textContent = 'Défi'; challengeLabelEl.style.color = col; }
-  setText('detail-challenge', p.challenge);
-
-  const resultLabelEl = document.getElementById('detail-result-label');
-  if (resultLabelEl) { resultLabelEl.textContent = 'Résultat'; resultLabelEl.style.color = col; }
-  setText('detail-result', p.result);
   setText('detail-tech-label', '// Technologies');
 
   const tagsEl = document.getElementById('detail-tags');
@@ -123,22 +116,30 @@ function fillDetail(id) {
   }
   setPhoto(0);
 
-  const videoThumb = document.getElementById('video-thumb');
-  if (videoThumb) videoThumb.src = p.gallery[1] || p.cover;
-
+  const videoBlock = document.querySelector('.video-block');
   const videoWrap = document.getElementById('video-wrap');
-  if (videoWrap) {
-    const poster = document.getElementById('video-poster');
-    if (!poster) {
-      videoWrap.innerHTML = `
-        <div class="video-poster" id="video-poster" onclick="loadVideo()">
-          <img class="video-thumb" id="video-thumb" src="${p.gallery[1] || p.cover}" alt="" />
-          <div class="video-overlay"></div>
-          <div class="video-play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#f0e8ff"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-      `;
-    } else if (videoThumb) {
-      videoThumb.src = p.gallery[1] || p.cover;
+
+  if (videoBlock && (!p.videoId || !String(p.videoId).trim())) {
+    videoBlock.style.display = 'none';
+  } else if (videoBlock) {
+    videoBlock.style.display = '';
+
+    const videoThumb = document.getElementById('video-thumb');
+    if (videoThumb) videoThumb.src = p.gallery[1] || p.cover;
+
+    if (videoWrap) {
+      const poster = document.getElementById('video-poster');
+      if (!poster) {
+        videoWrap.innerHTML = `
+          <div class="video-poster" id="video-poster" onclick="loadVideo()">
+            <img class="video-thumb" id="video-thumb" src="${p.gallery[1] || p.cover}" alt="" />
+            <div class="video-overlay"></div>
+            <div class="video-play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#f0e8ff"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        `;
+      } else if (videoThumb) {
+        videoThumb.src = p.gallery[1] || p.cover;
+      }
     }
   }
 
@@ -161,7 +162,7 @@ function fillDetail(id) {
 
 function loadVideo() {
   const p = currentProject;
-  if (!p) return;
+  if (!p || !p.videoId || !String(p.videoId).trim()) return;
   const wrap = document.getElementById('video-wrap');
   if (wrap) wrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${p.videoId}?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
 }
@@ -271,10 +272,15 @@ function openProject(id) {
   });
 }
 
-// Retour à l'accueil
+// Retour à la section projets
 
 function goBack() {
   showPage('home');
+
+  const projectsSection = document.getElementById('projects');
+  if (projectsSection) {
+    projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 // Clone l'orb hero pour contact

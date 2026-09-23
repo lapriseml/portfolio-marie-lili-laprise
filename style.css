@@ -134,8 +134,8 @@ svg { display: block; }
   scroll-margin-top: 5.75rem;
 }
 #projects {
-  padding-top: .75rem;
-  justify-content: flex-start;
+  padding-top: 0;
+  justify-content: center;
 }
 #contact { justify-content: center; }
 #contact .contact-grid { margin-bottom: 0; }
@@ -181,7 +181,6 @@ svg { display: block; }
   display: flex; align-items: center; justify-content: center;
 }
 
-.saber { width: 100%; height: 1px; background: rgba(139,26,26,0.18); }
 
 /* Section projets */
 

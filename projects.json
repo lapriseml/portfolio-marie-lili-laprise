@@ -18,9 +18,7 @@
       "medias/HighFish4.png",
       "medias/HighFish5.png"
     ],
-    "videoId": "dQw4w9WgXcQ",
-    "challenge": "Créer une expérience d'achat en ligne qui reflète le prestige des créations artisanales tout en optimisant les conversions.",
-    "result": "+340% de conversions en ligne, 0 abandon de panier lié à la performance"
+    "videoId": "dQw4w9WgXcQ"
   },
   {
     "id": 1,
@@ -41,9 +39,7 @@
       "medias/Os'scape4.png",
       "medias/Os'scape5.png"
     ],
-    "videoId": "dQw4w9WgXcQ",
-    "challenge": "Concevoir un système sécurisé conforme à la Loi 25 avec une UX assez simple pour des professionnels de santé non-techniques.",
-    "result": "Adopté par 47 cliniques, réduction de 60% du temps administratif"
+    "videoId": "dQw4w9WgXcQ"
   },
   {
     "id": 2,
@@ -64,9 +60,7 @@
       "medias/HighStar4.png",
       "medias/HighStar5.png"
     ],
-    "videoId": "dQw4w9WgXcQ",
-    "challenge": "Présenter un portfolio photographique avec une performance maximale malgré des images haute résolution.",
-    "result": "Score Lighthouse 98/100, +180% de demandes de devis reçues"
+    "videoId": "dQw4w9WgXcQ"
   },
   {
     "id": 3,
@@ -87,9 +81,7 @@
       "medias/Tatooine4.png",
       "medias/Tatooine5.png"
     ],
-    "videoId": "dQw4w9WgXcQ",
-    "challenge": "Synchroniser en temps réel les données de plusieurs utilisateurs simultanés sans perte de données ni conflits.",
-    "result": "Utilisée par 12 agences, 99.97% de disponibilité, 4.9/5 satisfaction"
+    "videoId": "medias/Tatooine.mp4"
   },
   {
     "id": 4,
@@ -109,10 +101,7 @@
       "medias/HishSkull3.jpg",
       "medias/HishSkull4.jpg",
       "medias/HishSkull5.jpg"
-    ],
-    "videoId": "dQw4w9WgXcQ",
-    "challenge": "Créer une expérience d'achat en ligne qui reflète le prestige des créations artisanales tout en optimisant les conversions.",
-    "result": "+340% de conversions en ligne, 0 abandon de panier lié à la performance"
+    ]
   },
   {
     "id": 5,
@@ -132,9 +121,6 @@
       "medias/LostIsland3.jpg",
       "medias/LostIsland4.jpg",
       "medias/LostIsland5.jpg"
-    ],
-    "videoId": "dQw4w9WgXcQ",
-    "challenge": "Créer une expérience d'achat en ligne qui reflète le prestige des créations artisanales tout en optimisant les conversions.",
-    "result": "+340% de conversions en ligne, 0 abandon de panier lié à la performance"
+    ]
   }
 ]
