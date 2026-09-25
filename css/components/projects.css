@@ -8,11 +8,11 @@
 }
 .project-card:hover { border-color: rgba(192, 57, 43, .5); box-shadow: 0 0 30px rgba(192,57,43,.12); }
 .card-media { position: relative; height: 8.5rem; overflow: hidden; }
-.card-media img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .38; filter: saturate(.7); transition: opacity .6s, transform .6s; }
-.project-card:hover .card-media img { opacity: .6; transform: scale(1.07); }
+.card-media img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .7; filter: saturate(.82); transition: opacity .6s, transform .6s; }
+.project-card:hover .card-media img { opacity: .95; transform: scale(1.07); }
 .card-media::after {
   content: 'Voir le projet'; position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; opacity: 0; transition: opacity .3s;
-  font-family: 'Cinzel', serif; letter-spacing: .15em; text-transform: uppercase; color: var(--fg); background: rgba(6, 4, 10, .28);
+  font-family: 'Cinzel', serif; letter-spacing: .15em; text-transform: uppercase; color: var(--fg); background: rgba(6, 4, 10, .16);
 }
 .project-card:hover .card-media::after { opacity: 1; }
 .card-year {
@@ -54,7 +54,7 @@
 .related-card { background: var(--panel); border: 1px solid rgba(139,26,26,.15); overflow: hidden; cursor: pointer; }
 .related-card:hover { border-color: rgba(192,57,43,.4); }
 .related-image { height: 8rem; overflow: hidden; }
-.related-image img { width: 100%; height: 100%; object-fit: cover; opacity: .4; filter: saturate(.5); }
+.related-image img { width: 100%; height: 100%; object-fit: cover; opacity: .64; filter: saturate(.7); }
 .related-body { padding: 1rem; }
 .related-cat { color: var(--red); font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); letter-spacing: .2em; text-transform: uppercase; }
 .related-title { font-family: 'Cinzel', serif; }
