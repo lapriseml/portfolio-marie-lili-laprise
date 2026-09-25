@@ -15,20 +15,23 @@
 - **Prompt:** *crée une faisceau lumineux sortant des cercles sharingan jusqu'à l'écriture pour qu'elle soit éclairée dans les sections home et contact*
 - **Résultat:** *ajout d'une lumière en forme de cercle qui part du milieu des cercles jusqu'aux titres des sectionsv home et contact*
 
-- ### 2026-09-09
+### 2026-09-09
 - **Outil:** *Copilot (VSCode)*
 - **Prompt:** *j'ai crée un fichier json, mets les données de chaque projet dans ce fichier à la place du html*
 - **Résultat:** *modification des fichiers html et json avec les données de chaque projet*
 
-- - ### 2026-09-16
+### 2026-09-16
 - **Outil:** *Copilot (VSCode)*
 - **Prompt:** *rajoute 2 projets et réorganise pour que les 6 projets rentrent dans la page*
 - **Résultat:** *ajout de 2 projets dans la section projects et réorganisation des projets (2 rangées de 3 projets)*
 
-- - ### 2026-09-23
+### 2026-09-23
 - **Outil:** *Copilot (VSCode)*
 - **Prompt:** *j'ai changé l'arborescence, j'ai crée et modifié plusieurs fichiers et dossiers, relink tout pour que tout fonctionne*
 - **Résultat:** *tous les liens ont été modifiés pour que tous les chemins fonctionnent*
+
+
+
 
 
 ### 2026-09-09
