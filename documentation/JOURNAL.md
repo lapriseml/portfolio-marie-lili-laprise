@@ -32,7 +32,7 @@
 
 
 
-
+## Bloc de cours
 
 ### 2026-09-09
 **1. Qu'est-ce que j'ai accompli depuis le dernier bloc?**
