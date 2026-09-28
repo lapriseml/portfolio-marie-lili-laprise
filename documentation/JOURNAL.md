@@ -30,6 +30,11 @@
 - **Prompt:** *j'ai changé l'arborescence, j'ai crée et modifié plusieurs fichiers et dossiers, relink tout pour que tout fonctionne*
 - **Résultat:** *tous les liens ont été modifiés pour que tous les chemins fonctionnent*
 
+### 2026-09-28
+- **Outil:** *Copilot (VSCode)*
+- **Prompt:** *je veux ajouter un effet hover sur les cartes de compétences, je veux l'agrandir et changer la couleur pour un rouge plus brillant ou un mauve plus brillant dépendant de la couleur initiale, ainsi qu'une animation "shining"*
+- **Résultat:** *ajout d'une animation et l'effet hover demandé dans le fichier css*
+
 
 
 ## Bloc de cours
