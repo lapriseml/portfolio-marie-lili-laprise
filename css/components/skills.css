@@ -2,7 +2,68 @@
 
 .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
 .skill-card {
-  position: relative; background: var(--panel); border: 1px solid rgba(139, 26, 26, .15); padding: 1.5rem; overflow: hidden; display: flex; flex-direction: column; gap: 1.1rem;
+  position: relative;
+  background: var(--panel);
+  border: 1px solid rgba(139, 26, 26, .15);
+  padding: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  transform: translateY(0) scale(1);
+  transform-origin: center;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: -35% -15%;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .18) 48%, transparent 60%);
+  transform: translateX(-70%) rotate(8deg);
+  opacity: 0;
+  pointer-events: none;
+}
+.skill-card::after {
+  content: '';
+  position: absolute;
+  inset: auto 12% -20% 12%;
+  height: 5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(192, 57, 43, .22), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+}
+.skill-card:hover {
+  transform: translateY(-.4rem) scale(1.03);
+  border-color: rgba(192, 57, 43, .45);
+  box-shadow: 0 0 0 1px rgba(192, 57, 43, .06), 0 1rem 2rem rgba(0, 0, 0, .22), 0 0 2.5rem rgba(192, 57, 43, .18);
+}
+.skill-card:hover::before {
+  opacity: 1;
+  animation: skill-shine 1.15s ease forwards;
+}
+.skill-card:hover::after {
+  opacity: 1;
+}
+.skill-card:hover .skill-label,
+.skill-card:hover .skill-list li {
+  color: #ff7b6b;
+}
+.skill-card:nth-child(2):hover .skill-label,
+.skill-card:nth-child(2):hover .skill-list li {
+  color: #d9adff;
+}
+.skill-card:hover .skill-label.alt,
+.skill-card:hover .skill-list .dot.alt {
+  color: #d9adff;
+}
+.skill-card:hover .skill-list .dot {
+  background: var(--red);
+  box-shadow: 0 0 .6rem rgba(192, 57, 43, .55);
+}
+.skill-card:nth-child(2):hover .skill-list .dot.alt {
+  background: #b86bff;
+  box-shadow: 0 0 .6rem rgba(124, 58, 237, .55);
 }
 .skill-list { list-style: none; display: flex; flex-direction: column; gap: .65rem; margin: 0; padding: 0; }
 .skill-list li { display: flex; align-items: center; gap: .9rem; color: var(--muted); }
@@ -10,6 +71,11 @@
   position: static; transform: none; width: .375rem; height: .375rem; border-radius: 50%; background: var(--red); flex-shrink: 0; display: inline-block;
 }
 .dot.alt { background: var(--violet); }
+
+@keyframes skill-shine {
+  0% { transform: translateX(-70%) rotate(8deg); }
+  100% { transform: translateX(70%) rotate(8deg); }
+}
 
 /* Section histoire personnelle */
 
