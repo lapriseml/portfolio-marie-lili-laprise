@@ -1,7 +1,63 @@
 /* Orb hero */
 
 .orb-wrap { display: flex; justify-content: center; align-items: center; }
-.orb { position: relative; width: 16rem; height: 16rem; }
+.orb {
+  position: relative;
+  width: 16rem;
+  height: 16rem;
+  cursor: pointer;
+  transform: translateY(0) scale(1);
+  transform-origin: center;
+  transition: transform .45s ease, filter .45s ease;
+}
+.orb::before,
+.orb::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+.orb::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, .34) 0%, rgba(255, 255, 255, .16) 12%, rgba(192, 57, 43, .18) 24%, rgba(124, 58, 237, .12) 34%, transparent 66%);
+  filter: blur(.35rem);
+}
+.orb::after {
+  inset: -34%;
+  background: radial-gradient(circle, transparent 40%, rgba(255, 255, 255, .28) 45%, rgba(192, 57, 43, .16) 49%, rgba(124, 58, 237, .12) 54%, transparent 61%);
+  transform: scale(.74);
+}
+.orb:hover {
+  transform: translateY(-.15rem) scale(1.05) rotate(-1deg);
+  filter: drop-shadow(0 0 1.2rem rgba(192, 57, 43, .2)) drop-shadow(0 0 2.2rem rgba(124, 58, 237, .24)) saturate(1.12);
+}
+.orb:hover::before {
+  opacity: 1;
+  animation: orb-flare .95s ease-out infinite;
+}
+.orb:hover::after {
+  opacity: 1;
+  animation: orb-shockwave 1.15s ease-out infinite;
+}
+.orb:hover .core {
+  box-shadow: 0 0 2.8rem rgba(124,58,237,.42), 0 0 5.8rem rgba(192,57,43,.24), 0 0 7rem rgba(255,255,255,.08), inset 0 0 1.875rem rgba(6,4,10,.8);
+}
+.orb:hover .ring-a {
+  border-color: rgba(192, 57, 43, .5);
+}
+.orb:hover .ring-b {
+  border-color: rgba(124, 58, 237, .52);
+}
+.orb:hover .ring-c {
+  border-color: rgba(255, 255, 255, .22);
+}
+.orb:hover .dot.red {
+  box-shadow: 0 0 .8rem rgba(192, 57, 43, .95), 0 0 1.4rem rgba(192, 57, 43, .35), 0 0 2rem rgba(255, 140, 120, .14);
+}
+.orb:hover .dot.violet {
+  box-shadow: 0 0 .7rem rgba(124, 58, 237, .95), 0 0 1.3rem rgba(124, 58, 237, .35), 0 0 2rem rgba(196, 160, 255, .14);
+}
 .orbit, .ring { position: absolute; border-radius: 50%; }
 .orbit-red, .orbit-violet { inset: 0; }
 .orbit-red .dot-red-1 { top: calc(50% - 106px); left: calc(50%); }
@@ -21,8 +77,47 @@
 .core {
   position: absolute; inset: 0; border-radius: 50%;
   background: radial-gradient(circle at 40% 40%, #1a0830, #06040a);
-  box-shadow: 0 0 2.5rem rgba(124,58,237,.3), 0 0 5rem rgba(192,57,43,.15), inset 0 0 1.875rem rgba(6,4,10,.8);
+  box-shadow: 0 0 2.8rem rgba(124,58,237,.36), 0 0 5.8rem rgba(192,57,43,.22), inset 0 0 1.875rem rgba(6,4,10,.8);
   display: flex; align-items: center; justify-content: center;
+}
+.core::before,
+.core::after {
+  content: '';
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+.core::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, .68) 0%, rgba(255, 255, 255, .28) 16%, rgba(124, 58, 237, .18) 30%, rgba(192, 57, 43, .12) 42%, transparent 66%);
+}
+.core::after {
+  inset: 5%;
+  border: 1px solid rgba(255, 255, 255, .38);
+  box-shadow: 0 0 1rem rgba(192, 57, 43, .2), inset 0 0 .8rem rgba(124, 58, 237, .18);
+}
+.orb:hover .core::before {
+  opacity: 1;
+  animation: orb-flash .9s ease-out infinite;
+}
+.orb:hover .core::after {
+  opacity: 1;
+  animation: orb-ripple 1.1s ease-out infinite;
+}
+.orb:hover .spin-cw {
+  animation-duration: 6s;
+}
+.orb:hover .spin-ccw {
+  animation-duration: 4.6s;
+}
+.orb:hover .pulse {
+  animation-duration: 1.2s;
+}
+.orb:hover .ring-a,
+.orb:hover .ring-b,
+.orb:hover .ring-c {
+  animation: orb-ring-pulse 1.1s ease-in-out infinite;
 }
 
 /* Animation orbs */
@@ -31,6 +126,25 @@
 @keyframes spin-ccw { to { transform: rotate(-360deg); } }
 @keyframes pulse-glow { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
 @keyframes ripple { 0% { transform: scale(.85); opacity: .7; } 100% { transform: scale(1.55); opacity: 0; } }
+@keyframes orb-flare {
+  0% { transform: scale(.68); opacity: 0; }
+  18% { opacity: .8; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+@keyframes orb-ripple {
+  0% { transform: scale(.8); opacity: 0; }
+  14% { opacity: .82; }
+  100% { transform: scale(1.42); opacity: 0; }
+}
+@keyframes orb-shockwave {
+  0% { transform: scale(.66); opacity: 0; }
+  12% { opacity: .85; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+@keyframes orb-ring-pulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.03); filter: brightness(1.18); }
+}
 .spin-cw { animation: spin-cw 12s linear infinite; }
 .spin-ccw { animation: spin-ccw 8s linear infinite; }
 .pulse { animation: pulse-glow 3s ease-in-out infinite; }

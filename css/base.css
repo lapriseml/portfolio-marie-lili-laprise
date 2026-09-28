@@ -107,7 +107,32 @@ svg { display: block; }
 .btn.secondary { color: var(--muted); font-size: var(--text-md); }
 
 .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: center; }
-.contact-orb { min-height: 20rem; }
+.contact-orb {
+  position: relative;
+  min-height: 20rem;
+  overflow: visible;
+  isolation: isolate;
+}
+.contact-orb::before,
+.contact-orb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.contact-orb::after {
+  left: 50%;
+  top: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  background: radial-gradient(circle at 42% 48%, rgba(255, 255, 255, .16) 0%, rgba(255, 255, 255, .08) 18%, transparent 52%);
+  filter: blur(.35rem);
+  opacity: .55;
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+.contact-orb .orb { position: relative; z-index: 1; }
 .contact-title { font-family: 'Cinzel', serif; font-size: clamp(2rem, 3vw, 3.25rem); margin-bottom: 1.25rem; }
 .contact-title span { background: linear-gradient(135deg, var(--red), var(--violet)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .contact-link {
