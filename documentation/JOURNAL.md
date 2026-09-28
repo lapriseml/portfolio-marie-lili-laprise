@@ -33,8 +33,12 @@
 ### 2026-09-28
 - **Outil:** *Copilot (VSCode)*
 - **Prompt:** *je veux ajouter un effet hover sur les cartes de compétences, je veux l'agrandir et changer la couleur pour un rouge plus brillant ou un mauve plus brillant dépendant de la couleur initiale, ainsi qu'une animation "shining"*
-- **Résultat:** *ajout d'une animation et l'effet hover demandé dans le fichier css*
+- **Résultat:** *ajout d'une animation et l'effet hover demandé sur les cartes compétences dans le fichier css*
 
+### 2026-09-28
+- **Outil:** *Copilot (VSCode)*
+- **Prompt:** *je veux ajouter un effet hover sur les orbs de la section home et contact, mettre une animation sur les cercles et la luminostié de l'orb pour l'animer, je veux que ce soit intense et brillant*
+- **Résultat:** *ajout d'une animation et l'effet hover demandé sur les orbs de home et contact dans le fichier css*
 
 
 ## Bloc de cours
