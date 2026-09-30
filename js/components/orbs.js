@@ -3,21 +3,6 @@
 const HS_DURATION = 1200;
 const HS_STARS = 520;
 
-function initContactOrb() {
-  const source = document.querySelector('#hero .orb');
-  const target = document.querySelector('.contact-orb');
-  if (!source || !target) return;
-
-  const orb = source.cloneNode(true);
-  const grad = orb.querySelector('#rg0');
-  const fill = orb.querySelector('[fill="url(#rg0)"]');
-  if (grad && fill) {
-    grad.id = 'rg-contact';
-    fill.setAttribute('fill', 'url(#rg-contact)');
-  }
-  target.appendChild(orb);
-}
-
 function runHyperspace(cb) {
   const canvas = document.getElementById('hyperspace');
   if (!canvas) return cb();
@@ -80,6 +65,5 @@ function runHyperspace(cb) {
 }
 
 export {
-  initContactOrb,
   runHyperspace,
 };

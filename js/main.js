@@ -1,7 +1,7 @@
 import { loadProjects, getProjects } from './data.js';
 import { buildProjectCards, fillDetail, loadVideo } from './components/projects.js';
 import { initNavScroll, initSectionScroll } from './components/nav.js';
-import { initContactOrb, runHyperspace } from './components/orbs.js';
+import { runHyperspace } from './components/orbs.js';
 
 function showPage(name) {
   const nav = document.getElementById('main-nav');
@@ -53,7 +53,6 @@ async function initializePortfolio() {
   }
 
   buildProjectCards();
-  initContactOrb();
   initNavScroll();
   initSectionScroll();
   showPage('home');

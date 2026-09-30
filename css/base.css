@@ -28,7 +28,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
   cursor: pointer;
 }
 
-.skill-card, .orb, .orb-wrap, .contact-orb {
+.skill-card, .orb, .orb-wrap {
   cursor: default;
 }
 
@@ -218,7 +218,65 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
   padding-top: 0;
   justify-content: center;
 }
-#contact { justify-content: center; }
+#contact {
+  justify-content: center;
+  align-items: center;
+}
+#contact .contact-card {
+  position: relative;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  background: var(--panel);
+  border: 2px solid rgba(124, 58, 237, .2);
+  border-radius: 0;
+  overflow: hidden;
+  transform: translateY(0) scale(1);
+  transform-origin: center;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease, color .35s ease;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2), 0 0 1.8rem rgba(124, 58, 237, .12), 0 0 2.5rem rgba(124, 58, 237, .08);
+}
+#contact .contact-card::before,
+#contact .contact-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+#contact .contact-card::before {
+  background: linear-gradient(120deg, transparent 28%, rgba(255, 255, 255, .16) 44%, rgba(124, 58, 237, .12) 50%, rgba(217, 173, 255, .12) 56%, transparent 72%);
+  transform: translateX(-70%) skewX(-12deg);
+}
+#contact .contact-card::after {
+  background: radial-gradient(circle at 18% 20%, rgba(255, 255, 255, .14), transparent 28%), radial-gradient(circle at 82% 18%, rgba(255, 255, 255, .1), transparent 22%), radial-gradient(circle at 10% 82%, rgba(255, 255, 255, .1), transparent 24%), radial-gradient(circle at 86% 78%, rgba(255, 255, 255, .12), transparent 24%);
+}
+#contact .contact-card:hover {
+  transform: translateY(-.35rem) scale(1.02);
+  border-color: rgba(124, 58, 237, .45);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2), 0 0 1.8rem rgba(124, 58, 237, .18), 0 0 2.5rem rgba(124, 58, 237, .12);
+}
+#contact .contact-card:hover .contact-title span:first-child,
+#contact .contact-card:hover .cl-label,
+#contact .contact-card:hover .cl-val,
+#contact .contact-card:hover .contact-link {
+  color: var(--violet);
+}
+#contact .contact-card:hover .contact-title .contact-inline-word {
+  color: var(--violet);
+  background: linear-gradient(135deg, var(--red), var(--violet));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#contact .contact-card:hover::before {
+  opacity: 1;
+  animation: about-shine 1.2s ease-in-out infinite;
+}
+#contact .contact-card:hover::after {
+  opacity: 1;
+  animation: about-glow 1.8s ease-in-out infinite;
+}
 #contact .contact-grid { margin-bottom: 0; }
 #contact footer { margin-top: 3rem; }
 .copy { max-width: 40rem; }
@@ -236,39 +294,48 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 .btn.secondary { color: var(--muted); font-size: var(--text-md); }
 
 .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: center; }
-.contact-orb {
-  position: relative;
-  min-height: 20rem;
-  overflow: visible;
-  isolation: isolate;
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
-.contact-orb::before,
-.contact-orb::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.contact-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
-.contact-orb::after {
-  left: 50%;
-  top: 50%;
-  width: 120%;
-  height: 120%;
-  transform: translate(-50%, -50%) rotate(-12deg);
-  background: radial-gradient(circle at 42% 48%, rgba(255, 255, 255, .16) 0%, rgba(255, 255, 255, .08) 18%, transparent 52%);
-  filter: blur(.35rem);
-  opacity: .55;
-  mix-blend-mode: screen;
-  z-index: 0;
+.contact-title {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  font-weight: 400;
+  margin: 0;
 }
-.contact-orb .orb { position: relative; z-index: 1; }
-.contact-title { font-family: 'Cinzel', serif; font-size: clamp(2rem, 3vw, 3.25rem); margin-bottom: 1.25rem; }
-.contact-title span { background: linear-gradient(135deg, var(--red), var(--violet)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.contact-title span {
+  display: inline-block;
+  color: var(--fg);
+}
+.contact-title .contact-inline-word {
+  background: linear-gradient(135deg, var(--red), var(--violet));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
 .contact-link {
-  display: flex; align-items: flex-start; gap: 8rem; padding: .85rem 0; border-bottom: 1px solid rgba(139, 26, 26, .2); text-decoration: none;
+  display: flex; align-items: center; gap: 6rem; padding: .85rem 0; border-bottom: 1px solid rgba(139, 26, 26, .2); text-decoration: none; white-space: nowrap;
 }
+.linkedin-link { white-space: nowrap; }
 .contact-link:hover { border-color: var(--red); }
-.cl-label { width: 3.5rem; flex-shrink: 0; color: var(--muted); font-family: 'JetBrains Mono', monospace; letter-spacing: .2em; text-transform: uppercase; }
+.cl-label { width: 5.25rem; flex-shrink: 0; color: var(--muted); font-family: 'JetBrains Mono', monospace; letter-spacing: .2em; text-transform: uppercase; }
 .cl-val { color: var(--fg); }
 
 footer { margin-top: 7rem; padding-top: 1.25rem; }
@@ -303,6 +370,14 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
 .glow {
   position: absolute; left: 50%; top: 50%; width: clamp(30rem, 55vw, 50rem); height: clamp(15rem, 28vw, 25rem);
   transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(ellipse, var(--violet), var(--red) 50%, transparent 70%); opacity: .07; pointer-events: none;
+}
+#contact .glow {
+  z-index: 0;
+}
+#contact .contact-grid,
+#contact footer {
+  position: relative;
+  z-index: 1;
 }
 
 .detail-hero { position: relative; height: 65vh; min-height: 25rem; background: #0d0914; overflow: hidden; }
@@ -362,7 +437,6 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
   .detail-body { grid-template-columns: 1fr; padding: 2rem; }
   .gallery-wrap, .video-block, .related-wrap { padding: 0 2rem 2rem; }
   .gallery-thumbs { grid-template-columns: repeat(4, 1fr); }
-  .contact-orb { order: 2; }
 }
 
 @media (min-width: 1350px) {

@@ -4,7 +4,7 @@
 .skill-card {
   position: relative;
   background: var(--panel);
-  border: 1px solid rgba(139, 26, 26, .15);
+  border: 2px solid rgba(139, 26, 26, .15);
   padding: 1.5rem;
   overflow: hidden;
   display: flex;
@@ -88,7 +88,7 @@
 .about-card {
   position: relative;
   background: var(--panel);
-  border: 1px solid rgba(124,58,237,.2);
+  border: 2px solid rgba(124,58,237,.2);
   padding: 2rem 2.5rem;
   margin-top: 1.5rem;
   overflow: hidden;

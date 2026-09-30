@@ -10,7 +10,7 @@
   --project-border-soft: rgba(192, 57, 43, .45);
   position: relative;
   background: var(--panel);
-  border: 1px solid rgba(139, 26, 26, .15);
+  border: 2px solid rgba(139, 26, 26, .15);
   overflow: hidden;
   cursor: pointer;
   transform: translateY(0) scale(1) rotate(0deg);
@@ -133,7 +133,7 @@
   --project-border-soft: rgba(192, 57, 43, .45);
   position: relative;
   background: var(--panel);
-  border: 1px solid rgba(139,26,26,.15);
+  border: 2px solid rgba(139,26,26,.15);
   overflow: hidden;
   cursor: pointer;
   transform: translateY(0) scale(1);
