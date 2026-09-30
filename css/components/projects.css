@@ -126,14 +126,84 @@
 /* Autres projets */
 
 .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
-.related-card { position: relative; background: var(--panel); border: 1px solid rgba(139,26,26,.15); overflow: hidden; cursor: pointer; transform: translateY(0) scale(1); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
-.related-card:hover { border-color: rgba(192,57,43,.52); transform: translateY(-.25rem) scale(1.01); box-shadow: 0 0 20px rgba(192,57,43,.1); }
-.related-image { height: 8rem; overflow: hidden; }
+.related-card {
+  --project-accent: var(--red);
+  --project-accent-soft: rgba(192, 57, 43, .12);
+  --project-accent-glow: rgba(192, 57, 43, .2);
+  --project-border-soft: rgba(192, 57, 43, .45);
+  position: relative;
+  background: var(--panel);
+  border: 1px solid rgba(139,26,26,.15);
+  overflow: hidden;
+  cursor: pointer;
+  transform: translateY(0) scale(1);
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease, filter .35s ease;
+}
+.related-card[data-tone="violet"] {
+  --project-accent: var(--violet);
+  --project-accent-soft: rgba(124, 58, 237, .12);
+  --project-accent-glow: rgba(124, 58, 237, .2);
+  --project-border-soft: rgba(124, 58, 237, .45);
+}
+.related-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .12), transparent 26%), radial-gradient(circle at 70% 30%, var(--project-accent-soft), transparent 30%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.related-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 30%, transparent 70%, rgba(255,255,255,.03));
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.related-card:hover {
+  border-color: var(--project-border-soft);
+  transform: translateY(-.25rem) scale(1.01);
+  box-shadow: 0 .8rem 1.8rem rgba(0, 0, 0, .18), 0 0 28px var(--project-accent-glow), 0 0 48px rgba(124, 58, 237, .08);
+}
+.related-card:hover::before,
+.related-card:hover::after {
+  opacity: 1;
+}
+.related-image { position: relative; height: 8rem; overflow: hidden; }
 .related-image img { width: 100%; height: 100%; object-fit: cover; opacity: .64; filter: saturate(.7); transition: transform .55s ease, opacity .45s ease, filter .45s ease; }
 .related-card:hover .related-image img { opacity: .95; transform: scale(1.08); filter: saturate(1.02); }
-.related-body { padding: 1rem; }
+.related-image::after {
+  content: 'Voir le projet';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity .35s ease, transform .35s ease, text-shadow .35s ease;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--project-accent);
+  background: linear-gradient(135deg, rgba(6, 4, 10, .08), var(--project-accent-soft), rgba(124, 58, 237, .16));
+  text-shadow: 0 0 12px rgba(255, 255, 255, .2), 0 0 24px var(--project-accent-glow);
+  transform: translateY(.35rem);
+}
+.related-card:hover .related-image::after {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, .04);
+}
+.related-body { position: relative; z-index: 2; padding: 1rem; }
 .related-cat { color: var(--red); font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); letter-spacing: .2em; text-transform: uppercase; }
-.related-title { font-family: 'Cinzel', serif; }
+.related-card[data-tone="violet"] .related-cat { color: var(--violet); }
+.related-card:hover .related-cat,
+.related-card:hover .related-title { color: var(--project-accent); }
+.related-title { font-family: 'Cinzel', serif; transition: color .3s ease; }
 
 @media (max-width: 1100px) {
   .projects-grid,

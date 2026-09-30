@@ -26,12 +26,18 @@
 .skill-card::after {
   content: '';
   position: absolute;
-  inset: auto 12% -20% 12%;
-  height: 5rem;
+  left: 12%;
+  right: 12%;
+  bottom: -25%;
+  height: 4.5rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(192, 57, 43, .22), transparent 70%);
+  background: radial-gradient(circle, rgba(192, 57, 43, .18) 0%, rgba(192, 57, 43, .06) 25%, transparent 72%);
+  filter: blur(12px);
   opacity: 0;
   pointer-events: none;
+}
+.skill-card:nth-child(2)::after {
+  background: radial-gradient(circle, rgba(124, 58, 237, .2) 0%, rgba(124, 58, 237, .08) 25%, transparent 72%);
 }
 .skill-card:hover {
   transform: translateY(-.4rem) scale(1.03);

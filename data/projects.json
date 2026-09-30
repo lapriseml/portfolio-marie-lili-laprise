@@ -87,40 +87,40 @@
     "id": 4,
     "tone": "red",
     "accent": "#c0392b",
-    "title": "HighSkull",
-    "category": "Personnage 3D",
-    "year": "2024",
-    "description": "<p>Personnage 3D réalisé avec <strong>Maya</strong>. Le projet consiste en la modélisation d’un personnage inspiré d’un univers sombre et fantastique, avec une attention portée à la silhouette, aux proportions et aux formes caractéristiques de la créature.</p><p>Le modèle comprend la création du corps, des membres, de la tête et des différents éléments anatomiques, ainsi que le travail des formes et des détails pour obtenir une apparence stylisée et cohérente. Le projet met l’accent sur les techniques de modélisation 3D et de création de personnages dans Maya.</p>",
-    "tags": ["Maya", "Modélisation 3D", "Personnage 3D"],
-    "cadre": "Scolaire",
-    "duration": "1 semaine",
-    "cover": "assets/images/HishSkull1.jpg",
-    "gallery": [
-      "assets/images/HishSkull1.jpg",
-      "assets/images/HishSkull2.jpg",
-      "assets/images/HishSkull3.jpg",
-      "assets/images/HishSkull4.jpg",
-      "assets/images/HishSkull5.jpg"
-    ]
-  },
-  {
-    "id": 5,
-    "tone": "violet",
-    "accent": "#7c3aed",
-    "title": "LostIsland",
+    "title": "HighLand",
     "category": "Environnement 3D",
     "year": "2024",
     "description": "<p>Environnement 3D réalisé avec <strong>Maya</strong>, mettant en pratique différentes techniques de modélisation, de texturage et de composition d'une scène.</p><p>Le projet comprend la création et l'assemblage de plusieurs éléments 3D afin de construire un environnement cohérent et détaillé. Une attention particulière a été portée à la <strong>modélisation des formes, aux proportions, aux matériaux et à l'éclairage</strong>, afin de donner à la scène une identité visuelle et une atmosphère adaptées.</p>",
     "tags": ["Maya", "Modélisation 3D", "Environnement 3D"],
     "cadre": "Scolaire",
     "duration": "4 semaines",
-    "cover": "assets/images/LostIsland1.jpg",
+    "cover": "assets/images/HighLand1.jpg",
     "gallery": [
-      "assets/images/LostIsland1.jpg",
-      "assets/images/LostIsland2.jpg",
-      "assets/images/LostIsland3.jpg",
-      "assets/images/LostIsland4.jpg",
-      "assets/images/LostIsland5.jpg"
+      "assets/images/HighLand1.jpg",
+      "assets/images/HighLand2.jpg",
+      "assets/images/HighLand3.jpg",
+      "assets/images/HighLand4.jpg",
+      "assets/images/HighLand5.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "tone": "violet",
+    "accent": "#7c3aed",
+    "title": "DarkSoul",
+    "category": "Personnage 3D",
+    "year": "2024",
+    "description": "<p>Personnage 3D réalisé avec <strong>Maya</strong>. Le projet consiste en la modélisation d’un personnage inspiré d’un univers sombre et fantastique, avec une attention portée à la silhouette, aux proportions et aux formes caractéristiques de la créature.</p><p>Le modèle comprend la création du corps, des membres, de la tête et des différents éléments anatomiques, ainsi que le travail des formes et des détails pour obtenir une apparence stylisée et cohérente. Le projet met l’accent sur les techniques de modélisation 3D et de création de personnages dans Maya.</p>",
+    "tags": ["Maya", "Modélisation 3D", "Personnage 3D"],
+    "cadre": "Scolaire",
+    "duration": "1 semaine",
+    "cover": "assets/images/DarkSoul1.jpg",
+    "gallery": [
+      "assets/images/DarkSoul1.jpg",
+      "assets/images/DarkSoul2.jpg",
+      "assets/images/DarkSoul3.jpg",
+      "assets/images/DarkSoul4.jpg",
+      "assets/images/DarkSoul5.jpg"
     ]
   }
 ]
