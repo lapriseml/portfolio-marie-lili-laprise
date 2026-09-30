@@ -1,7 +1,7 @@
 /* Couleurs, espacements, tailles texte. */
 
 :root {
-  --bg: #06040a;
+  --bg: linear-gradient(135deg, #210b0a 0%, #3a1220 18%, #180f1f 38%, #09070d 62%, #030207 100%);
   --panel: #0d0914;
   --fg: #f0e8ff;
   --muted: #6e5a80;

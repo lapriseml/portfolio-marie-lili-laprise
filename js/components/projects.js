@@ -81,18 +81,38 @@ function fillDetail(id) {
   const mainImg = document.getElementById('gallery-img');
   const thumbsEl = document.getElementById('gallery-thumbs');
   const counter = document.getElementById('gallery-counter');
+  const prevBtn = document.querySelector('.gallery-prev');
+  const nextBtn = document.querySelector('.gallery-next');
   let active = 0;
 
   function setPhoto(index) {
-    active = index;
-    if (mainImg) mainImg.src = p.gallery[index];
-    if (counter) counter.textContent = `${index + 1} / ${p.gallery.length}`;
+    active = (index + p.gallery.length) % p.gallery.length;
+    if (mainImg) mainImg.src = p.gallery[active];
+    if (counter) counter.textContent = `${active + 1} / ${p.gallery.length}`;
     if (thumbsEl) {
       thumbsEl.querySelectorAll('.gallery-thumb').forEach((thumb, i) => {
-        thumb.classList.toggle('active', i === index);
-        thumb.style.borderColor = i === index ? p.accent : 'transparent';
+        thumb.classList.toggle('active', i === active);
+        thumb.style.borderColor = i === active ? p.accent : 'transparent';
       });
     }
+    if (prevBtn) {
+      prevBtn.style.borderColor = p.accent;
+      prevBtn.style.boxShadow = `inset 0 0 0 1px ${p.accent}66, 0 0 20px ${p.accent}25`;
+      prevBtn.style.background = `linear-gradient(135deg, ${p.accent}25, rgba(255,255,255,.06))`;
+    }
+    if (nextBtn) {
+      nextBtn.style.borderColor = p.accent;
+      nextBtn.style.boxShadow = `inset 0 0 0 1px ${p.accent}66, 0 0 20px ${p.accent}25`;
+      nextBtn.style.background = `linear-gradient(135deg, ${p.accent}25, rgba(255,255,255,.06))`;
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => setPhoto(active - 1));
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => setPhoto(active + 1));
   }
 
   if (thumbsEl) {

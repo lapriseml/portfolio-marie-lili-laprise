@@ -7,7 +7,10 @@ body {
   font-family: 'Outfit', sans-serif;
   font-size: var(--text-md);
   color: var(--fg);
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 15% 12%, rgba(192, 57, 43, 0.18), transparent 22%),
+    radial-gradient(circle at 82% 80%, rgba(124, 58, 237, 0.14), transparent 25%),
+    linear-gradient(135deg, #210b0a 0%, #3a1220 18%, #180f1f 38%, #09070d 62%, #030207 100%);
   min-height: 100dvh;
   cursor: default;
   user-select: none;
