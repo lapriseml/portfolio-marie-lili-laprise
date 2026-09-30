@@ -47,22 +47,22 @@
 }
 .skill-card:hover .skill-label,
 .skill-card:hover .skill-list li {
-  color: #ff7b6b;
+  color: var(--red);
 }
 .skill-card:nth-child(2):hover .skill-label,
 .skill-card:nth-child(2):hover .skill-list li {
-  color: #d9adff;
+  color: var(--violet);
 }
 .skill-card:hover .skill-label.alt,
 .skill-card:hover .skill-list .dot.alt {
-  color: #d9adff;
+  color: var(--violet);
 }
 .skill-card:hover .skill-list .dot {
   background: var(--red);
   box-shadow: 0 0 .6rem rgba(192, 57, 43, .55);
 }
 .skill-card:nth-child(2):hover .skill-list .dot.alt {
-  background: #b86bff;
+  background: var(--violet);
   box-shadow: 0 0 .6rem rgba(124, 58, 237, .55);
 }
 .skill-list { list-style: none; display: flex; flex-direction: column; gap: .65rem; margin: 0; padding: 0; }
@@ -99,7 +99,7 @@
   opacity: 0;
 }
 .about-card::before {
-  background: linear-gradient(120deg, transparent 28%, rgba(255, 255, 255, .16) 44%, rgba(255, 123, 107, .1) 50%, rgba(217, 173, 255, .1) 56%, transparent 72%);
+  background: linear-gradient(120deg, transparent 28%, rgba(255, 255, 255, .16) 44%, rgba(124, 58, 237, .12) 50%, rgba(217, 173, 255, .12) 56%, transparent 72%);
   transform: translateX(-70%) skewX(-12deg);
 }
 .about-card::after {
@@ -107,8 +107,8 @@
 }
 .about-card:hover {
   transform: translateY(-.35rem) scale(1.02);
-  border-color: rgba(255, 123, 107, .45);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2), 0 0 1.8rem rgba(255, 123, 107, .14), 0 0 2.5rem rgba(217, 173, 255, .12);
+  border-color: rgba(124, 58, 237, .45);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2), 0 0 1.8rem rgba(124, 58, 237, .18), 0 0 2.5rem rgba(124, 58, 237, .12);
 }
 .about-card:hover::before {
   opacity: 1;
@@ -121,10 +121,10 @@
 .about-card:hover .about-title,
 .about-card:hover .about-text,
 .about-card:hover .mini-tag {
-  color: #ff7b6b;
+  color: var(--violet);
 }
 .about-card:hover .about-title span {
-  background: linear-gradient(135deg, #ff7b6b, #d9adff);
+  background: linear-gradient(135deg, var(--red), var(--violet));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -9,13 +9,25 @@ body {
   color: var(--fg);
   background: var(--bg);
   min-height: 100dvh;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 /* Styles liens, boutons, images, SVG */
 
-a, button { font: inherit; }
+a, button { font: inherit; cursor: pointer; }
 img { display: block; max-width: 100%; }
 svg { display: block; }
+
+button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a {
+  cursor: pointer;
+}
+
+.skill-card, .orb, .orb-wrap, .contact-orb {
+  cursor: default;
+}
 
 /* Page d'accueil */
 
@@ -146,8 +158,30 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
 .page footer { padding: 1.5rem 4rem 2rem 3.5rem; margin-top: 0; }
 .page .footer-brand { margin-left: 0; }
 .footer-brand { display: flex; align-items: center; gap: .75rem; }
-.footer-name { font-family: 'Cinzel', serif; letter-spacing: .15em; color: var(--muted); }
+.footer-name {
+  display: inline-flex; flex-wrap: wrap; align-items: center; font-family: 'Cinzel', serif; letter-spacing: .15em; color: var(--muted);
+  transition: color .35s ease, transform .35s ease;
+}
+.footer-name:hover { color: var(--fg); }
+.footer-char {
+  display: inline-block;
+  transform: translateY(0);
+  transition: transform .35s ease, color .35s ease, text-shadow .35s ease;
+}
+.footer-space { width: .45em; }
+.footer-name:hover .footer-char {
+  animation: footer-wave .9s ease-in-out infinite;
+  animation-delay: calc(var(--i) * .06s);
+  color: var(--fg);
+  text-shadow: 0 0 12px rgba(124, 58, 237, .35), 0 0 20px rgba(192, 57, 43, .22);
+}
 .footer-copy { font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+
+@keyframes footer-wave {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-4px) scale(1.02); }
+  60% { transform: translateY(2px) scale(.99); }
+}
 
 .glow {
   position: absolute; left: 50%; top: 50%; width: clamp(30rem, 55vw, 50rem); height: clamp(15rem, 28vw, 25rem);

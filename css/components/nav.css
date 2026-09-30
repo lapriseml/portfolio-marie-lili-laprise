@@ -12,7 +12,7 @@
   border-color: rgba(139, 26, 26, .25);
   backdrop-filter: blur(12px);
 }
-.brand { display: flex; align-items: center; gap: .75rem; cursor: pointer; }
+.brand { display: flex; align-items: center; gap: .75rem; cursor: default; }
 .brand span { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: .15em; }
 .menu { display: flex; gap: 2.5rem; }
 .menu a {

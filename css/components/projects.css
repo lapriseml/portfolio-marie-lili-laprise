@@ -4,6 +4,10 @@
 .section-icon { opacity: .55; }
 .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85rem; margin-top: 1.5rem; }
 .project-card {
+  --project-accent: var(--red);
+  --project-accent-soft: rgba(192, 57, 43, .12);
+  --project-accent-glow: rgba(192, 57, 43, .2);
+  --project-border-soft: rgba(192, 57, 43, .45);
   position: relative;
   background: var(--panel);
   border: 1px solid rgba(139, 26, 26, .15);
@@ -13,11 +17,17 @@
   transform-origin: center;
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease, filter .35s ease;
 }
+.project-card[data-tone="violet"] {
+  --project-accent: var(--violet);
+  --project-accent-soft: rgba(124, 58, 237, .12);
+  --project-accent-glow: rgba(124, 58, 237, .2);
+  --project-border-soft: rgba(124, 58, 237, .45);
+}
 .project-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, .05) 0%, transparent 28%, transparent 72%, rgba(192, 57, 43, .08) 100%);
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .14), transparent 26%), radial-gradient(circle at 70% 30%, var(--project-accent-soft), transparent 30%);
   opacity: 0;
   pointer-events: none;
   z-index: 1;
@@ -25,34 +35,38 @@
 .project-card::after {
   content: '';
   position: absolute;
-  inset: -20% -10%;
-  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .22) 0%, transparent 30%), radial-gradient(circle at 75% 18%, rgba(124, 58, 237, .16) 0%, transparent 26%), radial-gradient(circle at 20% 80%, rgba(192, 57, 43, .14) 0%, transparent 28%);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 30%, transparent 70%, rgba(255,255,255,.03));
   opacity: 0;
-  mix-blend-mode: screen;
   pointer-events: none;
   z-index: 1;
 }
 .project-card:hover {
-  border-color: rgba(192, 57, 43, .68);
-  box-shadow: 0 .8rem 1.8rem rgba(0, 0, 0, .18), 0 0 28px rgba(192, 57, 43, .2), 0 0 48px rgba(124, 58, 237, .08);
+  border-color: var(--project-border-soft);
+  box-shadow: 0 .8rem 1.8rem rgba(0, 0, 0, .18), 0 0 28px var(--project-accent-glow), 0 0 48px rgba(124, 58, 237, .08);
   transform: translateY(-.45rem) scale(1.015) rotate(-.45deg);
 }
 .project-card:hover::before {
   opacity: 1;
-  animation: project-sheen .95s ease-in-out infinite;
 }
 .project-card:hover::after {
   opacity: 1;
-  animation: project-sparkle 1.15s ease-in-out infinite;
 }
 .card-media { position: relative; height: 8.5rem; overflow: hidden; }
 .card-media img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .72; filter: saturate(.82) contrast(1.03); transition: opacity .55s, transform .65s, filter .55s; }
 .project-card:hover .card-media img { opacity: 1; transform: scale(1.1); filter: saturate(1.06) contrast(1.08); }
 .card-media::after {
-  content: 'Voir le projet'; position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; opacity: 0; transition: opacity .3s;
-  font-family: 'Cinzel', serif; letter-spacing: .15em; text-transform: uppercase; color: #ff7b6b; background: linear-gradient(135deg, rgba(6, 4, 10, .08), rgba(192, 57, 43, .12), rgba(124, 58, 237, .12));
+  content: 'Voir le projet'; position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; opacity: 0; transition: opacity .35s ease, transform .35s ease, text-shadow .35s ease;
+  font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--project-accent);
+  background: linear-gradient(135deg, rgba(6, 4, 10, .08), var(--project-accent-soft), rgba(124, 58, 237, .16));
+  text-shadow: 0 0 12px rgba(255, 255, 255, .2), 0 0 24px var(--project-accent-glow);
+  transform: translateY(.35rem);
 }
-.project-card:hover .card-media::after { opacity: 1; }
+.project-card:hover .card-media::after {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, .04);
+}
 .card-year {
   position: absolute; top: 1rem; left: 1rem; z-index: 1; padding: .25rem .6rem;
   background: rgba(6, 4, 10, .82); border: 1px solid rgba(139, 26, 26, .2); color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); transition: transform .35s ease, color .35s ease, border-color .35s ease;
@@ -82,11 +96,11 @@
 .project-card:hover .card-title,
 .project-card:hover .card-label,
 .project-card:hover .tag {
-  color: #ff7b6b;
+  color: var(--project-accent);
 }
 .project-card:hover .card-label.alt,
 .project-card:hover .tag.alt {
-  color: #d9adff;
+  color: var(--project-accent);
 }
 .card-tags {
   grid-row: 3;

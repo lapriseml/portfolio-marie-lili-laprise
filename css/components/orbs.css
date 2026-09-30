@@ -5,7 +5,7 @@
   position: relative;
   width: 16rem;
   height: 16rem;
-  cursor: pointer;
+  cursor: default;
   transform: translateY(0) scale(1);
   transform-origin: center;
   transition: transform .45s ease, filter .45s ease;
