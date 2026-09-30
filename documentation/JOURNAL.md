@@ -37,8 +37,30 @@
 
 ### 2026-09-28
 - **Outil:** *Copilot (VSCode)*
-- **Prompt:** *je veux ajouter un effet hover sur les orbs de la section home et contact, mettre une animation sur les cercles et la luminostié de l'orb pour l'animer, je veux que ce soit intense et brillant*
+- **Prompt:** *je veux ajouter un effet hover sur les orbs de la section home et contact, mettre une animation sur les cercles et la luminosité de l'orb pour l'animer, je veux que ce soit intense et brillant*
 - **Résultat:** *ajout d'une animation et l'effet hover demandé sur les orbs de home et contact dans le fichier css*
+
+### 2026-09-30
+- **Outil:** *Copilot (VSCode)*
+- **Prompt:** *je veux complètement enlever l'orb de la section contact et mettre cette section dans une carte avec un effet hover comme la carte histoire personelle*
+- **Résultat:** *retrait de l'orb de la section contact et ajout d'une carte pour encadrer le contenu de la section*
+
+### 2026-09-30
+- **Outil:** *Copilot (VSCode)*
+- **Prompt:** *je veux un effet hover sur mon footer, une animation wavy des lettres*
+- **Résultat:** *ajout d'une animation de vague sur les lettres de mon nom dans le footer de contact*
+
+### 2026-09-30
+- **Outil:** *Copilot (VSCode)*
+- **Prompt:** *je veux ajouter une version mobile, dans cette version, chaque carte de projet agira comme une section individuelle avec un scroll qui change de projet, même chose pour les cartes compétences et histoire personnelle, ainsi qu'un menu burger qui remplace la barre nav*
+- **Résultat:** *ajout de média querries pour la version mobile, modifications des css pour que chaque carte agisse comme une section indépendante et ajout d'un menu burger pour la navigation*
+
+
+### 2026--
+- **Outil:** *Copilot (VSCode)*
+- **Prompt:** **
+- **Résultat:** **
+
 
 
 ## Bloc de cours
