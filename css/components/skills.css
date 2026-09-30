@@ -1,6 +1,8 @@
 /* Section compétences */
 
-.skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.skills-mobile-slide { display: contents; }
+.about-mobile-slide { display: contents; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1rem; margin-top: 2rem; }
 .skill-card {
   position: relative;
   background: var(--panel);
@@ -140,18 +142,44 @@
 .about-title span { background: linear-gradient(135deg, var(--red), var(--violet)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: background .35s ease; }
 .about-text { margin-bottom: .75rem; color: var(--muted); line-height: 1.6; transition: color .35s ease; }
 
-@media (max-width: 1100px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (max-width: 768px) {
+  #skills {
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: flex-start;
   }
-}
-
-@media (max-width: 640px) {
+  .skills-mobile-slide {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .skills-grid {
-    grid-template-columns: 1fr;
+    background: var(--panel);
+    border: 2px solid rgba(139, 26, 26, .15);
+    padding: 1.5rem 1.25rem;
+    margin-top: 1.5rem;
+    gap: .75rem;
+    align-content: center;
+  }
+  .skills-grid .skill-card {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    gap: .75rem;
   }
   .about-card {
+    min-height: 0;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
     padding: 1.5rem 1.25rem;
+  }
+  .about-mobile-slide {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
   }
   .about-title {
     font-size: clamp(1.5rem, 5vw, 2.2rem);

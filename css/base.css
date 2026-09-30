@@ -431,6 +431,49 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
   .section { padding: 3rem 2rem 2rem; }
   .projects-grid, .skills-grid, .related-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  #contact .contact-card {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+  #contact .contact-heading {
+    display: block;
+  }
+  #contact .contact-title {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem .6rem;
+    margin-top: .6rem;
+    font-size: clamp(1.65rem, 8vw, 2.25rem);
+    line-height: 1.05;
+  }
+  #contact .contact-link {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .35rem;
+    padding: .75rem 0;
+    white-space: normal;
+  }
+  #contact .linkedin-link { white-space: normal; }
+  #contact .cl-label {
+    width: auto;
+  }
+  #contact .cl-val {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  #contact footer {
+    margin-top: 1.5rem;
+  }
+  #contact .footer-brand {
+    gap: .5rem;
+    justify-content: center;
+  }
+  #contact .footer-name {
+    font-size: .7rem;
+    letter-spacing: .08em;
+    justify-content: center;
+    text-align: center;
+  }
   .detail-head { padding: 1.25rem 2rem; }
   .detail-copy { padding: 2rem; }
   .detail-meta { grid-template-columns: repeat(2, 1fr); padding: 2rem; }

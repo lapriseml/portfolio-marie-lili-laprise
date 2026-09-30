@@ -47,6 +47,27 @@
   </div>
 </nav>
 
+<nav class="mobile-menu" aria-label="Navigation mobile">
+  <button class="mobile-menu__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu-links" aria-label="Ouvrir le menu">
+    <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+      <defs><radialGradient id="mobile-logo-gradient" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a0505"/><stop offset="100%" stop-color="#06040a"/></radialGradient></defs>
+      <circle cx="50" cy="50" r="48" fill="url(#mobile-logo-gradient)" stroke="#c0392b" stroke-width="0.5" opacity="0.8"/>
+      <circle cx="50" cy="50" r="38" fill="none" stroke="#c0392b" stroke-width="0.3" opacity="0.4"/>
+      <circle cx="50" cy="50" r="28" fill="none" stroke="#c0392b" stroke-width="0.3" opacity="0.25"/>
+      <circle cx="50" cy="50" r="10" fill="#0a0000"/>
+      <g transform="translate(50,28)"><circle cx="0" cy="0" r="4" fill="#c0392b"/><ellipse cx="0" cy="-5" rx="2" ry="4.5" fill="#c0392b" opacity="0.9"/></g>
+      <g transform="translate(69.1,61)"><circle cx="0" cy="0" r="4" fill="#c0392b"/><ellipse cx="0" cy="-5" rx="2" ry="4.5" fill="#c0392b" opacity="0.9"/></g>
+      <g transform="translate(30.9,61)"><circle cx="0" cy="0" r="4" fill="#c0392b"/><ellipse cx="0" cy="-5" rx="2" ry="4.5" fill="#c0392b" opacity="0.9"/></g>
+    </svg>
+    <span>M·L·L</span>
+  </button>
+  <div class="mobile-menu__links" id="mobile-menu-links" hidden>
+    <a href="#projects">Projets</a>
+    <a href="#skills">Compétences</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <!-- Animation hyperspace -->
 
 <canvas id="hyperspace"></canvas>
@@ -129,9 +150,10 @@
   <!-- Section compétences + histoire personnelle -->
 
   <section id="skills" class="section">
-    <p class="eyebrow">03 — Expertise</p>
-    <h2 class="title">Compétences</h2>
-    <div class="skills-grid">
+    <div class="skills-mobile-slide">
+      <p class="eyebrow">03 — Expertise</p>
+      <h2 class="title">Compétences</h2>
+      <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-label">Développement</div>
         <ul class="skill-list">
@@ -165,15 +187,18 @@
           <li><span class="dot"></span>After Effects</li>
         </ul>
       </div>
+      </div>
     </div>
 
-    <div class="about-card">
-      <div class="about-grid">
-        <div>
-          <p class="mini-tag">// Histoire personnelle</p>
-          <h3 class="about-title">Passionnée par le <span>web artisanal</span></h3>
-          <p class="about-text">Diplômée en Technique d’Intégration Multimédia au Collège Montmorency, je combine rigueur technique et vision créative pour livrer des produits web d'exception.</p>
-          <p class="about-text">Je conçois des expériences numériques immersives, lisibles et efficaces, en alliant esthétisme, structuration claire et sens du détail.</p>
+    <div class="about-mobile-slide">
+      <div class="about-card">
+        <div class="about-grid">
+          <div>
+            <p class="mini-tag">// Histoire personnelle</p>
+            <h3 class="about-title">Passionnée par le <span>web artisanal</span></h3>
+            <p class="about-text">Diplômée en Technique d’Intégration Multimédia au Collège Montmorency, je combine rigueur technique et vision créative pour livrer des produits web d'exception.</p>
+            <p class="about-text">Je conçois des expériences numériques immersives, lisibles et efficaces, en alliant esthétisme, structuration claire et sens du détail.</p>
+          </div>
         </div>
       </div>
     </div>

@@ -8,19 +8,25 @@ function buildProjectCards() {
 
   const projects = getProjects();
   grid.innerHTML = projects.map((p) => `
-    <article class="project-card" data-tone="${p.tone}" onclick="openProject(${p.id})">
-      <div class="card-media">
-        <img src="${p.cover}" alt="${p.title}" loading="lazy" />
-        <div class="card-year">${p.year}</div>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">${p.title}</h3>
-        <div class="card-label ${p.tone === 'violet' ? 'alt' : ''}">${p.category}</div>
-        <div class="card-tags">
-          ${p.tags.map((t) => `<span class="tag ${p.tone === 'violet' ? 'alt' : ''}">${t}</span>`).join('')}
+    <div class="project-mobile-slide">
+      <header class="project-mobile-heading">
+        <p class="section-label">02 — Sélection</p>
+        <h2 class="section-title">Projets récents</h2>
+      </header>
+      <article class="project-card" data-tone="${p.tone}" onclick="openProject(${p.id})">
+        <div class="card-media">
+          <img src="${p.cover}" alt="${p.title}" loading="lazy" />
+          <div class="card-year">${p.year}</div>
         </div>
-      </div>
-    </article>
+        <div class="card-body">
+          <h3 class="card-title">${p.title}</h3>
+          <div class="card-label ${p.tone === 'violet' ? 'alt' : ''}">${p.category}</div>
+          <div class="card-tags">
+            ${p.tags.map((t) => `<span class="tag ${p.tone === 'violet' ? 'alt' : ''}">${t}</span>`).join('')}
+          </div>
+        </div>
+      </article>
+    </div>
   `).join('');
 }
 
