@@ -23,6 +23,41 @@
 .menu a:hover { color: var(--red); }
 .menu a:hover::after { width: 100%; }
 
+@media (max-width: 900px) {
+  .nav {
+    padding: 1rem 1.5rem;
+    gap: .75rem;
+  }
+  .menu {
+    gap: 1rem 1.25rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .menu a {
+    letter-spacing: .18em;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .brand {
+    width: 100%;
+    justify-content: center;
+  }
+  .menu {
+    width: 100%;
+    justify-content: center;
+    gap: .7rem .9rem;
+  }
+  .menu a {
+    font-size: .6rem;
+    letter-spacing: .12em;
+  }
+}
+
 /* Navigation de page détail */
 
 .detail-head {

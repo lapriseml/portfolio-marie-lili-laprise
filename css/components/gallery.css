@@ -44,6 +44,29 @@
 .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .gallery-thumb.active { opacity: 1; }
 
+@media (max-width: 900px) {
+  .gallery-wrap, .video-block, .related-wrap {
+    padding: 2.5rem 1.25rem 2rem;
+  }
+  .gallery-thumb {
+    aspect-ratio: 5 / 4;
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery-main {
+    aspect-ratio: 4 / 5;
+  }
+  .gallery-nav {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+  .gallery-count {
+    right: .7rem;
+    bottom: .7rem;
+  }
+}
+
 /* Vidéo */
 
 .video-wrap { position: relative; aspect-ratio: 16 / 9; background: #0d0914; }

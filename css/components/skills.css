@@ -125,13 +125,32 @@
 }
 .about-card:hover .about-title span {
   background: linear-gradient(135deg, var(--red), var(--violet));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .about-grid { display: grid; }
 .about-title { margin-bottom: 1rem; font-family: 'Cinzel', serif; font-size: var(--text-lg); transition: color .35s ease; }
-.about-title span { background: linear-gradient(135deg, var(--red), var(--violet)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: background .35s ease; }
+.about-title span { background: linear-gradient(135deg, var(--red), var(--violet)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: background .35s ease; }
 .about-text { margin-bottom: .75rem; color: var(--muted); line-height: 1.6; transition: color .35s ease; }
+
+@media (max-width: 1100px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .about-title {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+}
 
 @keyframes about-shine {
   0% { transform: translateX(-70%) skewX(-12deg); opacity: 0; }
