@@ -27,7 +27,7 @@
 
 <!-- Navigation principale -->
 
-<nav id="main-nav" class="nav">
+<nav id="main-nav" class="nav" aria-label="Navigation principale">
   <div class="brand">
     <svg width="28" height="28" viewBox="0 0 100 100">
       <defs><radialGradient id="nsg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a0505"/><stop offset="100%" stop-color="#06040a"/></radialGradient></defs>
@@ -76,16 +76,16 @@
 <!-- Page principale -->
 
 <div id="page-home" class="page active">
-  <section id="hero" class="panel">
+  <section id="hero" class="panel" aria-labelledby="hero-title">
     <div class="copy">
       <p class="eyebrow">// Développeuse web</p>
-      <h1 class="title big">
+      <h1 id="hero-title" class="title big">
         <span>Marie-Lili</span>
         <span class="accent">Laprise</span>
       </h1>
       <p class="lead">Je conçois et développe des expériences web soignées — de l'interface à l'infrastructure — avec une attention particulière à la performance et au détail.</p>
       <div class="actions">
-        <a href="#projects" class="btn primary"><svg width="12" height="12" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" fill="#fff"/><ellipse cx="10" cy="5" rx="2" ry="4" fill="#fff" opacity="0.85"/></svg>Voir mes projets</a>
+        <a href="#projects" class="btn primary">Voir mes projets</a>
         <a href="#contact" class="btn secondary">Me contacter →</a>
       </div>
     </div>
@@ -138,11 +138,11 @@
 
   <!-- Section projets (projects-grid rempli avec js) -->
 
-  <section id="projects" class="section">
+  <section id="projects" class="section" aria-labelledby="projects-title">
     <div class="section-head">
       <div>
         <p class="section-label">02 — Sélection</p>
-        <h2 class="section-title">Projets récents</h2>
+        <h2 id="projects-title" class="section-title">Projets récents</h2>
       </div>
     </div>
     <div class="projects-grid" id="projects-grid"></div>
@@ -150,10 +150,10 @@
 
   <!-- Section compétences + histoire personnelle -->
 
-  <section id="skills" class="section">
+  <section id="skills" class="section" aria-labelledby="skills-title">
     <div class="skills-mobile-slide">
       <p class="eyebrow">03 — Expertise</p>
-      <h2 class="title">Compétences</h2>
+      <h2 id="skills-title" class="title">Compétences</h2>
       <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-label">Développement</div>
@@ -207,20 +207,20 @@
 
   <!-- Section contact + footer -->
 
-  <section id="contact" class="section">
+  <section id="contact" class="section" aria-labelledby="contact-title">
     <div class="contact-card">
       <div class="glow"></div>
       <div class="contact-grid">
         <div class="contact-copy">
           <div class="contact-heading">
             <p class="eyebrow">04 — Contact</p>
-            <h2 class="contact-title"><span>Travaillons</span> <span class="contact-inline-word">ensemble</span></h2>
+            <h2 id="contact-title" class="contact-title"><span>Travaillons</span> <span class="contact-inline-word">ensemble</span></h2>
           </div>
           <div class="contact-links">
             <a href="mailto:marie.laprise@icloud.com" class="contact-link">
               <span class="cl-label">Email</span><span class="cl-val">marie.laprise@icloud.com</span>
             </a>
-            <a href="#" class="contact-link linkedin-link">
+            <a href="https://www.linkedin.com/in/marie-lili-laprise/" class="contact-link linkedin-link" target="_blank" rel="noopener noreferrer">
               <span class="cl-label">LinkedIn</span><span class="cl-val">linkedin.com/in/marie-lili-laprise</span>
             </a>
           </div>
@@ -276,7 +276,7 @@
   </div>
 
   <div class="detail-hero">
-    <img class="detail-cover" id="detail-cover" src="" alt=""/>
+    <img class="detail-cover" id="detail-cover" src="" alt="Image de couverture du projet"/>
     <div class="detail-overlay" id="detail-overlay"></div>
     <svg width="300" height="300" class="cc cc-detail">
       <circle cx="150" cy="150" r="52" fill="none" stroke-width="0.5" opacity="0.1"/>
@@ -284,7 +284,7 @@
       <circle cx="150" cy="150" r="96" fill="none" stroke-width="0.5" opacity="0.14"/>
     </svg>
     <div class="detail-copy">
-      <h1 class="detail-title" id="detail-title"></h1>
+      <h1 class="detail-title" id="detail-title">Détail du projet</h1>
       <p class="detail-cat" id="detail-cat"></p>
     </div>
   </div>
@@ -313,7 +313,7 @@
       <button class="gallery-nav gallery-prev" type="button" aria-label="Image précédente">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18L9 12L15 6"/></svg>
       </button>
-      <img id="gallery-img" src="" alt=""/>
+      <img id="gallery-img" src="" alt="Image de la galerie du projet"/>
       <button class="gallery-nav gallery-next" type="button" aria-label="Image suivante">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L15 12L9 6"/></svg>
       </button>
@@ -325,8 +325,8 @@
   <div class="video-block">
     <div class="mini-tag">// Vidéo</div>
     <div class="video-wrap" id="video-wrap">
-      <div class="video-poster" id="video-poster" onclick="loadVideo()">
-        <img class="video-thumb" id="video-thumb" src="" alt=""/>
+      <div class="video-poster" id="video-poster" role="button" tabindex="0" aria-label="Lire la vidéo" onclick="loadVideo()" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); loadVideo(); }">
+        <img class="video-thumb" id="video-thumb" src="" alt="Aperçu de la vidéo du projet"/>
         <div class="video-overlay"></div>
         <div class="video-play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#f0e8ff"><path d="M8 5v14l11-7z"/></svg></div>
       </div>

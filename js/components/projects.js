@@ -13,7 +13,7 @@ function buildProjectCards() {
         <p class="section-label">02 — Sélection</p>
         <h2 class="section-title">Projets récents</h2>
       </header>
-      <article class="project-card" data-tone="${p.tone}" onclick="openProject(${p.id})">
+      <article class="project-card" data-tone="${p.tone}" tabindex="0" role="button" aria-label="Voir le projet ${p.title}" onclick="openProject(${p.id})" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProject(${p.id}); }">
         <div class="card-media">
           <img src="${p.cover}" alt="${p.title}" loading="lazy" />
           <div class="card-year">${p.year}</div>
@@ -45,7 +45,7 @@ function fillDetail(id) {
   const coverEl = document.getElementById('detail-cover');
   if (coverEl) {
     coverEl.src = p.cover;
-    coverEl.alt = p.title;
+    coverEl.alt = `Image de couverture du projet ${p.title}`;
   }
 
   const overlayEl = document.getElementById('detail-overlay');
@@ -93,7 +93,10 @@ function fillDetail(id) {
 
   function setPhoto(index) {
     active = (index + p.gallery.length) % p.gallery.length;
-    if (mainImg) mainImg.src = p.gallery[active];
+    if (mainImg) {
+      mainImg.src = p.gallery[active];
+      mainImg.alt = `Image ${active + 1} de la galerie du projet ${p.title}`;
+    }
     if (counter) counter.textContent = `${active + 1} / ${p.gallery.length}`;
     if (thumbsEl) {
       thumbsEl.querySelectorAll('.gallery-thumb').forEach((thumb, i) => {
@@ -123,13 +126,19 @@ function fillDetail(id) {
 
   if (thumbsEl) {
     thumbsEl.innerHTML = p.gallery.map((photo, i) => `
-      <div class="gallery-thumb" data-i="${i}">
+      <div class="gallery-thumb" data-i="${i}" role="button" tabindex="0" aria-label="Afficher la photo ${i + 1}" >
         <img src="${photo}" alt="Photo ${i + 1}" loading="lazy" />
       </div>
     `).join('');
 
     thumbsEl.querySelectorAll('.gallery-thumb').forEach((thumb, i) => {
       thumb.addEventListener('click', () => setPhoto(i));
+      thumb.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          setPhoto(i);
+        }
+      });
     });
   }
 
@@ -144,14 +153,17 @@ function fillDetail(id) {
     videoBlock.style.display = '';
 
     const videoThumb = document.getElementById('video-thumb');
-    if (videoThumb) videoThumb.src = p.gallery[1] || p.cover;
+    if (videoThumb) {
+      videoThumb.src = p.gallery[1] || p.cover;
+      videoThumb.alt = `Aperçu de la vidéo du projet ${p.title}`;
+    }
 
     if (videoWrap) {
       const poster = document.getElementById('video-poster');
       if (!poster) {
         videoWrap.innerHTML = `
-          <div class="video-poster" id="video-poster" onclick="loadVideo()">
-            <img class="video-thumb" id="video-thumb" src="${p.gallery[1] || p.cover}" alt="" />
+          <div class="video-poster" id="video-poster" role="button" tabindex="0" aria-label="Lire la vidéo" onclick="loadVideo()" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); loadVideo(); }">
+            <img class="video-thumb" id="video-thumb" src="${p.gallery[1] || p.cover}" alt="Aperçu de la vidéo du projet ${p.title}" />
             <div class="video-overlay"></div>
             <div class="video-play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#f0e8ff"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
@@ -166,7 +178,7 @@ function fillDetail(id) {
   if (relatedGrid) {
     const others = getProjects().filter((x) => x.id !== id);
     relatedGrid.innerHTML = others.map((r) => `
-      <article class="related-card" data-tone="${r.tone}" onclick="openProject(${r.id})">
+      <article class="related-card" data-tone="${r.tone}" tabindex="0" role="button" aria-label="Voir le projet ${r.title}" onclick="openProject(${r.id})" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProject(${r.id}); }">
         <div class="related-image"><img src="${r.cover}" alt="${r.title}" loading="lazy" /></div>
         <div class="related-body">
           <div class="related-cat ${r.tone === 'violet' ? 'alt' : ''}">${r.category}</div>

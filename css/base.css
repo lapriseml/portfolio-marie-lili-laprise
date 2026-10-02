@@ -24,6 +24,13 @@ a, button { font: inherit; cursor: pointer; }
 img { display: block; max-width: 100%; }
 svg { display: block; }
 
+a:focus-visible,
+button:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 4px;
+}
+
 button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a {
   cursor: pointer;
 }
@@ -486,4 +493,3 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
   .nav { padding-left: calc((100vw - 1280px) / 2 + 4rem); padding-right: calc((100vw - 1280px) / 2 + 4rem); }
   .detail-head { padding-left: calc((100vw - 1280px) / 2 + 4rem); padding-right: calc((100vw - 1280px) / 2 + 4rem); }
 }
-
