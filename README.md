@@ -6,7 +6,8 @@
 
 ## marie.laprise@icloud.com
 
-## lien portfolio
+## lien portfolio:
+*https://lapriseml.github.io/portfolio-marie-lili-laprise/*
 
 ## Figma Make:
 *https://www.figma.com/make/GUspf9v7ROLf4DrG629hgN/Portfolio-for-Marie-Lili-Laprise?t=n2P5k64zutSYwMek-1*
