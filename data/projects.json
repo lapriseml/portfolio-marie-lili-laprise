@@ -27,9 +27,9 @@
     "title": "Os'scape",
     "category": "Jeu réalité virtuelle",
     "year": "2025",
-    "description": "<p>Jeu en réalité virtuelle développé avec <strong>Unity</strong>. Le projet consiste en une expérience immersive composée de trois niveaux prenant place dans différents labyrinthes, où le joueur doit explorer l’environnement afin de trouver un diamant permettant d’ouvrir un portail et de progresser vers le niveau suivant.</p><p>Le projet comprend la création complète des environnements, l’intégration de la réalité virtuelle, les déplacements et interactions du joueur, les collisions, le système de collecte du diamant ainsi que la gestion de la progression entre les niveaux. L’ensemble met en œuvre les différents outils nécessaires à la conception d’une expérience de jeu VR fonctionnelle et interactive.</p>",
-    "tags": ["Unity", "C#", "3D", "VR", "Game development"],
-    "cadre": "Scolaire",
+    "description": "<p>Jeu en réalité virtuelle développé avec <strong>Unity</strong>. Le projet consiste en une expérience immersive composée de trois niveaux prenant place dans différents labyrinthes, où le joueur doit explorer l’environnement afin de trouver un diamant permettant d’ouvrir un portail et de progresser vers le niveau suivant.</p><p>Le projet comprend la création complète des environnements, l’intégration de la réalité virtuelle, les déplacements et interactions du joueur, les collisions, le système de collecte du diamant ainsi que la gestion de la progression entre les niveaux. Le projet a aussi fait appel à <strong>TouchDesigner</strong>, à <strong>OSC</strong> et à un <strong>contrôleur MIDI</strong> pour la gestion des portes. L’ensemble met en œuvre les différents outils nécessaires à la conception d’une expérience de jeu VR fonctionnelle et interactive.</p>",
+    "tags": ["Unity", "C#", "3D", "VR", "TouchDesigner", "OSC", "MIDI", "Game development"],
+    "cadre": "Scolaire - projet d'équipe",
     "duration": "8 semaines",
     "cover": "assets/images/Os'scape1.webp",
     "gallery": [
