@@ -58,7 +58,7 @@
 .project-card:hover::after {
   opacity: 1;
 }
-.card-media { position: relative; height: 8.5rem; overflow: hidden; }
+.card-media { position: relative; height: 13.5rem; overflow: hidden; }
 .card-media img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .72; filter: saturate(.82) contrast(1.03); transition: opacity .55s, transform .65s, filter .55s; }
 .project-card:hover .card-media img { opacity: 1; transform: scale(1.1); filter: saturate(1.06) contrast(1.08); }
 .card-media::after {
@@ -86,18 +86,19 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 1rem 1.1rem 1.1rem;
+  justify-content: space-between;
+  padding: .45rem 1.1rem .7rem;
 }
 .card-label, .skill-label { font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
 .card-label.alt, .skill-label.alt { color: var(--violet); }
 .card-title {
   grid-row: 1;
-  margin: 0 0 .25rem;
+  margin: 0 0 .1rem;
   font-family: 'Cinzel', serif;
-  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+  font-size: clamp(1.35rem, 1.9vw, 2rem);
 }
 .card-label {
-  margin-bottom: .5rem;
+  margin-bottom: .15rem;
 }
 .project-card:hover .card-title,
 .project-card:hover .card-label,
@@ -112,7 +113,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: .3rem;
-  margin-top: auto;
+  margin-top: 0;
 }
 .tag {
   padding: .16rem .42rem; color: var(--muted); border: 1px solid rgba(192,57,43,.2); background: rgba(192,57,43,.04);
