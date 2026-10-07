@@ -4,7 +4,7 @@
 .section-icon { opacity: .55; }
 .project-mobile-slide { display: contents; }
 .project-mobile-heading { display: none; }
-.projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85rem; margin-top: 1.5rem; }
+.projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; margin-top: 1.5rem; }
 .project-card {
   --project-accent: var(--red);
   --project-accent-soft: rgba(192, 57, 43, .12);
