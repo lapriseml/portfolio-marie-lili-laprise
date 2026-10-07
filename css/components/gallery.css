@@ -87,7 +87,7 @@
 
 @media (max-width: 560px) {
   .gallery-main {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 9;
   }
   .gallery-nav {
     width: 2.35rem;

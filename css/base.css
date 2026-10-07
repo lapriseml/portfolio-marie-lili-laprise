@@ -478,6 +478,10 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
     text-align: center;
   }
   .detail-head { padding: 1.25rem 2rem; }
+  .detail-hero {
+    height: 48vh;
+    min-height: 18rem;
+  }
   .detail-copy { padding: 2rem; }
   .detail-meta { grid-template-columns: repeat(2, 1fr); padding: 2rem; }
   .detail-body { grid-template-columns: 1fr; padding: 2rem; }

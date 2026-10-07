@@ -35,9 +35,12 @@ function openProject(id) {
 function goBack() {
   showPage('home');
 
+  const home = document.getElementById('page-home');
   const projectsSection = document.getElementById('projects');
-  if (projectsSection) {
-    projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (home && projectsSection) {
+    requestAnimationFrame(() => {
+      home.scrollTo({ top: projectsSection.offsetTop, behavior: 'smooth' });
+    });
   }
 }
 

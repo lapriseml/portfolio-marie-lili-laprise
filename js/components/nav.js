@@ -10,7 +10,7 @@ function initNavScroll() {
 
   const mobileMenu = document.querySelector('.mobile-menu');
   const toggle = mobileMenu?.querySelector('.mobile-menu__toggle');
-  const links = mobileMenu?.querySelector('.mobile-menu__links');
+  const links = mobileMenu?.querySelector('.burger-menu_links');
   if (!toggle || !links) return;
 
   toggle.addEventListener('click', () => {

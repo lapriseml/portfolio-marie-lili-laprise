@@ -84,7 +84,7 @@
     box-shadow: 0 .4rem 1.2rem rgba(0, 0, 0, .3), 0 0 1rem rgba(192, 57, 43, .12);
   }
   .mobile-menu__toggle svg { width: 2rem; height: 2rem; }
-  .mobile-menu__links {
+  .burger-menu_links {
     display: flex;
     flex-direction: column;
     min-width: 11rem;
@@ -93,8 +93,8 @@
     border: 1px solid rgba(192, 57, 43, .35);
     box-shadow: 0 .6rem 1.5rem rgba(0, 0, 0, .35);
   }
-  .mobile-menu__links[hidden] { display: none; }
-  .mobile-menu__links a {
+  .burger-menu_links[hidden] { display: none; }
+  .burger-menu_links a {
     padding: .75rem .8rem;
     color: var(--muted);
     text-decoration: none;
@@ -103,8 +103,8 @@
     letter-spacing: .15em;
     text-transform: uppercase;
   }
-  .mobile-menu__links a:hover,
-  .mobile-menu__links a:focus-visible { color: var(--red); background: rgba(192, 57, 43, .1); }
+  .burger-menu_links a:hover,
+  .burger-menu_links a:focus-visible { color: var(--red); background: rgba(192, 57, 43, .1); }
 }
 
 /* Navigation de page détail */
