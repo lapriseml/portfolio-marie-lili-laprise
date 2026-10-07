@@ -9,10 +9,6 @@ function buildProjectCards() {
   const projects = getProjects();
   grid.innerHTML = projects.map((p) => `
     <div class="project-mobile-slide">
-      <header class="project-mobile-heading">
-        <p class="section-label">02 — Sélection</p>
-        <h2 class="section-title">Projets récents</h2>
-      </header>
       <article class="project-card" data-tone="${p.tone}" tabindex="0" role="button" aria-label="Voir le projet ${p.title}" onclick="openProject(${p.id})" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProject(${p.id}); }">
         <div class="card-media">
           <img src="${p.cover}" alt="${p.title}" loading="lazy" />

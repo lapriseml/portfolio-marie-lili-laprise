@@ -37,13 +37,14 @@ function initSectionScroll() {
   if (!home || !sections.length) return;
 
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  const projectCards = Array.from(document.querySelectorAll('#projects .project-card'));
-  const targets = isMobile
+  const skillSlide = document.querySelector('#skills .skills-mobile-slide');
+  const aboutSlide = document.querySelector('#skills .about-mobile-slide');
+  const targets = isMobile && skillSlide && aboutSlide
     ? [
         { element: sections[0], section: sections[0] },
-        ...projectCards.map((card) => ({ element: card, section: sections[1] })),
-        { element: document.querySelector('#skills .skills-mobile-slide'), section: sections[2] },
-        { element: document.querySelector('#skills .about-mobile-slide'), section: sections[2] },
+        { element: sections[1], section: sections[1] },
+        { element: skillSlide, section: sections[2] },
+        { element: aboutSlide, section: sections[2] },
         { element: sections[3], section: sections[3] }
       ]
     : sections.map((section) => ({ element: section, section }));
@@ -53,14 +54,11 @@ function initSectionScroll() {
   let animationId = 0;
   home.style.scrollSnapType = 'none';
   home.style.scrollBehavior = 'auto';
-  if (isMobile) home.style.touchAction = 'none';
 
   const setActiveSection = (index) => {
     currentIndex = index;
     sections.forEach((section) => section.classList.remove('active-section'));
-    targets.forEach((target, i) => {
-      target.element.classList.toggle('active-section', i === index);
-    });
+    targets.forEach((target, i) => target.element.classList.toggle('active-section', i === index));
     targets[index].section.classList.add('active-section');
   };
 
@@ -91,7 +89,7 @@ function initSectionScroll() {
     );
     const startTop = home.scrollTop;
     const startTime = performance.now();
-    const animationDuration = 650;
+    const animationDuration = 900;
     const currentAnimationId = ++animationId;
 
     isAnimating = true;
@@ -146,12 +144,7 @@ function initSectionScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
       const target = document.querySelector(link.getAttribute('href'));
-      const targetSectionIndex = sections.indexOf(target);
-      const targetIndex = isMobile && targetSectionIndex === 1
-        ? 1
-          : isMobile && targetSectionIndex === 2
-          ? targets.findIndex((item) => item.element === document.querySelector('#skills .skills-mobile-slide'))
-        : targets.findIndex((item) => item.section === target);
+      const targetIndex = targets.findIndex((item) => item.section === target);
       if (targetIndex === -1) return;
       event.preventDefault();
       scrollToSection(targetIndex);

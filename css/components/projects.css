@@ -217,50 +217,58 @@
   .section-head {
     display: none;
   }
+  #projects .section-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .35rem;
+    margin-bottom: 1rem;
+  }
   .related-grid {
     grid-template-columns: 1fr;
   }
   .projects-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 100dvh);
-    gap: 0;
-    margin-top: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: .7rem;
+    margin-top: .25rem;
   }
   .projects-grid .project-card {
     min-height: 0;
-    height: max-content;
-    align-self: center;
     display: flex;
     flex-direction: column;
   }
   .project-mobile-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: block;
   }
   .project-mobile-heading {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  .project-mobile-heading .section-label {
-    margin-bottom: .75rem;
-  }
-  .project-mobile-heading .section-title {
-    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    display: none;
   }
   .card-media {
-    height: 10rem;
+    height: 7rem;
   }
   .card-body {
-    padding: .9rem .95rem 1rem;
+    padding: .65rem .7rem .75rem;
   }
   .card-title {
-    font-size: clamp(1.2rem, 5vw, 1.45rem);
+    font-size: .95rem;
+    margin-bottom: .2rem;
+    line-height: 1.08;
+  }
+  .card-label {
+    margin-bottom: .3rem;
+    font-size: .56rem;
+  }
+  .card-tags {
+    gap: .22rem;
+  }
+  .tag {
+    font-size: .5rem;
+    padding: .1rem .3rem;
   }
   .card-media::after {
-    font-size: .68rem;
-    letter-spacing: .12em;
+    font-size: .58rem;
+    letter-spacing: .1em;
   }
 }
 

@@ -115,8 +115,8 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 }
 
 @media (max-width: 768px) {
-  #page-home { scroll-snap-type: none; }
-  #hero, .section { scroll-snap-align: none; scroll-snap-stop: normal; }
+  #page-home { scroll-snap-type: y mandatory; }
+  #hero, .section { scroll-snap-align: start; scroll-snap-stop: always; }
   .panel,
   .section,
   .gallery-wrap,
@@ -220,10 +220,6 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
   padding-bottom: 2rem;
   justify-content: center;
   scroll-margin-top: 5.75rem;
-}
-#projects {
-  padding-top: 0;
-  justify-content: center;
 }
 #contact {
   justify-content: center;
