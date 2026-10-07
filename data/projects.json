@@ -10,13 +10,13 @@
     "tags": ["HTML", "CSS", "JavaScript", "Phaser", "Game development"],
     "cadre": "Scolaire",
     "duration": "15 semaines",
-    "cover": "assets/images/HighFish1.png",
+    "cover": "assets/images/HighFish1.webp",
     "gallery": [
-      "assets/images/HighFish1.png",
-      "assets/images/HighFish2.png",
-      "assets/images/HighFish3.png",
-      "assets/images/HighFish4.png",
-      "assets/images/HighFish5.png"
+      "assets/images/HighFish1.webp",
+      "assets/images/HighFish2.webp",
+      "assets/images/HighFish3.webp",
+      "assets/images/HighFish4.webp",
+      "assets/images/HighFish5.webp"
     ],
     "videoId": "dQw4w9WgXcQ"
   },
@@ -31,13 +31,13 @@
     "tags": ["Unity", "C#", "3D", "VR", "Game development"],
     "cadre": "Scolaire",
     "duration": "8 semaines",
-    "cover": "assets/images/Os'scape1.png",
+    "cover": "assets/images/Os'scape1.webp",
     "gallery": [
-      "assets/images/Os'scape1.png",
-      "assets/images/Os'scape2.png",
-      "assets/images/Os'scape3.png",
-      "assets/images/Os'scape4.png",
-      "assets/images/Os'scape5.png"
+      "assets/images/Os'scape1.webp",
+      "assets/images/Os'scape2.webp",
+      "assets/images/Os'scape3.webp",
+      "assets/images/Os'scape4.webp",
+      "assets/images/Os'scape5.webp"
     ],
     "videoId": "dQw4w9WgXcQ"
   },
@@ -52,13 +52,13 @@
     "tags": ["Unity", "C#", "3D", "Game development"],
     "cadre": "Scolaire",
     "duration": "2 semaines",
-    "cover": "assets/images/HighStar1.png",
+    "cover": "assets/images/HighStar1.webp",
     "gallery": [
-      "assets/images/HighStar1.png",
-      "assets/images/HighStar2.png",
-      "assets/images/HighStar3.png",
-      "assets/images/HighStar4.png",
-      "assets/images/HighStar5.png"
+      "assets/images/HighStar1.webp",
+      "assets/images/HighStar2.webp",
+      "assets/images/HighStar3.webp",
+      "assets/images/HighStar4.webp",
+      "assets/images/HighStar5.webp"
     ],
     "videoId": "dQw4w9WgXcQ"
   },
@@ -73,13 +73,13 @@
     "tags": ["Maya", "Modélisation 3D", "Animation 3D"],
     "cadre": "Scolaire",
     "duration": "2 semaines",
-    "cover": "assets/images/Tatooine1.png",
+    "cover": "assets/images/Tatooine1.webp",
     "gallery": [
-      "assets/images/Tatooine1.png",
-      "assets/images/Tatooine2.png",
-      "assets/images/Tatooine3.png",
-      "assets/images/Tatooine4.png",
-      "assets/images/Tatooine5.png"
+      "assets/images/Tatooine1.webp",
+      "assets/images/Tatooine2.webp",
+      "assets/images/Tatooine3.webp",
+      "assets/images/Tatooine4.webp",
+      "assets/images/Tatooine5.webp"
     ],
     "videoId": "assets/images/tatooine.mp4"
   }

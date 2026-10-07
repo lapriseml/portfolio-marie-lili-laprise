@@ -308,7 +308,7 @@
       <button class="gallery-nav gallery-prev" type="button" aria-label="Image précédente">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18L9 12L15 6"/></svg>
       </button>
-      <img id="gallery-img" src="" alt="Image de la galerie du projet"/>
+      <img id="gallery-img" src="" alt="Image de la galerie du projet" loading="lazy"/>
       <button class="gallery-nav gallery-next" type="button" aria-label="Image suivante">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L15 12L9 6"/></svg>
       </button>
@@ -321,7 +321,7 @@
     <div class="mini-tag">// Vidéo</div>
     <div class="video-wrap" id="video-wrap">
       <div class="video-poster" id="video-poster" role="button" tabindex="0" aria-label="Lire la vidéo" onclick="loadVideo()" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); loadVideo(); }">
-        <img class="video-thumb" id="video-thumb" src="" alt="Aperçu de la vidéo du projet"/>
+        <img class="video-thumb" id="video-thumb" src="" alt="Aperçu de la vidéo du projet" loading="lazy"/>
         <div class="video-overlay"></div>
         <div class="video-play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#f0e8ff"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
