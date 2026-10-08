@@ -1,9 +1,12 @@
-/* Réinitialisation base et fond de page, masquage de la scrollbar */
+/* Réinitialisation globale, fond de page et masquage de la scrollbar. */
 
+/* Harmonise le modèle de boîte et retire les marges natives. */
 * { box-sizing: border-box; margin: 0; padding: 0; }
+/* Empêche le débordement horizontal et masque les barres de défilement. */
 html, body { width: 100%; min-height: 100%; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 body {
+  /* Typographie, couleurs et décor principal de toute l'application. */
   font-family: 'Outfit', sans-serif;
   font-size: var(--text-md);
   color: var(--fg);
@@ -18,7 +21,7 @@ body {
   -moz-user-select: none;
 }
 
-/* Styles liens, boutons, images, SVG */
+/* Éléments HTML communs : interactions, images, SVG et focus clavier. */
 
 a, button { font: inherit; cursor: pointer; }
 img { display: block; max-width: 100%; }
@@ -36,10 +39,11 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 }
 
 .skill-card, .orb, .orb-wrap {
+  /* Ces éléments sont visuels et ne sont pas des liens directs. */
   cursor: default;
 }
 
-/* Page d'accueil */
+/* Page d'accueil : défilement par sections et transitions de visibilité. */
 
 #page-home {
   height: 100dvh;
@@ -58,6 +62,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 #hero:not(.active-section), .section:not(.active-section) { opacity: .88; }
 
 @media (max-width: 1100px) {
+  /* Passe les colonnes principales en une colonne sur tablette. */
   .panel {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -86,6 +91,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 }
 
 @media (max-width: 900px) {
+  /* Recentre les contenus et compacte le pied de page. */
   .copy {
     max-width: 100%;
     text-align: center;
@@ -115,6 +121,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 }
 
 @media (max-width: 768px) {
+  /* Réduit les marges latérales et empile les grilles sur mobile. */
   #page-home { scroll-snap-type: y mandatory; }
   #hero, .section { scroll-snap-align: start; scroll-snap-stop: always; }
   .panel,
@@ -139,6 +146,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 }
 
 @media (max-width: 560px) {
+  /* Ajustements finaux pour les très petits écrans. */
   .panel { padding-top: 6.25rem; }
   .section { padding-top: 2.5rem; }
   .actions {
@@ -176,12 +184,12 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
   }
 }
 
-/* Une seule page visible à la fois */
+/* Navigation entre vues : une seule page est visible à la fois. */
 
 .page { display: none; }
 .page.active { display: block; max-width: 1280px; margin: 0 auto; }
 
-/* Styles labels, sous-titres, tags, légendes */
+/* Styles communs pour les labels, sous-titres, tags et légendes. */
 
 .eyebrow, .section-label, .meta-label, .mini-tag {
   font-family: 'JetBrains Mono', monospace;
@@ -202,7 +210,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 .title.big span { display: block; }
 .title .accent { background: linear-gradient(135deg, var(--red), var(--violet)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-/* Mise en page hero, sections, cartes */
+/* Mise en page générale du hero, des sections et des cartes de contact. */
 
 .panel { min-height: 100dvh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding: 7rem 4rem 3rem; position: relative; overflow: hidden; }
 .section {
@@ -226,6 +234,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
   align-items: center;
 }
 #contact .contact-card {
+  /* Carte de contact centrée avec surface, bordure et halo. */
   position: relative;
   width: min(100%, 980px);
   margin: 0 auto;
@@ -241,6 +250,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 }
 #contact .contact-card::before,
 #contact .contact-card::after {
+  /* Calques décoratifs masqués jusqu'au survol de la carte. */
   content: '';
   position: absolute;
   inset: 0;
@@ -255,6 +265,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
   background: radial-gradient(circle at 18% 20%, rgba(255, 255, 255, .14), transparent 28%), radial-gradient(circle at 82% 18%, rgba(255, 255, 255, .1), transparent 22%), radial-gradient(circle at 10% 82%, rgba(255, 255, 255, .1), transparent 24%), radial-gradient(circle at 86% 78%, rgba(255, 255, 255, .12), transparent 24%);
 }
 #contact .contact-card:hover {
+  /* Accentue la carte de contact au survol. */
   transform: translateY(-.35rem) scale(1.02);
   border-color: rgba(124, 58, 237, .45);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2), 0 0 1.8rem rgba(124, 58, 237, .18), 0 0 2.5rem rgba(124, 58, 237, .12);
@@ -297,6 +308,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 .btn.secondary { color: var(--muted); font-size: var(--text-md); }
 
 .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: center; }
+/* Organisation verticale du texte et des coordonnées. */
 .contact-copy {
   display: flex;
   flex-direction: column;
@@ -334,6 +346,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
   gap: 0.25rem;
 }
 .contact-link {
+  /* Chaque moyen de contact est séparé par une ligne discrète. */
   display: flex; align-items: center; gap: 6rem; padding: .85rem 0; border-bottom: 1px solid rgba(139, 26, 26, .2); text-decoration: none; white-space: nowrap;
 }
 .linkedin-link { white-space: nowrap; }
@@ -341,6 +354,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 .cl-label { width: 5.25rem; flex-shrink: 0; color: var(--muted); font-family: 'JetBrains Mono', monospace; letter-spacing: .2em; text-transform: uppercase; }
 .cl-val { color: var(--fg); }
 
+/* Pied de page général et signature animée. */
 footer { margin-top: 7rem; padding-top: 1.25rem; }
 .page footer { padding: 1.5rem 4rem 2rem 3.5rem; margin-top: 0; }
 .page .footer-brand { margin-left: 0; }
@@ -365,12 +379,14 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
 .footer-copy { font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
 
 @keyframes footer-wave {
+  /* Fait onduler les caractères de la signature les uns après les autres. */
   0%, 100% { transform: translateY(0) scale(1); }
   30% { transform: translateY(-4px) scale(1.02); }
   60% { transform: translateY(2px) scale(.99); }
 }
 
 .glow {
+  /* Halo central décoratif placé derrière le contenu. */
   position: absolute; left: 50%; top: 50%; width: clamp(30rem, 55vw, 50rem); height: clamp(15rem, 28vw, 25rem);
   transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(ellipse, var(--violet), var(--red) 50%, transparent 70%); opacity: .07; pointer-events: none;
 }
@@ -383,6 +399,7 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
   z-index: 1;
 }
 
+/* En-tête des pages de détail avec image, voile et titre superposé. */
 .detail-hero { position: relative; height: 65vh; min-height: 25rem; background: #0d0914; overflow: hidden; }
 .detail-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .4; filter: saturate(.7) contrast(1.1); }
 .detail-overlay { position: absolute; inset: 0; }
@@ -413,6 +430,7 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
   text-transform: uppercase;
 }
 
+/* Métadonnées et contenu détaillé du projet. */
 .detail-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding: 2rem 4rem; border-bottom: 1px solid var(--line); }
 .meta-label { font-size: var(--text-xs); margin-bottom: .25rem; }
 .meta-value { font-family: 'Cinzel', serif; }
@@ -424,10 +442,24 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
 .detail-text { color: var(--muted); line-height: 1.65; }
 .detail-card.result .detail-text { color: var(--fg); }
 .detail-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+/* Lien de lancement du jeu affiché uniquement pour les projets qui en possèdent un. */
+.detail-play { margin-bottom: 2rem; }
+.detail-play-link {
+  display: inline-block;
+  color: var(--fg);
+  text-decoration: none;
+  transition: color .3s ease;
+}
+.detail-play-link:hover,
+.detail-play-link:focus-visible {
+  color: var(--red);
+}
 
+/* Calque de transition plein écran activé par le script de navigation. */
 #hyperspace { position: fixed; inset: 0; z-index: 9999; pointer-events: none; display: none; }
 
 @media (max-width: 768px) {
+  /* Mise en page des pages de détail et du menu flottant sur mobile. */
   .nav { padding: 1.25rem 2rem; }
   .menu { display: none; }
   .panel { grid-template-columns: 1fr; padding: 7rem 2rem 3rem; }
@@ -490,6 +522,7 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
 }
 
 @media (min-width: 1350px) {
+  /* Aligne la navigation sur la largeur maximale du contenu. */
   .nav { padding-left: calc((100vw - 1280px) / 2 + 4rem); padding-right: calc((100vw - 1280px) / 2 + 4rem); }
   .detail-head { padding-left: calc((100vw - 1280px) / 2 + 4rem); padding-right: calc((100vw - 1280px) / 2 + 4rem); }
 }

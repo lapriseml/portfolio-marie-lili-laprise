@@ -1,11 +1,13 @@
-/* Section projets */
+/* Section projets : cartes principales, cartes associées et effets d'interaction. */
 
+/* En-tête de section et variante mobile de la présentation. */
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .section-icon { opacity: .55; }
 .project-mobile-slide { display: contents; }
 .project-mobile-heading { display: none; }
 .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; margin-top: 1.5rem; align-items: stretch; }
 .project-card {
+  /* Carte principale entièrement cliquable et extensible en hauteur. */
   --project-accent: var(--red);
   --project-accent-soft: rgba(192, 57, 43, .12);
   --project-accent-glow: rgba(192, 57, 43, .2);
@@ -24,12 +26,14 @@
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease, filter .35s ease;
 }
 .project-card[data-tone="violet"] {
+  /* Remplace les accents rouges par une palette violette. */
   --project-accent: var(--violet);
   --project-accent-soft: rgba(124, 58, 237, .12);
   --project-accent-glow: rgba(124, 58, 237, .2);
   --project-border-soft: rgba(124, 58, 237, .45);
 }
 .project-card::before {
+  /* Halo radial affiché au survol de la carte. */
   content: '';
   position: absolute;
   inset: 0;
@@ -39,6 +43,7 @@
   z-index: 1;
 }
 .project-card::after {
+  /* Voile dégradé ajoutant de la profondeur sur la carte. */
   content: '';
   position: absolute;
   inset: 0;
@@ -48,6 +53,7 @@
   z-index: 1;
 }
 .project-card:hover {
+  /* Soulève, incline et illumine la carte active. */
   border-color: var(--project-border-soft);
   box-shadow: 0 .8rem 1.8rem rgba(0, 0, 0, .18), 0 0 28px var(--project-accent-glow), 0 0 48px rgba(124, 58, 237, .08);
   transform: translateY(-.45rem) scale(1.015) rotate(-.45deg);
@@ -59,9 +65,11 @@
   opacity: 1;
 }
 .card-media { position: relative; height: 13.5rem; overflow: hidden; }
+/* Image de projet zoomée et éclaircie au survol. */
 .card-media img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .72; filter: saturate(.82) contrast(1.03); transition: opacity .55s, transform .65s, filter .55s; }
 .project-card:hover .card-media img { opacity: 1; transform: scale(1.1); filter: saturate(1.06) contrast(1.08); }
 .card-media::after {
+  /* Invite visuelle affichée au centre de l'image au survol. */
   content: 'Voir le projet'; position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; opacity: 0; transition: opacity .35s ease, transform .35s ease, text-shadow .35s ease;
   font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--project-accent);
   background: linear-gradient(135deg, rgba(6, 4, 10, .08), var(--project-accent-soft), rgba(124, 58, 237, .16));
@@ -74,6 +82,7 @@
   box-shadow: inset 0 0 50px rgba(255, 255, 255, .04);
 }
 .card-year {
+  /* Année du projet superposée dans le coin de l'image. */
   position: absolute; top: 1rem; left: 1rem; z-index: 1; padding: .25rem .6rem;
   background: rgba(6, 4, 10, .82); border: 1px solid rgba(139, 26, 26, .2); color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); transition: transform .35s ease, color .35s ease, border-color .35s ease;
 }
@@ -83,6 +92,7 @@
   border-color: rgba(192, 57, 43, .45);
 }
 .card-body {
+  /* Contenu textuel distribué entre le titre et les étiquettes. */
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -90,6 +100,7 @@
   padding: .45rem 1.1rem .7rem;
 }
 .card-label, .skill-label { font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+/* Variante d'accent violet pour les labels et étiquettes. */
 .card-label.alt, .skill-label.alt { color: var(--violet); }
 .card-title {
   grid-row: 1;
@@ -110,6 +121,7 @@
   color: var(--project-accent);
 }
 .card-tags {
+  /* Étiquettes qui passent à la ligne lorsque l'espace manque. */
   display: flex;
   flex-wrap: wrap;
   gap: .3rem;
@@ -130,10 +142,11 @@
 }
 .tag.alt { border-color: rgba(124,58,237,.2); background: rgba(124,58,237,.04); }
 
-/* Autres projets */
+/* Autres projets : cartes compactes affichées sur les pages de détail. */
 
 .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
 .related-card {
+  /* Carte secondaire réutilisant les mêmes accents que les projets principaux. */
   --project-accent: var(--red);
   --project-accent-soft: rgba(192, 57, 43, .12);
   --project-accent-glow: rgba(192, 57, 43, .2);
@@ -147,12 +160,14 @@
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease, filter .35s ease;
 }
 .related-card[data-tone="violet"] {
+  /* Variante violette d'une carte secondaire. */
   --project-accent: var(--violet);
   --project-accent-soft: rgba(124, 58, 237, .12);
   --project-accent-glow: rgba(124, 58, 237, .2);
   --project-border-soft: rgba(124, 58, 237, .45);
 }
 .related-card::before {
+  /* Halo décoratif de la carte secondaire. */
   content: '';
   position: absolute;
   inset: 0;
@@ -171,6 +186,7 @@
   z-index: 1;
 }
 .related-card:hover {
+  /* Mise en avant plus légère que celle des cartes principales. */
   border-color: var(--project-border-soft);
   transform: translateY(-.25rem) scale(1.01);
   box-shadow: 0 .8rem 1.8rem rgba(0, 0, 0, .18), 0 0 28px var(--project-accent-glow), 0 0 48px rgba(124, 58, 237, .08);
@@ -180,6 +196,7 @@
   opacity: 1;
 }
 .related-image { position: relative; height: 8rem; overflow: hidden; }
+/* Image secondaire et son zoom au survol. */
 .related-image img { width: 100%; height: 100%; object-fit: cover; opacity: .64; filter: saturate(.7); transition: transform .55s ease, opacity .45s ease, filter .45s ease; }
 .related-card:hover .related-image img { opacity: .95; transform: scale(1.08); filter: saturate(1.02); }
 .related-image::after {
@@ -213,12 +230,14 @@
 .related-title { font-family: 'Cinzel', serif; transition: color .3s ease; }
 
 @media (max-width: 1100px) {
+  /* Réduit la grille des projets associés à deux colonnes. */
   .related-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 768px) {
+  /* Compacte les cartes et conserve deux colonnes pour les projets mobiles. */
   .section-head {
     display: none;
   }
@@ -280,6 +299,7 @@
 }
 
 @media (hover: none) {
+  /* Désactive les transformations de survol sur les écrans tactiles. */
   .project-card:hover,
   .related-card:hover {
     transform: none;
@@ -288,12 +308,14 @@
 }
 
 @keyframes project-sheen {
+  /* Animation de reflet disponible pour les effets de projet. */
   0% { transform: translateX(-8%); opacity: .55; }
   50% { opacity: .9; }
   100% { transform: translateX(8%); opacity: .55; }
 }
 
 @keyframes project-sparkle {
+  /* Variation douce de l'opacité et de l'échelle des particules. */
   0%, 100% { opacity: .15; transform: scale(1); }
   50% { opacity: .45; transform: scale(1.02); }
 }

@@ -73,6 +73,14 @@ function fillDetail(id) {
   const detailDescEl = document.getElementById('detail-desc');
   if (detailDescEl) detailDescEl.innerHTML = p.description;
 
+  const playEl = document.getElementById('detail-play');
+  const playLinkEl = document.getElementById('detail-play-link');
+  if (playEl && playLinkEl) {
+    const hasGameLink = Boolean(p.gameUrl);
+    playEl.hidden = !hasGameLink;
+    if (hasGameLink) playLinkEl.href = p.gameUrl;
+  }
+
   setText('detail-tech-label', '// Technologies');
 
   const tagsEl = document.getElementById('detail-tags');
@@ -101,14 +109,10 @@ function fillDetail(id) {
       });
     }
     if (prevBtn) {
-      prevBtn.style.borderColor = p.accent;
-      prevBtn.style.boxShadow = `inset 0 0 0 1px ${p.accent}66, 0 0 20px ${p.accent}25`;
-      prevBtn.style.background = `linear-gradient(135deg, ${p.accent}25, rgba(255,255,255,.06))`;
+      prevBtn.style.color = p.accent;
     }
     if (nextBtn) {
-      nextBtn.style.borderColor = p.accent;
-      nextBtn.style.boxShadow = `inset 0 0 0 1px ${p.accent}66, 0 0 20px ${p.accent}25`;
-      nextBtn.style.background = `linear-gradient(135deg, ${p.accent}25, rgba(255,255,255,.06))`;
+      nextBtn.style.color = p.accent;
     }
   }
 

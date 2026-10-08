@@ -1,13 +1,17 @@
-/* Couleurs, espacements, tailles texte. */
+/* Variables globales : palette, surfaces et échelle typographique. */
 
 :root {
+  /* Fond général et couleur de surface des cartes. */
   --bg: linear-gradient(135deg, #210b0a 0%, #3a1220 18%, #180f1f 38%, #09070d 62%, #030207 100%);
   --panel: #0d0914;
+  /* Couleurs principales du texte, du texte secondaire et des séparateurs. */
   --fg: #f0e8ff;
   --muted: #8a79a0;
   --line: rgba(139, 26, 26, 0.18);
+  /* Couleurs d'accent utilisées par les composants et leurs interactions. */
   --red: #c0392b;
   --violet: #7c3aed;
+  /* Tailles de texte fluides, adaptées à la largeur de l'écran. */
   --text-xs: clamp(11px, 1.2vw, 16px);
   --text-sm: clamp(12px, 1.5vw, 18px);
   --text-md: clamp(15px, 1.7vw, 22px);

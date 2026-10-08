@@ -6,6 +6,7 @@
     "title": "HighFish",
     "category": "Jeu vidéo",
     "year": "2024",
+    "gameUrl": "https://lapriseml.itch.io/highfish",
     "description": "<p>Jeu de pêche en pixel art développé avec <strong>Phaser et JavaScript</strong>. Le joueur doit atteindre un nombre précis de poissons pêchés avant la fin du temps, tout en évitant les obstacles et en récupérant des coffres offrant du temps supplémentaire.</p><p>Le projet comprend <strong>trois niveaux à difficulté progressive</strong> et met en œuvre différentes mécaniques de gameplay, telles que la pêche, les déplacements, les collisions, la gestion du temps, les bonus et la progression entre les niveaux. L'ensemble est accompagné d'une direction visuelle et sonore inspirée des jeux d'arcade rétro.</p>",
     "tags": ["HTML", "CSS", "JavaScript", "Phaser", "Game development"],
     "cadre": "Scolaire",

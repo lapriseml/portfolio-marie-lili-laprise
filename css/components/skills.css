@@ -1,9 +1,12 @@
-/* Section compétences */
+/* Section compétences : cartes, effets lumineux et adaptation mobile. */
 
+/* Les wrappers deviennent transparents pour laisser la mise en page parente gérer les sections. */
 .skills-mobile-slide { display: contents; }
 .about-mobile-slide { display: contents; }
+/* Grille fluide des cartes de compétences. */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1rem; margin-top: 2rem; }
 .skill-card {
+  /* Carte contenant une catégorie de compétences. */
   position: relative;
   background: var(--panel);
   border: 2px solid rgba(139, 26, 26, .15);
@@ -17,6 +20,7 @@
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
 }
 .skill-card::before {
+  /* Bande lumineuse qui traverse la carte au survol. */
   content: '';
   position: absolute;
   inset: -35% -15%;
@@ -26,6 +30,7 @@
   pointer-events: none;
 }
 .skill-card::after {
+  /* Halo coloré placé sous le contenu de la carte. */
   content: '';
   position: absolute;
   left: 12%;
@@ -42,11 +47,13 @@
   background: radial-gradient(circle, rgba(124, 58, 237, .2) 0%, rgba(124, 58, 237, .08) 25%, transparent 72%);
 }
 .skill-card:hover {
+  /* Soulève et agrandit légèrement la carte active. */
   transform: translateY(-.4rem) scale(1.03);
   border-color: rgba(192, 57, 43, .45);
   box-shadow: 0 0 0 1px rgba(192, 57, 43, .06), 0 1rem 2rem rgba(0, 0, 0, .22), 0 0 2.5rem rgba(192, 57, 43, .18);
 }
 .skill-card:hover::before {
+  /* Lance une seule traversée du reflet, puis le rend transparent. */
   opacity: 1;
   animation: skill-shine 1.15s ease forwards;
 }
@@ -74,6 +81,7 @@
   box-shadow: 0 0 .6rem rgba(124, 58, 237, .55);
 }
 .skill-list { list-style: none; display: flex; flex-direction: column; gap: .65rem; margin: 0; padding: 0; }
+/* Chaque compétence est alignée avec son indicateur coloré. */
 .skill-list li { display: flex; align-items: center; gap: .9rem; color: var(--muted); }
 .skill-list .dot {
   position: static; transform: none; width: .375rem; height: .375rem; border-radius: 50%; background: var(--red); flex-shrink: 0; display: inline-block;
@@ -81,13 +89,15 @@
 .dot.alt { background: var(--violet); }
 
 @keyframes skill-shine {
+  /* Déplace le reflet de gauche à droite sans le laisser visible à la fin. */
   0% { transform: translateX(-70%) rotate(8deg); }
   100% { transform: translateX(70%) rotate(8deg); opacity: 0; }
 }
 
-/* Section histoire personnelle */
+/* Section histoire personnelle : carte, halo et interactions. */
 
 .about-card {
+  /* Carte éditoriale présentant le parcours personnel. */
   position: relative;
   background: var(--panel);
   border: 2px solid rgba(124,58,237,.2);
@@ -100,6 +110,7 @@
 }
 .about-card::before,
 .about-card::after {
+  /* Calques décoratifs masqués jusqu'au survol. */
   content: '';
   position: absolute;
   inset: 0;
@@ -114,6 +125,7 @@
   background: radial-gradient(circle at 18% 20%, rgba(255, 255, 255, .14), transparent 28%), radial-gradient(circle at 82% 18%, rgba(255, 255, 255, .1), transparent 22%), radial-gradient(circle at 10% 82%, rgba(255, 255, 255, .1), transparent 24%), radial-gradient(circle at 86% 78%, rgba(255, 255, 255, .12), transparent 24%);
 }
 .about-card:hover {
+  /* Mise en avant de la carte au survol. */
   transform: translateY(-.35rem) scale(1.02);
   border-color: rgba(124, 58, 237, .45);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2), 0 0 1.8rem rgba(124, 58, 237, .18), 0 0 2.5rem rgba(124, 58, 237, .12);
@@ -143,6 +155,7 @@
 .about-text { margin-bottom: .75rem; color: var(--muted); line-height: 1.6; transition: color .35s ease; }
 
 @media (max-width: 768px) {
+  /* Sur mobile, chaque partie occupe une hauteur d'écran distincte. */
   #skills {
     min-height: 0;
     padding-top: 0;
@@ -156,6 +169,7 @@
     justify-content: center;
   }
   .skills-grid {
+    /* Supprime le conteneur visuel partagé entre les deux cartes. */
     background: transparent;
     border: 0;
     padding: 0;
@@ -164,6 +178,7 @@
     align-content: center;
   }
   .skills-grid .skill-card {
+    /* Conserve un fond et une bordure propres à chaque carte. */
     background: var(--panel);
     border: 2px solid rgba(139, 26, 26, .15);
     padding: 1.25rem;
@@ -187,18 +202,21 @@
 }
 
 @media (max-width: 900px) {
+  /* Empile les cartes avant qu'elles ne deviennent trop étroites. */
   .skills-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @keyframes about-shine {
+  /* Fait glisser le reflet de la carte personnelle en boucle au survol. */
   0% { transform: translateX(-70%) skewX(-12deg); opacity: 0; }
   18% { opacity: .85; }
   100% { transform: translateX(70%) skewX(-12deg); opacity: 0; }
 }
 
 @keyframes about-glow {
+  /* Fait varier doucement l'intensité du halo décoratif. */
   0%, 100% { opacity: .22; }
   50% { opacity: .5; }
 }
