@@ -55,6 +55,10 @@
 - **Prompt:** *je veux ajouter une version mobile, dans cette version, chaque carte de projet agira comme une section individuelle avec un scroll qui change de projet, même chose pour les cartes compétences et histoire personnelle, ainsi qu'un menu burger qui remplace la barre nav*
 - **Résultat:** *ajout de média querries pour la version mobile, modifications des css pour que chaque carte agisse comme une section indépendante et ajout d'un menu burger pour la navigation*
 
+### 2026-10-07
+- **Outil:** *Copilot (VSCode)*
+- **Prompt:** *redimensionne les images de la galerie de la version mobile pour les mettre de la même dimension que la vidéo pour éviter de les rogner*
+- **Résultat:** *redimension des images dans le css pour copier les dimensions de la vidéo*
 
 ### 2026--
 - **Outil:** *Copilot (VSCode)*
