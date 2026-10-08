@@ -20,7 +20,7 @@
   content: '';
   position: absolute;
   inset: -35% -15%;
-  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .18) 48%, transparent 60%);
+  background: linear-gradient(115deg, transparent 28%, rgba(255, 255, 255, .24) 46%, rgba(255, 255, 255, .12) 54%, transparent 72%);
   transform: translateX(-70%) rotate(8deg);
   opacity: 0;
   pointer-events: none;
@@ -82,7 +82,7 @@
 
 @keyframes skill-shine {
   0% { transform: translateX(-70%) rotate(8deg); }
-  100% { transform: translateX(70%) rotate(8deg); }
+  100% { transform: translateX(70%) rotate(8deg); opacity: 0; }
 }
 
 /* Section histoire personnelle */
@@ -156,17 +156,17 @@
     justify-content: center;
   }
   .skills-grid {
-    background: var(--panel);
-    border: 2px solid rgba(139, 26, 26, .15);
-    padding: 1.5rem 1.25rem;
+    background: transparent;
+    border: 0;
+    padding: 0;
     margin-top: 1.5rem;
     gap: .75rem;
     align-content: center;
   }
   .skills-grid .skill-card {
-    background: transparent;
-    border: 0;
-    padding: 0;
+    background: var(--panel);
+    border: 2px solid rgba(139, 26, 26, .15);
+    padding: 1.25rem;
     gap: .75rem;
   }
   .about-card {
@@ -183,6 +183,12 @@
   }
   .about-title {
     font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
 
