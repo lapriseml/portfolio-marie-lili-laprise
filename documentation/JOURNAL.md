@@ -60,12 +60,6 @@
 - **Prompt:** *redimensionne les images de la galerie de la version mobile pour les mettre de la même dimension que la vidéo pour éviter de les rogner*
 - **Résultat:** *redimension des images dans le css pour copier les dimensions de la vidéo*
 
-### 2026--
-- **Outil:** *Copilot (VSCode)*
-- **Prompt:** **
-- **Résultat:** **
-
-
 
 ## Bloc de cours
 
@@ -88,4 +82,26 @@
 
 **5.Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?**
 
-*Oui, pour le design principal de ma page, pour mes logos svg sharingan/rinnegan, mes animations hyperspace et la planification de mon JSON. Il m'a appris comment fonctionnaient les fetch et comment faire des animations gsap svg*
+*Oui, pour mes logos svg sharingan/rinnegan, mes animations hyperspace et la planification de mon JSON. Il m'a appris comment fonctionnaient les fetch et comment faire des animations gsap svg*
+
+
+### 2026-10-09
+**1. Qu'est-ce que j'ai accompli depuis le dernier bloc?**
+
+*J'ai optimisé mes médias, apporté plusieurs corrections sur erreurs WAVE (missing alt/contrast) et ajouté des medias querries pour la version mobile*
+
+**2. Quelle a été ma principale difficulté et comment je l'ai surmontée?**
+
+*De rendre le site responsive sur mobile car je devais changer le format de plusieurs choses, j'ai surmonté en essayant plusieurs options d'organisation de mon site pour trouver la meilleure*
+
+**3. Qu'est-ce que j'ai appris que je ne savais pas avant?**
+
+*J'ai appris à utiliser optimisé des fichiers et utiliser le site WAVE pour cibler des problèmes sur mon site*
+
+**4. Quelle est ma prochaine étape concrète?**
+
+*La remise finale*
+
+**5.Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?**
+
+*Oui, pour les media querries, il m'a appris comment faire en sorte que chaque élément soit toujours visible, peu importe la taille de l'écran*
