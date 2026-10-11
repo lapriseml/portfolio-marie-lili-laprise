@@ -67,7 +67,8 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 7rem 2.75rem 2.5rem;
-    min-height: auto;
+    height: auto;
+    min-height: 100dvh;
   }
   .section {
     padding: 3rem 2.75rem 2rem;
@@ -134,6 +135,10 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
   .detail-body {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+  .panel,
+  .section {
+    height: auto;
   }
   .projects-grid,
   .skills-grid,
@@ -212,8 +217,9 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 
 /* Mise en page générale du hero, des sections et des cartes de contact. */
 
-.panel { min-height: 100dvh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding: 7rem 4rem 3rem; position: relative; overflow: hidden; }
+.panel { height: 100dvh; min-height: 100dvh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding: 7rem 4rem 3rem; position: relative; overflow: hidden; }
 .section {
+  height: 100dvh;
   min-height: 100dvh;
   padding: 3rem 4rem 2.5rem;
   display: flex;
@@ -223,6 +229,7 @@ button, a, .project-card, .related-card, .gallery-thumb, .contact-link, .menu a 
 }
 #projects,
 #skills {
+  height: 100dvh;
   min-height: 100dvh;
   padding-top: 3rem;
   padding-bottom: 2rem;

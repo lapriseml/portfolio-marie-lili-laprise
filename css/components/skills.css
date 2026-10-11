@@ -10,7 +10,7 @@
   position: relative;
   background: var(--panel);
   border: 2px solid rgba(139, 26, 26, .15);
-  padding: 1.5rem;
+  padding: clamp(1rem, 2.5vh, 1.5rem);
   overflow: hidden;
   display: flex;
   flex-direction: column;

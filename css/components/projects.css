@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 24rem;
+  min-height: 0;
   background: var(--panel);
   border: 2px solid rgba(139, 26, 26, .15);
   overflow: hidden;
@@ -64,7 +64,7 @@
 .project-card:hover::after {
   opacity: 1;
 }
-.card-media { position: relative; height: 13.5rem; overflow: hidden; }
+.card-media { position: relative; height: clamp(9rem, 25vh, 13.5rem); overflow: hidden; }
 /* Image de projet zoomée et éclaircie au survol. */
 .card-media img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .72; filter: saturate(.82) contrast(1.03); transition: opacity .55s, transform .65s, filter .55s; }
 .project-card:hover .card-media img { opacity: 1; transform: scale(1.1); filter: saturate(1.06) contrast(1.08); }
