@@ -14,3 +14,7 @@
 
 ## Figma Design:
 *https://www.figma.com/design/ZJvDWFCfhCmv1JON6hTDCQ/Portfolio-Marie-Lili-Laprise?node-id=0-1&t=YG2DcQAOg6MioCGG-1*
+
+
+## QA:
+*https://cmontmorency365-my.sharepoint.com/:x:/r/personal/mariem_ouellet_cmontmorency_qc_ca/_layouts/15/Doc.aspx?sourcedoc=%7BC9059DA2-C822-475C-8849-56819F4135D4%7D&file=qa_marie-lili_laprise.xlsx&action=default&mobileredirect=true*
