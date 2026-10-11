@@ -65,6 +65,7 @@ function fillDetail(id) {
 
   setText('detail-title', p.title);
   setText('detail-cadre', p.cadre);
+  setText('detail-equipe', p.equipe);
   setText('detail-meta-cat', p.category);
   setText('detail-duration', p.duration);
   setText('detail-year', p.year);
@@ -146,8 +147,9 @@ function fillDetail(id) {
 
   const videoBlock = document.querySelector('.video-block');
   const videoWrap = document.getElementById('video-wrap');
+  const videoSource = p.videoUrl || p.videoId;
 
-  if (videoBlock && (!p.videoId || !String(p.videoId).trim())) {
+  if (videoBlock && (!videoSource || !String(videoSource).trim())) {
     videoBlock.style.display = 'none';
   } else if (videoBlock) {
     videoBlock.style.display = '';
@@ -191,11 +193,21 @@ function fillDetail(id) {
 
 function loadVideo() {
   const p = getCurrentProject();
-  if (!p || !p.videoId || !String(p.videoId).trim()) return;
+  const videoSource = p && (p.videoUrl || p.videoId);
+  if (!videoSource || !String(videoSource).trim()) return;
 
   const wrap = document.getElementById('video-wrap');
   if (wrap) {
-    wrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${p.videoId}?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+    const source = String(videoSource).trim();
+    const vimeoMatch = source.match(/vimeo\.com\/(?:video\/)?(\d+)/i);
+
+    if (vimeoMatch) {
+      wrap.innerHTML = `<iframe src="https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+    } else if (/\.mp4(?:$|\?)/i.test(source)) {
+      wrap.innerHTML = `<video controls autoplay playsinline><source src="${source}" type="video/mp4"></video>`;
+    } else {
+      wrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${encodeURIComponent(source)}?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+    }
   }
 }
 

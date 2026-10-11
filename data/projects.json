@@ -7,9 +7,10 @@
     "category": "Jeu vidéo",
     "year": "2024",
     "gameUrl": "https://lapriseml.itch.io/highfish",
-    "description": "<p>Jeu de pêche en pixel art développé avec <strong>Phaser et JavaScript</strong>. Le joueur doit atteindre un nombre précis de poissons pêchés avant la fin du temps, tout en évitant les obstacles et en récupérant des coffres offrant du temps supplémentaire.</p><p>Le projet comprend <strong>trois niveaux à difficulté progressive</strong> et met en œuvre différentes mécaniques de gameplay, telles que la pêche, les déplacements, les collisions, la gestion du temps, les bonus et la progression entre les niveaux. L'ensemble est accompagné d'une direction visuelle et sonore inspirée des jeux d'arcade rétro.</p>",
+    "description": "<p>Jeu de pêche en pixel art développé avec <strong>Phaser et JavaScript</strong>. Le joueur doit atteindre un nombre minimal précis de poissons pêchés avant la fin du temps, tout en évitant les obstacles et en récupérant des coffres offrant du temps supplémentaire.</p><p>Le projet comprend <strong>trois niveaux à difficulté progressive</strong> et met en œuvre différentes mécaniques de gameplay, telles que la pêche, les déplacements, les collisions, la gestion du temps, les bonus et la progression entre les niveaux. L'ensemble est accompagné d'une direction visuelle et sonore inspirée des jeux d'arcade rétro.</p>",
     "tags": ["HTML", "CSS", "JavaScript", "Phaser", "Game development"],
     "cadre": "Scolaire",
+    "equipe": "Individuel",
     "duration": "15 semaines",
     "cover": "assets/images/HighFish1.webp",
     "gallery": [
@@ -19,7 +20,7 @@
       "assets/images/HighFish4.webp",
       "assets/images/HighFish5.webp"
     ],
-    "videoId": "dQw4w9WgXcQ"
+    "videoUrl": "https://vimeo.com/1234818487?share=copy&fl=sv&fe=ci"
   },
   {
     "id": 1,
@@ -28,9 +29,10 @@
     "title": "Os'scape",
     "category": "Jeu réalité virtuelle",
     "year": "2025",
-    "description": "<p>Jeu en réalité virtuelle développé avec <strong>Unity</strong>. Le projet consiste en une expérience immersive composée de trois niveaux prenant place dans différents labyrinthes, où le joueur doit explorer l’environnement afin de trouver un diamant permettant d’ouvrir un portail et de progresser vers le niveau suivant.</p><p>Le projet comprend la création complète des environnements, l’intégration de la réalité virtuelle, les déplacements et interactions du joueur, les collisions, le système de collecte du diamant ainsi que la gestion de la progression entre les niveaux. Le projet a aussi fait appel à <strong>TouchDesigner</strong>, à <strong>OSC</strong> et à un <strong>contrôleur MIDI</strong> pour la gestion des portes. L’ensemble met en œuvre les différents outils nécessaires à la conception d’une expérience de jeu VR fonctionnelle et interactive.</p>",
+    "description": "<p>Jeu en réalité virtuelle développé avec <strong>Unity</strong>. Le projet consiste en une expérience immersive composée de trois niveaux prenant place dans un labyrinthe, où le joueur doit explorer l’environnement afin de trouver un diamant permettant d’ouvrir un portail et de progresser vers le niveau suivant.</p><p>Le projet comprend la création complète des environnements, l’intégration de la réalité virtuelle, les déplacements et interactions du joueur, les collisions, le système de collecte du diamant ainsi que la gestion de la progression entre les niveaux. Le projet a aussi fait appel à <strong>TouchDesigner</strong>, à <strong>OSC</strong> et à un <strong>contrôleur MIDI</strong> pour la gestion des portes. L’ensemble met en œuvre les différents outils nécessaires à la conception d’une expérience de jeu VR fonctionnelle et interactive.</p>",
     "tags": ["Unity", "C#", "3D", "VR", "TouchDesigner", "OSC", "MIDI", "Game development"],
-    "cadre": "Scolaire - projet d'équipe",
+    "cadre": "Scolaire",
+    "equipe": "Jade Hébert & Radhouane Kordan",
     "duration": "8 semaines",
     "cover": "assets/images/Os'scape1.webp",
     "gallery": [
@@ -40,7 +42,7 @@
       "assets/images/Os'scape4.webp",
       "assets/images/Os'scape5.webp"
     ],
-    "videoId": "dQw4w9WgXcQ"
+    "videoUrl": "https://vimeo.com/1234825597?share=copy&fl=sv&fe=ci"
   },
   {
     "id": 2,
@@ -49,9 +51,10 @@
     "title": "HighStar",
     "category": "Jeu vidéo",
     "year": "2025",
-    "description": "<p>Jeu vidéo 3D développé avec <strong>Unity</strong>. Le projet consiste en la création d’un environnement de jeu complet dans lequel le joueur contrôle un personnage et doit collecter un nombre défini d’étoiles dans un temps limité.</p><p>Le projet comprend la création et l’intégration de l’environnement, des déplacements du personnage, des animations, des collisions, de la gestion du temps et du système de collecte des étoiles. L’ensemble met en œuvre les outils nécessaires au fonctionnement du gameplay, notamment la détection des collisions, les interactions avec les objets et la gestion de la progression du joueur.</p>",
+    "description": "<p>Jeu vidéo 3D développé avec <strong>Unity</strong>. Le projet consiste en la création d’un environnement de jeu complet dans lequel le joueur contrôle un personnage et doit collecter le plus d’étoiles possible dans un temps limité.</p><p>Le projet comprend la création et l’intégration de l’environnement, des déplacements du personnage, des animations, des collisions, de la gestion du temps et du système de collecte des étoiles. L’ensemble met en œuvre les outils nécessaires au fonctionnement du gameplay, notamment la détection des collisions, les interactions avec les objets et la gestion de la progression du joueur.</p>",
     "tags": ["Unity", "C#", "3D", "Game development"],
     "cadre": "Scolaire",
+    "equipe": "Individuel",
     "duration": "2 semaines",
     "cover": "assets/images/HighStar1.webp",
     "gallery": [
@@ -61,7 +64,7 @@
       "assets/images/HighStar4.webp",
       "assets/images/HighStar5.webp"
     ],
-    "videoId": "dQw4w9WgXcQ"
+    "videoUrl": "https://vimeo.com/1234846681?share=copy&fl=sv&fe=ci"
   },
   {
     "id": 3,
@@ -73,6 +76,7 @@
     "description": "<p>Projet d’animation 3D réalisé avec <strong>Maya</strong>, comprenant la modélisation d’un robot et son intégration dans un univers de science-fiction inspiré de l’esthétique de <strong>Star Wars</strong>. Le personnage a été préparé à l’animation à l’aide d’un rig et de différents contrôleurs permettant de réaliser et de faciliter ses mouvements.</p><p>Le projet comprend également la recréation et l’adaptation d’une animation inspirée de l’univers de <strong>Pixar</strong> avec le personnage créé. L’animation met en œuvre différentes techniques de Maya, notamment l’utilisation du rig, des contrôleurs, des poses, de la timeline et des outils d’animation afin de donner vie au personnage et de créer une séquence dynamique et cohérente.</p>",
     "tags": ["Maya", "Modélisation 3D", "Animation 3D"],
     "cadre": "Scolaire",
+    "equipe": "Individuel",
     "duration": "2 semaines",
     "cover": "assets/images/Tatooine1.webp",
     "gallery": [
@@ -82,6 +86,6 @@
       "assets/images/Tatooine4.webp",
       "assets/images/Tatooine5.webp"
     ],
-    "videoId": "assets/images/tatooine.mp4"
+    "videoUrl": "https://vimeo.com/1234841704?share=copy&fl=sv&fe=ci"
   }
 ]

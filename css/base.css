@@ -438,7 +438,7 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
 }
 
 /* Métadonnées et contenu détaillé du projet. */
-.detail-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding: 2rem 4rem; border-bottom: 1px solid var(--line); }
+.detail-meta { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; padding: 2rem 4rem; border-bottom: 1px solid var(--line); }
 .meta-label { font-size: var(--text-xs); margin-bottom: .25rem; }
 .meta-value { font-family: 'Cinzel', serif; }
 
