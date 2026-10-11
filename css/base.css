@@ -524,7 +524,7 @@ footer { margin-top: 7rem; padding-top: 1.25rem; }
   .detail-copy { padding: 2rem; }
   .detail-meta { grid-template-columns: repeat(2, 1fr); padding: 2rem; }
   .detail-body { grid-template-columns: 1fr; padding: 2rem; }
-  .gallery-wrap, .video-block, .related-wrap { padding: 0 2rem 2rem; }
+  .gallery-wrap, .video-block, .process-wrap, .related-wrap { padding: 0 2rem 2rem; }
   .gallery-thumbs { grid-template-columns: repeat(4, 1fr); }
 }
 

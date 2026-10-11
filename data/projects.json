@@ -20,7 +20,27 @@
       "assets/images/HighFish4.webp",
       "assets/images/HighFish5.webp"
     ],
-    "videoUrl": "https://vimeo.com/1234818487?share=copy&fl=sv&fe=ci"
+    "videoUrl": "https://vimeo.com/1234818487?share=copy&fl=sv&fe=ci",
+    "process": [
+      {
+        "title": "Inspirations",
+        "description": "<p>Pour la création de <em>HighFish</em>, je me suis principalement inspirée du mini-jeu de pêche présent dans <em>Club Penguin</em>. Je souhaitais reprendre son système de contrôle simple et intuitif, où la souris permet de faire monter et descendre la ligne de pêche. Je voulais conserver cette mécanique qui rend la pêche interactive et accessible, tout en l'adaptant à mon propre jeu.</p><p>Je souhaitais également donner à <em>HighFish</em> une esthétique en pixel art, inspirée des jeux vidéo rétro. Pour obtenir ce style visuel, j'ai utilisé des sprite sheets provenant d'itch.io, notamment pour les décors, les personnages et les différents éléments du jeu. Ces assets m'ont permis de créer un univers cohérent avec l'ambiance que je voulais donner au projet.</p>",
+        "images": [
+          "assets/images/HighFish_inspiration1.webp",
+          "assets/images/HighFish_inspiration2.webp",
+          "assets/images/HighFish_inspiration3.jpg.webp",
+          "assets/images/HighFish_inspiration4.webp"
+        ]
+      },
+      {
+        "title": "Développement et programmation",
+        "description": "<p>Une fois les inspirations définies et les assets sélectionnés, j'ai développé <em>HighFish</em> à l'aide de Phaser et JavaScript. Cette étape consistait à intégrer les différents éléments visuels, notamment les décors, les poissons et les autres objets du jeu, tout en programmant les mécaniques nécessaires à son fonctionnement.</p><p>J'ai ensuite mis en place les différentes interactions, comme le contrôle de la ligne de pêche à la souris, les déplacements des poissons, les collisions, les bonus et les ennemis. J'ai également créé plusieurs scènes pour structurer l'expérience de jeu, notamment un menu d'accueil, une section expliquant les commandes et différents écrans de fin de partie.</p><p>Enfin, j'ai effectué plusieurs tests et ajustements afin de corriger les problèmes, d'améliorer les mécaniques et de m'assurer que les différents éléments fonctionnaient correctement ensemble.</p>"
+      },
+      {
+        "title": "Publication et mise en ligne",
+        "description": "<p>Une fois le développement terminé, j'ai préparé <em>HighFish</em> pour sa mise en ligne sur itch.io, une plateforme permettant de partager des jeux vidéo indépendants. Cette étape m'a permis de rendre mon projet accessible au public directement depuis un navigateur.</p><p>J'ai intégré le jeu à sa page de présentation et préparé les éléments nécessaires pour le mettre en valeur. Cette dernière étape représente l'aboutissement du projet, en passant d'un jeu développé dans un environnement de programmation à une expérience jouable et accessible en ligne.</p>"
+      }
+    ]
   },
   {
     "id": 1,

@@ -176,6 +176,29 @@ function fillDetail(id) {
     }
   }
 
+  const processWrap = document.getElementById('process-wrap');
+  const processSteps = document.getElementById('process-steps');
+  if (processWrap && processSteps) {
+    processWrap.hidden = !Array.isArray(p.process) || p.process.length === 0;
+    processSteps.innerHTML = processWrap.hidden ? '' : p.process.map((step, index) => `
+      <article class="process-step">
+        <h3 class="process-step__title skill-label ${index === 1 ? 'alt' : ''}">${index + 1}. ${step.title}</h3>
+        <div class="process-step__content">
+          <div class="process-text-placeholder" aria-label="Espace réservé au texte">
+            ${step.description || '<span>Espace réservé au texte</span>'}
+          </div>
+          ${Array.isArray(step.images) && step.images.length > 0 ? `
+            <div class="process-images">
+              ${step.images.map((image, imageIndex) => image
+                ? `<img src="${image}" alt="${step.title}, image ${imageIndex + 1}" loading="lazy" />`
+                : `<div class="process-image-placeholder" role="img" aria-label="Espace réservé à une image">Espace réservé à une image</div>`).join('')}
+            </div>
+          ` : ''}
+        </div>
+      </article>
+    `).join('');
+  }
+
   const relatedGrid = document.getElementById('related-grid');
   if (relatedGrid) {
     const others = getProjects().filter((x) => x.id !== id);
