@@ -143,7 +143,8 @@
 .tag.alt { border-color: rgba(124,58,237,.2); background: rgba(124,58,237,.04); }
 
 /* Processus de création affiché uniquement pour les projets qui le documentent. */
-.process-wrap { padding: 0 4rem 4rem; }
+.process-wrap { padding: 0 4rem 4rem; opacity: 0; transform: translateY(2rem); transition: opacity .7s ease, transform .7s ease; }
+.process-wrap.is-visible { opacity: 1; transform: translateY(0); }
 .process-title { margin: .75rem 0 2rem; font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; }
 .process-steps { display: grid; grid-template-columns: 1fr; gap: 1rem; }
 .process-step {
@@ -159,6 +160,10 @@
   transform-origin: center;
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
 }
+.process-wrap:not(.is-visible) .process-step { opacity: 0; transform: translateY(1.5rem); }
+.process-wrap.is-visible .process-step { animation: process-step-reveal .65s ease both; }
+.process-wrap.is-visible .process-step:nth-child(2) { animation-delay: .12s; }
+.process-wrap.is-visible .process-step:nth-child(3) { animation-delay: .24s; }
 .process-step::before {
   content: '';
   position: absolute;
@@ -210,6 +215,17 @@
 .process-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .process-images img,
 .process-image-placeholder { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; }
+
+@keyframes process-step-reveal {
+  from { opacity: 0; transform: translateY(1.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-wrap { opacity: 1; transform: none; transition: none; }
+  .process-wrap:not(.is-visible) .process-step,
+  .process-wrap.is-visible .process-step { opacity: 1; transform: none; animation: none; }
+}
 
 /* Autres projets : cartes compactes affichées sur les pages de détail. */
 

@@ -2,6 +2,8 @@
 
 import { getProjects, getProjectById, setCurrentProject, getCurrentProject } from '../data.js';
 
+let processRevealObserver;
+
 function buildProjectCards() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
@@ -180,6 +182,7 @@ function fillDetail(id) {
   const processSteps = document.getElementById('process-steps');
   if (processWrap && processSteps) {
     processWrap.hidden = !Array.isArray(p.process) || p.process.length === 0;
+    processWrap.classList.remove('is-visible');
     processSteps.innerHTML = processWrap.hidden ? '' : p.process.map((step, index) => `
       <article class="process-step">
         <h3 class="process-step__title skill-label ${index === 1 ? 'alt' : ''}">${index + 1}. ${step.title}</h3>
@@ -197,6 +200,16 @@ function fillDetail(id) {
         </div>
       </article>
     `).join('');
+
+    if (processRevealObserver) processRevealObserver.disconnect();
+    if (!processWrap.hidden) {
+      processRevealObserver = new IntersectionObserver(([entry], observer) => {
+        if (!entry.isIntersecting) return;
+        processWrap.classList.add('is-visible');
+        observer.disconnect();
+      }, { threshold: .15 });
+      processRevealObserver.observe(processWrap);
+    }
   }
 
   const relatedGrid = document.getElementById('related-grid');
