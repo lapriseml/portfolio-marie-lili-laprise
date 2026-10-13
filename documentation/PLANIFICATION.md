@@ -2,9 +2,9 @@
 JSON car simple et efficace et je suis déjà familière avec, contrairement aux autres options. De plus, je trouve ça beaucoup plus facile de travailler uniquement dans VSCode et avoir tous mes fichiers à la même place.
 
 # 2. Animations
-- **Élément à animer :** Le logo // les transitions pour les projets
-- **Type d'animation :** Des cercles mauves et rouges qui tournent // style "hyperspace" étoiles
-- **Déclencheur :** Constamment // au clic sur un projet
+- **Élément à animer :** Le logo
+- **Type d'animation :** Des cercles mauves et rouges qui tournent
+- **Déclencheur :** Constamment
 - **Élément à animer :** Les transitions pour les projets
 - **Type d'animation :** Style "hyperspace" étoiles
 - **Déclencheur :** Au clic sur un projet
