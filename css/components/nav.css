@@ -1,37 +1,37 @@
-/* Navigation principale fixe et ses variantes responsive. */
+/* Navigation */
 
+/* Nav bar transparente avant défilement */
 .nav {
-  /* Barre placée au-dessus du contenu, transparente avant le défilement. */
   position: fixed; inset: 0 0 auto 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.25rem 4rem;
   border-bottom: 1px solid transparent;
   transition: background .4s, border-color .4s;
 }
+/* Fond opaque et flouté lorsque défilement */
 .nav.scrolled {
-  /* Fond opaque et flouté lorsque la page est défilée. */
   background: rgba(6, 4, 10, .92);
   border-color: rgba(139, 26, 26, .25);
   backdrop-filter: blur(12px);
 }
 .brand { display: flex; align-items: center; gap: .75rem; cursor: default; }
-/* Nom de marque affiché à côté du logo. */
+/* Initiales à côté du logo */
 .brand span { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: .15em; }
-/* Liens de navigation alignés horizontalement sur grand écran. */
+/* Liens de navigation alignés horizontalement sur desktop */
 .menu { display: flex; gap: 2.5rem; }
 .menu a {
   color: var(--muted); text-decoration: none;
   font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); letter-spacing: .3em; text-transform: uppercase; position: relative;
 }
-/* Soulignement animé affiché sous le lien survolé. */
+/* Effet hover sur les liens */
 .menu a::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--red); transition: width .3s; }
 .menu a:hover { color: var(--red); }
 .menu a:hover::after { width: 100%; }
 /* Le menu flottant reste masqué sur les écrans larges. */
 .mobile-menu { display: none; }
 
+/* Media queries */
 @media (max-width: 900px) {
-  /* Réduit les espacements et permet aux liens de passer à la ligne. */
   .nav {
     padding: 1rem 1.5rem;
     gap: .75rem;
@@ -47,7 +47,6 @@
 }
 
 @media (max-width: 560px) {
-  /* Centre la marque et les liens sur les très petits écrans. */
   .nav {
     flex-wrap: wrap;
     align-items: center;

@@ -1,8 +1,10 @@
+// Initialisation des données, des interactions et des transitions entre les pages de contenu du site (charge les projets, instancie les modules de navigation, gère le changement de vue entre la page d'accueil et la fiche détail d'un projet)
 import { loadProjects, getProjects } from './data.js';
 import { buildProjectCards, fillDetail, loadVideo } from './components/projects.js';
 import { initNavScroll, initSectionScroll } from './components/nav.js';
-import { runHyperspace } from './components/orbs.js';
+import { runHyperspace } from './components/hyperspace.js';
 
+// Affiche une page donnée en masquant les autres, mode d'affichage principalement géré par classe CSS .active sur chaque page
 function showPage(name) {
   const nav = document.getElementById('main-nav');
   if (nav) nav.style.display = name === 'home' ? '' : 'none';
@@ -25,6 +27,7 @@ function showPage(name) {
   requestAnimationFrame(() => { document.documentElement.style.scrollBehavior = ''; });
 }
 
+// Ouvre un projet en déclenchant l'animation hyperspace, callback utilisé pour assurer que l'animation est terminée avant de charger le détail
 function openProject(id) {
   runHyperspace(() => {
     fillDetail(id);
@@ -32,6 +35,7 @@ function openProject(id) {
   });
 }
 
+// Revient à la page d'accueil et recentre la vue sur la section des projets
 function goBack() {
   showPage('home');
 
@@ -44,6 +48,7 @@ function goBack() {
   }
 }
 
+// Charge les projets, initialise les composants interactifs et ouvre la page d'accueil (routine de démarrage du portfolio)
 async function initializePortfolio() {
   const projects = await loadProjects();
 
@@ -70,4 +75,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 export { showPage, openProject, goBack, initializePortfolio };
-

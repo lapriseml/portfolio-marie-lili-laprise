@@ -1,26 +1,35 @@
-// Navigation et comportement de scroll
+// Navigation et scroll des sections
 
+// Initialisation du nav (desktop) et menu burger (mobile) et gestion scroll
 function initNavScroll() {
   const nav = document.getElementById('main-nav');
   if (!nav) return;
 
+  // Quand on scroll, nav = scrolled, fond = plus opaque et ombre pour lisibilité
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 30);
   }, { passive: true });
 
+  // Menu burger s'ouvre et se ferme + liens
   const mobileMenu = document.querySelector('.mobile-menu');
   const toggle = mobileMenu?.querySelector('.mobile-menu__toggle');
   const links = mobileMenu?.querySelector('.burger-menu_links');
   if (!toggle || !links) return;
 
+  // Le bouton du burger contrôle aria-expanded true = ouvert, false = fermé, met à jour le aria-label et l'état visuel du conteneur pour garder la logique du DOM et de l'accessibilité cohérente
   toggle.addEventListener('click', () => {
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+    // On inverse l'état actuel pour passer de ouvert à fermé et vice versa
     toggle.setAttribute('aria-expanded', String(!isOpen));
     toggle.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
+
+    // Le conteneur des liens est masqué fermé
     links.hidden = isOpen;
     mobileMenu.classList.toggle('is-open', !isOpen);
   });
 
+  // En cliquant sur un lien, ça ferme le panneau
   links.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       toggle.setAttribute('aria-expanded', 'false');
@@ -31,11 +40,13 @@ function initNavScroll() {
   });
 }
 
+// Scroll section par section
 function initSectionScroll() {
   const home = document.getElementById('page-home');
   const sections = Array.from(document.querySelectorAll('#hero, #projects, #skills, #contact'));
   if (!home || !sections.length) return;
 
+  // Sur mobile, les cartes compétences sont séparées en deux sections
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
   const skillSlide = document.querySelector('#skills .skills-mobile-slide');
   const aboutSlide = document.querySelector('#skills .about-mobile-slide');
@@ -55,6 +66,7 @@ function initSectionScroll() {
   home.style.scrollSnapType = 'none';
   home.style.scrollBehavior = 'auto';
 
+  // Met à jour la section active et applique la classe CSS correspondante
   const setActiveSection = (index) => {
     currentIndex = index;
     sections.forEach((section) => section.classList.remove('active-section'));
@@ -62,12 +74,14 @@ function initSectionScroll() {
     targets[index].section.classList.add('active-section');
   };
 
+  // Calcule le centre d'une section pour comparer sa position avec celle du viewport
   const getTargetCenter = (target) => {
     const homeRect = home.getBoundingClientRect();
     const targetRect = target.element.getBoundingClientRect();
     return targetRect.top - homeRect.top + home.scrollTop + targetRect.height / 2;
   };
 
+  // Détecte automatiquement la section la plus proche du centre de la vue actuelle
   const updateActiveSection = () => {
     if (isAnimating) return;
     const currentPosition = home.scrollTop + home.clientHeight / 2;
@@ -79,6 +93,7 @@ function initSectionScroll() {
     setActiveSection(closestIndex);
   };
 
+  // Anime le scroll vers une section cible pour obtenir un mouvement doux et contrôlé
   const scrollToSection = (index) => {
     if (index < 0 || index >= targets.length || isAnimating) return;
 
@@ -118,6 +133,7 @@ function initSectionScroll() {
     }, animationDuration + 200);
   };
 
+  // Écouteurs d'événements pour le scroll et le toucher
   home.addEventListener('scroll', updateActiveSection, { passive: true });
   home.addEventListener('wheel', (event) => {
     if (Math.abs(event.deltaY) < 8) return;
@@ -141,6 +157,7 @@ function initSectionScroll() {
     scrollToSection(currentIndex + (deltaY > 0 ? 1 : -1));
   }, { passive: true });
 
+  // Les liens internes de la page déclenchent un déplacement animé vers la section cible
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
       const target = document.querySelector(link.getAttribute('href'));

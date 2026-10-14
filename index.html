@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<!-- Navigation principale -->
+<!-- Navigation principale (desktop) -->
 
 <nav id="main-nav" class="nav" aria-label="Navigation principale">
   <div class="brand">
@@ -47,6 +47,7 @@
   </div>
 </nav>
 
+<!-- Navigation principale (mobile) -->
 <nav class="mobile-menu" aria-label="Navigation mobile">
   <button class="mobile-menu__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu-links" aria-label="Ouvrir le menu">
     <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
@@ -70,12 +71,12 @@
 </nav>
 
 <!-- Animation hyperspace -->
-
 <canvas id="hyperspace"></canvas>
 
-<!-- Page principale -->
-
+<!-- Accueil (contient sections : hero, projets, compétences, contact) gérée par le scroll par section -->
 <div id="page-home" class="page active">
+
+  <!-- Section hero -->
   <section id="hero" class="panel" aria-labelledby="hero-title">
     <div class="copy">
       <p class="eyebrow">// Développeuse web</p>
@@ -89,9 +90,6 @@
         <a href="#contact" class="btn secondary">Me contacter →</a>
       </div>
     </div>
-
-    <!-- Orb -->
-
     <div class="orb-wrap">
       <div class="orb">
         <div class="ring ring-a"></div>
@@ -136,8 +134,7 @@
     </div>
   </section>
 
-  <!-- Section projets (projects-grid rempli avec js) -->
-
+  <!-- Section projets -->
   <section id="projects" class="section" aria-labelledby="projects-title">
     <div class="section-head">
       <div>
@@ -149,7 +146,6 @@
   </section>
 
   <!-- Section compétences + histoire personnelle -->
-
   <section id="skills" class="section" aria-labelledby="skills-title">
     <div class="skills-mobile-slide">
       <p class="eyebrow">03 — Expertise</p>
@@ -195,7 +191,6 @@
   </section>
 
   <!-- Section contact + footer -->
-
   <section id="contact" class="section" aria-labelledby="contact-title">
     <div class="contact-card">
       <div class="glow"></div>
@@ -253,8 +248,9 @@
 </div>
 
 
-<!-- Page des projets remplie par js-->
+<!-- Page détail d'un projet remplie avec fetch -->
 
+<!-- Nav -->
 <div id="page-detail" class="page">
   <div class="detail-head">
     <button class="back-btn" onclick="goBack()">
@@ -264,11 +260,12 @@
     <span class="detail-year" id="detail-nav-year"></span>
   </div>
 
+  <!-- Image, dégradé, titre/catégorie -->
   <div class="detail-hero">
     <img class="detail-cover" id="detail-cover" src="" alt="Image de couverture du projet"/>
     <div class="detail-overlay" id="detail-overlay"></div>
     <div class="detail-copy">
-      <h1 class="detail-title" id="detail-title">Détail du projet</h1>
+      <h1 class="detail-title" id="detail-title">Nom du projet</h1>
       <p class="detail-cat" id="detail-cat"></p>
     </div>
   </div>
@@ -281,6 +278,8 @@
     <div><div class="meta-label">Année</div><div class="meta-value" id="detail-year"></div></div>
   </div>
 
+  
+  <!-- Description, tags (+ jouer au jeu highfish) -->
   <div class="detail-body">
     <div>
       <div class="section-label" id="detail-desc-label"></div>
@@ -296,6 +295,7 @@
     </div>
   </div>
 
+  <!-- Galerie -->
   <div class="gallery-wrap">
     <div class="mini-tag">// Galerie</div>
     <div class="gallery-main">
@@ -311,6 +311,7 @@
     <div class="gallery-thumbs" id="gallery-thumbs"></div>
   </div>
 
+  <!-- Vidéo -->
   <div class="video-block">
     <div class="mini-tag">// Vidéo</div>
     <div class="video-wrap" id="video-wrap">
@@ -322,17 +323,20 @@
     </div>
   </div>
 
+  <!-- Processus de création highfish -->
   <section class="process-wrap" id="process-wrap" hidden aria-labelledby="process-title">
     <div class="mini-tag">// Processus de création</div>
     <h2 class="process-title" id="process-title">Processus de création</h2>
     <div class="process-steps" id="process-steps"></div>
   </section>
 
+  <!-- Autres projets -->
   <div class="related-wrap">
     <div class="mini-tag">// Autres projets</div>
     <div class="related-grid" id="related-grid"></div>
   </div>
 
+  <!-- Footer -->
   <footer>
     <button class="back-btn" onclick="goBack()">
       <svg width="14" height="14" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#1a0505" stroke="#c0392b" stroke-width="0.5"/><circle cx="50" cy="50" r="10" fill="#0a0000"/></svg>

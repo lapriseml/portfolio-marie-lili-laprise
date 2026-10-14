@@ -1,8 +1,9 @@
-// Orb hero et animation hyperspace
+// Animation hyperspace
 
 const HS_DURATION = 1200;
 const HS_STARS = 520;
 
+// Animation de mouvement spatial qui s'affiche sur le canvas, chaque étoile reçoit une position initiale, une vitesse et une couleur
 function runHyperspace(cb) {
   const canvas = document.getElementById('hyperspace');
   if (!canvas) return cb();
@@ -13,6 +14,8 @@ function runHyperspace(cb) {
   canvas.height = window.innerHeight;
   const cx = canvas.width / 2;
   const cy = canvas.height / 2;
+
+  // Nuage d'étoiles réparties autour du centre du canvas, avec des vitesses et des couleurs légèrement variées
   const stars = Array.from({ length: HS_STARS }, () => ({
     angle: Math.random() * Math.PI * 2,
     dist: Math.random() * 80 + 20,
@@ -34,6 +37,7 @@ function runHyperspace(cb) {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     stars.forEach((star) => {
+      // Chaque étoile s'éloigne progressivement du centre
       star.dist += star.speed * (1 + t * 4);
       const x = cx + Math.cos(star.angle) * star.dist;
       const y = cy + Math.sin(star.angle) * star.dist;
@@ -49,12 +53,14 @@ function runHyperspace(cb) {
       ctx.stroke();
     });
 
+    // Callback et ouverture de page détail
     if (!moved && t >= 0.6) {
       moved = true;
       cb();
     }
   }
 
+  // Gsap anime le paramètre progress jusqu'à 1, en synchronisation avec le rendu du canvas
   gsap.to(state, {
     progress: 1,
     duration: HS_DURATION / 1000,

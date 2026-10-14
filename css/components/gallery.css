@@ -1,11 +1,11 @@
-/* Galerie d'images : visuel principal, commandes et miniatures. */
+/* Galerie */
 
-/* Zone de contenu commune à la galerie, à la vidéo et aux projets associés. */
+/* Contenu commun galerie, vidéo et projets associés */
 .gallery-wrap, .video-block, .related-wrap { padding: 4rem 4rem 4rem; }
 .gallery-main { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #0d0914; }
 .gallery-main img { width: 100%; height: 100%; object-fit: cover; opacity: .85; filter: saturate(.8) contrast(1.05); }
 .gallery-nav {
-  /* Boutons précédent/suivant superposés verticalement à l'image. */
+  /* Boutons précédent/suivant */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -26,7 +26,6 @@
   transition: transform .2s ease, color .2s ease;
 }
 .gallery-nav:hover {
-  /* Accentue le bouton actif au survol. */
   transform: translateY(-50%) scale(1.3);
 }
 .gallery-nav svg {
@@ -40,12 +39,12 @@
 }
 .gallery-prev { left: 1rem; }
 .gallery-next { right: 1rem; }
-/* Compteur placé dans le coin inférieur de l'image principale. */
+/* Compteur de projets */
 .gallery-count { position: absolute; right: 1rem; bottom: 1rem; padding: .25rem .6rem; background: rgba(6,4,10,.8); color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: var(--text-xs); }
-/* Miniatures alignées sous l'image principale. */
+/* Miniatures dessous image principale */
 .gallery-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: .5rem; margin-top: .5rem; }
 .gallery-thumb {
-  /* Chaque miniature est interactive et indique son état actif. */
+  /* Chaque miniature interactive et indique état actif */
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -108,7 +107,7 @@
   }
 }
 
-/* Lecteur vidéo : affiche une miniature avant le chargement de l'iframe. */
+/* Vidéo : affiche miniature avant de jouer la vidéo */
 
 .video-wrap { position: relative; aspect-ratio: 16 / 9; background: #0d0914; }
 .video-poster { position: absolute; inset: 0; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }

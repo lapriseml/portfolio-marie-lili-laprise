@@ -1,9 +1,10 @@
-// Gestion des cartes projets, détail, galerie, vidéo et projets liés
+// Cartes projets, détail, galerie, vidéo et autres projets (transforme les données JSON en interface interactive et remplit les zones dynamiques du DOM)
 
 import { getProjects, getProjectById, setCurrentProject, getCurrentProject } from '../data.js';
 
 let processRevealObserver;
 
+// Construit la grille des cartes de projets depuis les données chargées, chaque carte contient un aperçu visuel, le titre, la catégorie et les tags correspondant au projet
 function buildProjectCards() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
@@ -28,11 +29,13 @@ function buildProjectCards() {
   `).join('');
 }
 
+// Met à jour le contenu textuel d'un élément du DOM en fonction de son identifiant
 function setText(id, text) {
   const el = document.getElementById(id);
   if (el) el.textContent = text;
 }
 
+// Remplit le panneau de détail d'un projet avec ses informations, ses images et ses étapes,prend un id de projet, lit les données du JSON, puis injecte le contenu dans la vue de détail ainsi que dans la galerie et les autres sections associées
 function fillDetail(id) {
   const p = getProjectById(id);
   if (!p) return;
@@ -98,6 +101,7 @@ function fillDetail(id) {
   const nextBtn = document.querySelector('.gallery-next');
   let active = 0;
 
+  // Gère le changement de photo dans la galerie en mettant à jour l'image principale, le compteur et l'état actif des miniatures
   function setPhoto(index) {
     active = (index + p.gallery.length) % p.gallery.length;
     if (mainImg) {
@@ -203,6 +207,7 @@ function fillDetail(id) {
 
     if (processRevealObserver) processRevealObserver.disconnect();
     if (!processWrap.hidden) {
+      // Apparition du bloc de processus, quand il devient visible, ajout d'une classe CSS pour déclencher une animation de révélation progressive
       processRevealObserver = new IntersectionObserver(([entry], observer) => {
         if (!entry.isIntersecting) return;
         processWrap.classList.add('is-visible');
@@ -227,6 +232,7 @@ function fillDetail(id) {
   }
 }
 
+// Charge la vidéo d'un projet dans le conteneur prévu, en supportant YouTube, Vimeo et MP4 (car je n'étais pas sûre quel format j'allais choisir)
 function loadVideo() {
   const p = getCurrentProject();
   const videoSource = p && (p.videoUrl || p.videoId);
