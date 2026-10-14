@@ -8,12 +8,12 @@
 ### 2026-09-09
 - **Outil:** *Figma make*
 - **Prompt:** *lorsque je clique sur un projet je veux qu'une autre page souvre avec les details, plus de photos et une video egalement. aussi, je veux qu'il y a une animation inspirée du hyperspace dans star wars pour la transition de page*
-- **Résultat:** *ajout de pages projets ainsi qu'une animation hyperspace pour la transition de page*
+- **Résultat:** *ajout de pages projets ainsi qu'une animation hyperspace en canvas et gsap pour la transition de page*
 
 ### 2026-09-09
 - **Outil:** *Copilot (VSCode)*
 - **Prompt:** *crée une faisceau lumineux sortant des cercles sharingan jusqu'à l'écriture pour qu'elle soit éclairée dans les sections home et contact*
-- **Résultat:** *ajout d'une lumière en forme de cercle qui part du milieu des cercles jusqu'aux titres des sectionsv home et contact*
+- **Résultat:** *ajout d'une lumière en forme de cercle qui part du milieu des cercles en css jusqu'aux titres des sectionsv home et contact*
 
 ### 2026-09-09
 - **Outil:** *Copilot (VSCode)*
@@ -60,6 +60,10 @@
 - **Prompt:** *redimensionne les images de la galerie de la version mobile pour les mettre de la même dimension que la vidéo pour éviter de les rogner*
 - **Résultat:** *redimension des images dans le css pour copier les dimensions de la vidéo*
 
+### 2026-10-07
+- **Outil:** *Copilot (VSCode)*
+- **Prompt:** *rajoute une animation que le processus de HighFish apparaisse avec le scroll de la page du projet*
+- **Résultat:** *ajout d'animation css d'opacity et translate faisant apparaitre le processus graduellement avec le scroll*
 
 ## Bloc de cours
 
